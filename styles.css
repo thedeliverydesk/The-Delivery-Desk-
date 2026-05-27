@@ -645,6 +645,28 @@ textarea {
   font-size: 13px;
 }
 
+.form-note a {
+  color: var(--green);
+  font-weight: 900;
+}
+
+.consent-line {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.consent-line input {
+  width: 18px;
+  min-height: 18px;
+  margin: 2px 0 0;
+  padding: 0;
+}
+
 .final-cta {
   padding: clamp(48px, 7vw, 76px) 0;
   color: var(--white);
@@ -684,6 +706,65 @@ textarea {
 .local-detail {
   padding-top: clamp(56px, 8vw, 92px);
   padding-bottom: clamp(20px, 4vw, 48px);
+}
+
+.local-conversion {
+  padding: clamp(32px, 6vw, 72px) 0;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.insight-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(16, 47, 74, 0.06);
+}
+
+.insight-card h3 {
+  margin-bottom: 14px;
+}
+
+.insight-card ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.faq-section {
+  padding: clamp(24px, 5vw, 54px) 0 clamp(48px, 7vw, 78px);
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+  max-width: 860px;
+}
+
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(16, 47, 74, 0.05);
+}
+
+.faq-list summary {
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 900;
+}
+
+.faq-list p {
+  margin: 0;
+  padding: 0 18px 18px;
+  color: var(--muted);
 }
 
 .admin-main {
@@ -749,6 +830,13 @@ th {
   font-weight: 800;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
 @media (max-width: 900px) {
   .site-header,
   .main-nav {
@@ -779,6 +867,7 @@ th {
   .problem-grid,
   .two-col,
   .split-section,
+  .insight-grid,
   .assistant-layout,
   .lead-section {
     grid-template-columns: 1fr;
@@ -816,5 +905,9 @@ th {
 
   .site-footer {
     flex-direction: column;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
   }
 }

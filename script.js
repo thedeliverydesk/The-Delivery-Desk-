@@ -254,13 +254,15 @@ function renderAdminPage() {
       <td>${lead.email || ""}</td>
       <td>${lead.service || ""}</td>
       <td>${lead.location || ""}</td>
+      <td>${lead.volume || ""}</td>
+      <td>${lead.issue || ""}</td>
     </tr>
   `).join("");
 
   const exportButton = document.querySelector("[data-export-leads]");
   if (exportButton) {
     exportButton.addEventListener("click", () => {
-      const headers = ["reference", "createdAt", "business", "name", "email", "phone", "service", "location", "volume", "issue", "details"];
+      const headers = ["reference", "createdAt", "business", "name", "email", "phone", "service", "location", "volume", "issue", "consent", "details"];
       const rows = [headers.join(","), ...leads.map((lead) => headers.map((header) => escapeCsv(lead[header])).join(","))];
       const blob = new Blob([rows.join("\n")], { type: "text/csv" });
       const url = URL.createObjectURL(blob);
@@ -323,6 +325,23 @@ function detectCity(message) {
   return cities.find((city) => text.includes(city.toLowerCase())) || "";
 }
 
+function detectIssue(message) {
+  const text = message.toLowerCase();
+  const rules = [
+    { issue: "Price has increased", terms: ["price", "cost", "expensive", "surcharge", "rates", "margin"] },
+    { issue: "Collections are unreliable", terms: ["collection", "pickup", "pick up", "missed", "late", "cut off", "cut-off"] },
+    { issue: "Service does not fit the goods", terms: ["fragile", "bulky", "heavy", "awkward", "high value", "room of choice"] },
+    { issue: "Need storage or fulfilment", terms: ["storage", "fulfilment", "fulfillment", "warehouse", "pick and pack", "stock"] },
+    { issue: "Customs or international paperwork", terms: ["customs", "duties", "taxes", "paperwork", "commercial invoice", "eori"] },
+    { issue: "Sea freight or container planning", terms: ["sea freight", "container", "fcl", "lcl", "devanning", "port", "demurrage"] },
+    { issue: "Damage or failed deliveries", terms: ["damage", "damaged", "failed delivery", "failed deliveries", "claims", "broken"] },
+    { issue: "Need a new delivery partner", terms: ["new partner", "new supplier", "replace", "switch", "change carrier"] }
+  ];
+
+  const match = rules.find((rule) => rule.terms.some((term) => text.includes(term)));
+  return match ? match.issue : "";
+}
+
 function addAssistantMessage(log, text, type) {
   const message = document.createElement("div");
   message.className = `assistant-message ${type}`;
@@ -331,17 +350,19 @@ function addAssistantMessage(log, text, type) {
   log.scrollTop = log.scrollHeight;
 }
 
-function prefillLeadForm(service, city, message) {
+function prefillLeadForm(service, city, message, issue) {
   const leadForm = document.querySelector("[data-lead-form]");
   if (!leadForm) return;
 
   const serviceSelect = leadForm.querySelector("[name='service']");
   const locationInput = leadForm.querySelector("[name='location']");
   const detailsInput = leadForm.querySelector("[name='details']");
+  const issueSelect = leadForm.querySelector("[name='issue']");
 
   if (serviceSelect && service) serviceSelect.value = service.slug;
   if (locationInput && city) locationInput.value = city;
   if (detailsInput && !detailsInput.value) detailsInput.value = message;
+  if (issueSelect && issue) issueSelect.value = issue;
 }
 
 function wireAssistant() {
@@ -357,13 +378,14 @@ function wireAssistant() {
     addAssistantMessage(log, message, "user");
     const service = detectService(message);
     const city = detectCity(message);
+    const issue = detectIssue(message);
 
     if (service) {
-      prefillLeadForm(service, city, message);
+      prefillLeadForm(service, city, message, issue);
       const locationText = city ? ` in ${city}` : "";
       addAssistantMessage(log, `This sounds like ${service.name}${locationText}. I have selected that service in the enquiry form. The useful details are volume, collection area, delivery area, timing and what is going wrong now.`, "bot");
     } else {
-      prefillLeadForm(null, city, message);
+      prefillLeadForm(null, city, message, issue);
       addAssistantMessage(log, "I would need a bit more detail to choose the right service. Is it parcels, same-day, 2-man, storage, pallet freight, sea freight/container logistics, EU/international or retail supply chain?", "bot");
     }
   };

@@ -11,7 +11,13 @@ const services = [
     audience: "retailers, wholesalers, online sellers and local firms sending parcels most days",
     intro: "This is for businesses that need collections to happen without chasing, missed cut-offs or confusion over who is meant to be picking up.",
     checks: ["daily and weekly parcel volumes", "collection cut-off times", "average parcel size and weight", "current carrier failures", "returns and peak trading pressure"],
-    warning: "A low parcel rate is not much use if the collection window is wrong or the claims process eats up staff time."
+    warning: "A low parcel rate is not much use if the collection window is wrong or the claims process eats up staff time.",
+    fit: ["regular parcel volumes leaving one or more sites", "missed or late collections are causing staff pressure", "you need carrier options checked before changing supplier"],
+    redFlags: ["unclear cut-off times", "regular failed collections", "surcharges that are hard to explain", "too much manual chasing or rebooking"],
+    faq: [
+      ["Can you help if we already have a parcel carrier?", "Yes. A lot of enquiries start with an existing carrier that mostly works but has collection, cost, claims or service gaps."],
+      ["Do we need exact parcel volumes before asking?", "No. A sensible estimate is enough to start. Weekly volume, average weight and collection postcode help narrow the options."]
+    ]
   },
   {
     slug: "same-day-delivery",
@@ -20,7 +26,13 @@ const services = [
     audience: "businesses with urgent, time-sensitive or awkward deliveries that cannot wait for a parcel network",
     intro: "Same-day work needs a courier who understands timing, proof of delivery and communication. It is not just a faster version of standard parcel delivery.",
     checks: ["pickup and delivery deadlines", "vehicle type", "waiting time and access", "proof of delivery requirements", "regular routes versus one-off urgent jobs"],
-    warning: "The wrong same-day setup can leave you paying premium prices while still missing the promise made to your customer."
+    warning: "The wrong same-day setup can leave you paying premium prices while still missing the promise made to your customer.",
+    fit: ["urgent parts, samples, documents or customer orders", "timed collections and timed delivery windows", "direct routes where tracking and proof matter"],
+    redFlags: ["unclear pickup readiness", "wrong vehicle size", "waiting time not agreed", "no clear proof of delivery"],
+    faq: [
+      ["Is same-day only for one-off emergencies?", "No. It can also work for regular routes, store replenishment, service engineers, medical supplies and planned timed drops."],
+      ["What detail helps price a same-day job?", "Collection postcode, delivery postcode, ready time, deadline, size, weight, access notes and whether the item needs a van, car or larger vehicle."]
+    ]
   },
   {
     slug: "white-glove-2-man-delivery",
@@ -29,7 +41,13 @@ const services = [
     audience: "furniture retailers, interiors businesses, equipment suppliers and companies sending bulky or high-value goods",
     intro: "White glove 2-man delivery is about the customer handover as much as the transport. Access, care, timing and communication all have to be right.",
     checks: ["room-of-choice delivery", "fragile or high-value items", "stair carries and access restrictions", "customer booking process", "failed delivery and damage risk"],
-    warning: "A standard bulky delivery service can quickly become expensive if damages, failed drops or poor customer updates start to build up."
+    warning: "A standard bulky delivery service can quickly become expensive if damages, failed drops or poor customer updates start to build up.",
+    fit: ["furniture, interiors, equipment or fragile goods", "room-of-choice delivery or careful customer handover", "jobs where damage risk and customer communication matter"],
+    redFlags: ["no access checks before delivery", "poor customer booking process", "unclear damage handling", "bulky items being pushed through a standard parcel-style service"],
+    faq: [
+      ["What does white glove 2-man usually include?", "It can include customer booking, two-person handling, room-of-choice delivery, careful handover and sometimes unpacking or packaging removal depending on the partner."],
+      ["Is 2-man delivery only for furniture?", "No. It can also suit fitness equipment, appliances, trade goods, displays, office items and other bulky or high-value products."]
+    ]
   },
   {
     slug: "storage-fulfilment",
@@ -38,7 +56,13 @@ const services = [
     audience: "growing retailers, seasonal sellers and businesses that have outgrown their own stock space",
     intro: "Storage and fulfilment should make dispatch easier, not create another set of problems to manage. The fit depends on stock profile, order pattern and returns.",
     checks: ["space needed now and at peak", "pick-and-pack requirements", "SKU count and stock control", "returns handling", "dispatch carrier options"],
-    warning: "Moving stock into the wrong fulfilment setup can add cost and slow down dispatch instead of fixing the pressure."
+    warning: "Moving stock into the wrong fulfilment setup can add cost and slow down dispatch instead of fixing the pressure.",
+    fit: ["stock is taking over your own space", "orders are growing or seasonal demand is hard to manage", "returns, dispatch and carrier choice need tightening"],
+    redFlags: ["unclear storage charging", "weak stock visibility", "slow pick-and-pack process", "returns handled away from the main stock picture"],
+    faq: [
+      ["Can fulfilment help a small business?", "Yes, if the stock profile and order pattern fit. It is not always right, so the first job is to check whether outsourcing will save pressure or add cost."],
+      ["What should we know before moving stock?", "SKU count, average orders, peak volume, packaging needs, returns process, storage space and preferred dispatch services."]
+    ]
   },
   {
     slug: "international-delivery",
@@ -47,7 +71,13 @@ const services = [
     audience: "UK businesses sending parcels, pallets or freight into Europe and worldwide",
     intro: "EU and international delivery needs more than a cheap label. Customs, tracking, service level, paperwork and total landed cost all matter.",
     checks: ["destination countries", "parcel or freight profile", "customs paperwork", "transit time and tracking", "duties, taxes and total landed cost"],
-    warning: "The wrong international option can look fine at booking stage and then fail at customs, tracking or final delivery."
+    warning: "The wrong international option can look fine at booking stage and then fail at customs, tracking or final delivery.",
+    fit: ["EU parcel delivery, worldwide parcels, pallets or freight", "customs paperwork or tracking is causing problems", "you need service options checked by destination and goods type"],
+    redFlags: ["unclear commodity details", "poor customs data", "unexpected duties or taxes", "tracking that stops after export"],
+    faq: [
+      ["Do you cover both EU and worldwide delivery?", "Yes. This service covers EU and international parcel and freight delivery, including Europe and wider worldwide routes."],
+      ["What details matter for international delivery?", "Destination country, goods description, value, weight, dimensions, customs requirements, incoterms and whether the shipment is parcel, pallet or freight."]
+    ]
   },
   {
     slug: "pallet-freight",
@@ -56,7 +86,13 @@ const services = [
     audience: "manufacturers, wholesalers, distributors and suppliers moving heavier consignments",
     intro: "Pallet and freight work depends on access, timing, load type and the service promise. It needs a practical look before choosing a partner.",
     checks: ["pallet size and weight", "forklift or tail-lift access", "delivery booking requirements", "part-load versus network freight", "damage and claims exposure"],
-    warning: "Freight problems often start with small details: poor access notes, wrong vehicle type or a delivery window the carrier cannot meet."
+    warning: "Freight problems often start with small details: poor access notes, wrong vehicle type or a delivery window the carrier cannot meet.",
+    fit: ["pallets, oversized consignments or heavier business freight", "tail-lift, forklift or booking-in details matter", "damage risk, access and timing need checking before booking"],
+    redFlags: ["wrong pallet dimensions", "tail-lift not specified", "delivery booking ignored", "poor access notes or no contact details"],
+    faq: [
+      ["Is pallet freight different from parcel delivery?", "Yes. Pallet and freight services need more detail on access, weight, size, loading, unloading and booking requirements."],
+      ["Can you help with one-off freight?", "Yes. One-off and project movements can still be matched if the goods, route, access and timing are clear."]
+    ]
   },
   {
     slug: "retail-supply-chain",
@@ -65,7 +101,13 @@ const services = [
     audience: "retailers and small businesses trying to control inbound stock, outbound delivery and returns",
     intro: "Retail supply chain costs are often hidden in failed deliveries, stock delays, manual fixes and returns. We look at the whole flow, not just one rate card.",
     checks: ["inbound supplier deliveries", "outbound parcel and bulky delivery", "returns process", "seasonal pressure", "where staff time is being lost"],
-    warning: "Changing carrier alone may not fix the issue if the real problem sits in stock flow, fulfilment, returns or customer communication."
+    warning: "Changing carrier alone may not fix the issue if the real problem sits in stock flow, fulfilment, returns or customer communication.",
+    fit: ["delivery problems are linked to stock, returns or fulfilment", "staff are spending too much time fixing delivery issues", "you need to understand the full cost, not just the carriage price"],
+    redFlags: ["returns are disconnected from stock", "inbound delays keep affecting customers", "manual fixes are normal", "carrier changes have not solved the real issue"],
+    faq: [
+      ["Is this only for large retailers?", "No. Smaller retailers often feel supply chain problems faster because staff time, space and cash are tighter."],
+      ["What do you look at first?", "Inbound stock, outbound delivery, returns, storage, carrier fit, customer promises and where the team is losing time."]
+    ]
   },
   {
     slug: "sea-freight-container-logistics",
@@ -74,7 +116,13 @@ const services = [
     audience: "importers, exporters, wholesalers, retailers and manufacturers moving containerised stock",
     intro: "Sea freight and container logistics need planning around shipping terms, customs, ports, unloading, storage, onward transport and timing. The cheapest route is not always the one that keeps the job moving.",
     checks: ["FCL, LCL or loose-loaded cargo", "port or rail terminal collection", "20ft, 40ft or high-cube container type", "customs and document requirements", "devanning, storage and onward UK delivery"],
-    warning: "Sea freight can become expensive quickly if customs, unloading, demurrage, storage or onward delivery are not planned before the container arrives."
+    warning: "Sea freight can become expensive quickly if customs, unloading, demurrage, storage or onward delivery are not planned before the container arrives.",
+    fit: ["FCL or LCL sea freight", "container collection, devanning, storage or onward UK transport", "imports or exports where customs and timing need coordinating"],
+    redFlags: ["container arrival dates are unclear", "no unloading plan", "demurrage or quay rent risk", "customs and onward delivery being handled separately"],
+    faq: [
+      ["Should this be called sea logistics?", "Sea freight and container logistics is the clearer term. It covers the container work, but also the port, customs, devanning, storage and onward transport around it."],
+      ["Can you help after the container reaches the UK?", "Yes. The enquiry can cover port collection, container haulage, devanning, storage and onward UK delivery."]
+    ]
   }
 ];
 
@@ -186,10 +234,58 @@ function listItems(items) {
   return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n");
 }
 
+function cardItems(items) {
+  return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n");
+}
+
+function faqItems(items) {
+  return items.map(([question, answer]) => `
+            <details>
+              <summary>${escapeHtml(question)}</summary>
+              <p>${escapeHtml(answer)}</p>
+            </details>`).join("\n");
+}
+
+function faqSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": items.map(([question, answer]) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": answer
+      }
+    }))
+  };
+}
+
 function pageHtml(service, city) {
   const title = `${service.name} in ${city.name} | The Delivery Desk`;
   const description = `Need ${service.phrase} in ${city.name}? Independent delivery and logistics help for businesses in ${city.region}. Powered by SVMK.`;
   const canonical = `${siteUrl}/${service.slug}/${citySlug(city.name)}`;
+  const localFaq = [
+    ...service.faq,
+    [
+      `Can you help with ${service.phrase} in ${city.name}?`,
+      `Yes. Tell us what needs to move, the collection area, delivery area, timing and current issue. We will use that to work out the right kind of delivery or logistics partner.`
+    ]
+  ];
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": `${service.name} in ${city.name}`,
+      "description": description,
+      "areaServed": city.name,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "The Delivery Desk"
+      }
+    },
+    faqSchema(localFaq)
+  ];
 
   return `<!doctype html>
 <html lang="en">
@@ -200,6 +296,7 @@ function pageHtml(service, city) {
     <meta name="description" content="${escapeHtml(description)}">
     <link rel="canonical" href="${escapeHtml(canonical)}">
     <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
   <body>
     <header class="site-header">
@@ -256,6 +353,46 @@ ${listItems(service.checks)}
         </div>
       </section>
 
+      <section class="section-inner local-conversion">
+        <div class="section-heading">
+          <p class="eyebrow dark">How to know if it fits</p>
+          <h2>Use the enquiry to get the job pointed in the right direction.</h2>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>Good fit when</h3>
+            <ul>
+${cardItems(service.fit)}
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Watch for</h3>
+            <ul>
+${cardItems(service.redFlags)}
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Useful details</h3>
+            <ul>
+              <li>Collection and delivery postcodes</li>
+              <li>Volume, size, weight and timing</li>
+              <li>What is failing or costing too much now</li>
+              <li>Any access, customs, storage or handling notes</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-inner faq-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Questions businesses ask</p>
+          <h2>${escapeHtml(service.name)} questions.</h2>
+        </div>
+        <div class="faq-list">
+${faqItems(localFaq)}
+        </div>
+      </section>
+
       <section class="section-inner lead-section" id="lead-form">
         <div class="lead-copy">
           <p class="eyebrow dark">Start here</p>
@@ -290,11 +427,15 @@ ${listItems(service.checks)}
               <option>Service does not fit the goods</option>
               <option>Need a new delivery partner</option>
               <option>Need storage or fulfilment</option>
+              <option>Customs or international paperwork</option>
+              <option>Sea freight or container planning</option>
+              <option>Damage or failed deliveries</option>
             </select></label>
           </div>
           <label>What do you need help with?<textarea name="details" rows="5" placeholder="Tell us what moves, how often, where it goes and what is not working." required></textarea></label>
+          <label class="consent-line"><input name="consent" type="checkbox" required> I am happy for The Delivery Desk and SVMK to use these details to contact me and, where relevant, introduce a suitable delivery or logistics partner.</label>
           <button class="button primary full" type="submit">Send enquiry</button>
-          <p class="form-note">No obligation. We use the details to understand the job before making any introduction.</p>
+          <p class="form-note">No obligation. We use the details to understand the job before making any introduction. Read the <a href="../../privacy.html">privacy notice</a>.</p>
           <p class="form-status" role="status" data-form-status></p>
         </form>
       </section>
@@ -305,7 +446,10 @@ ${listItems(service.checks)}
         <strong>The Delivery Desk</strong>
         <p>Independent logistics matching, powered by SVMK.</p>
       </div>
-      <a href="../../index.html">Back to home</a>
+      <div class="footer-links">
+        <a href="../../index.html">Back to home</a>
+        <a href="../../privacy.html">Privacy</a>
+      </div>
     </footer>
 
     <script src="../../script.js"></script>
@@ -320,6 +464,20 @@ function serviceIndexHtml(service) {
   const description = `Practical help with ${service.phrase}, including partner selection, service fit and delivery route planning. Powered by SVMK.`;
   const cityLinks = cities.map((city) => `<a href="${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`).join("\n");
   const canonical = `${siteUrl}/${service.slug}`;
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": service.name,
+      "description": description,
+      "areaServed": "United Kingdom",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "The Delivery Desk"
+      }
+    },
+    faqSchema(service.faq)
+  ];
 
   return `<!doctype html>
 <html lang="en">
@@ -330,6 +488,7 @@ function serviceIndexHtml(service) {
     <meta name="description" content="${escapeHtml(description)}">
     <link rel="canonical" href="${escapeHtml(canonical)}">
     <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
   <body>
     <header class="site-header">
@@ -369,6 +528,46 @@ function serviceIndexHtml(service) {
 ${listItems(service.checks)}
           </ul>
         </aside>
+      </section>
+
+      <section class="section-inner local-conversion">
+        <div class="section-heading">
+          <p class="eyebrow dark">Service fit</p>
+          <h2>Use this when the problem is more than just getting another quote.</h2>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>Good fit when</h3>
+            <ul>
+${cardItems(service.fit)}
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Watch for</h3>
+            <ul>
+${cardItems(service.redFlags)}
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Useful details</h3>
+            <ul>
+              <li>Collection and delivery areas</li>
+              <li>Volume, timing, weight and size</li>
+              <li>Current supplier or process issues</li>
+              <li>Any access, customs, storage or handling notes</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-inner faq-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Questions businesses ask</p>
+          <h2>${escapeHtml(service.name)} questions.</h2>
+        </div>
+        <div class="faq-list">
+${faqItems(service.faq)}
+        </div>
       </section>
 
       <section class="locations-band">
@@ -417,11 +616,15 @@ ${cityLinks}
               <option>Service does not fit the goods</option>
               <option>Need a new delivery partner</option>
               <option>Need storage or fulfilment</option>
+              <option>Customs or international paperwork</option>
+              <option>Sea freight or container planning</option>
+              <option>Damage or failed deliveries</option>
             </select></label>
           </div>
           <label>What do you need help with?<textarea name="details" rows="5" placeholder="Tell us what moves, how often, where it goes and what is not working." required></textarea></label>
+          <label class="consent-line"><input name="consent" type="checkbox" required> I am happy for The Delivery Desk and SVMK to use these details to contact me and, where relevant, introduce a suitable delivery or logistics partner.</label>
           <button class="button primary full" type="submit">Send enquiry</button>
-          <p class="form-note">No obligation. We use the details to understand the job before making any introduction.</p>
+          <p class="form-note">No obligation. We use the details to understand the job before making any introduction. Read the <a href="../privacy.html">privacy notice</a>.</p>
           <p class="form-status" role="status" data-form-status></p>
         </form>
       </section>
@@ -432,7 +635,10 @@ ${cityLinks}
         <strong>The Delivery Desk</strong>
         <p>Independent logistics matching, powered by SVMK.</p>
       </div>
-      <a href="../index.html">Back to home</a>
+      <div class="footer-links">
+        <a href="../index.html">Back to home</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
     </footer>
 
     <script src="../script.js"></script>
@@ -445,8 +651,7 @@ ${cityLinks}
 const generated = [];
 const sitemapPaths = [
   "/",
-  "/thank-you",
-  "/admin"
+  "/privacy"
 ];
 
 for (const service of services) {

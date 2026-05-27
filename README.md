@@ -12,6 +12,7 @@ The current build generates 1,152 local SEO pages across 8 logistics services an
 - `script.js` - service/city data, local landing page rendering and prototype lead storage.
 - `assets/logistics-hero.png` - generated hero image for the homepage.
 - `thank-you.html` - prototype confirmation page after form submission.
+- `privacy.html` - plain-English enquiry privacy notice.
 - `admin.html` - browser-local prototype lead viewer and CSV export.
 - `generate-pages.js` - static page generator for service and city pages.
 - `vercel.json` - Vercel clean URL, redirect and header configuration.
