@@ -30,3 +30,9 @@ Use Vercel Hobby while the site is being tested. Upgrade before running the site
 ## Next setup step
 
 Replace prototype browser-local lead storage with Google Sheets routing before the site is used for real enquiries.
+
+For sitemap generation on the live domain, add a Vercel environment variable:
+
+`SITE_URL=https://your-domain.co.uk`
+
+For Google Sheets lead routing, add the Apps Script web app URL to `script.js` as `DELIVERY_DESK_LEAD_ENDPOINT`, or inject it before `script.js` loads.

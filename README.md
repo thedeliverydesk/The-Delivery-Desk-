@@ -14,6 +14,7 @@ Static first version of the SVMK lead-generation site.
 - `generate-pages.js` - static page generator for service and city pages.
 - `vercel.json` - Vercel clean URL, redirect and header configuration.
 - `DEPLOYMENT.md` - Vercel Hobby deployment checklist.
+- `sitemap.xml`, `robots.txt`, `404.html` - generated deployment support files.
 
 ## Current behaviour
 

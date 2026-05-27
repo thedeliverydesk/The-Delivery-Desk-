@@ -70,6 +70,7 @@ const cities = [
 ];
 
 const params = new URLSearchParams(window.location.search);
+const leadEndpoint = window.DELIVERY_DESK_LEAD_ENDPOINT || "";
 
 function titleCaseSlug(value) {
   return (value || "")
@@ -188,14 +189,36 @@ function renderLocalPage() {
 
 function wireLeadForms() {
   document.querySelectorAll("[data-lead-form]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const submitButton = form.querySelector("button[type='submit']");
+      if (submitButton) submitButton.disabled = true;
       const data = Object.fromEntries(new FormData(form).entries());
       const leads = JSON.parse(localStorage.getItem("deliveryDeskLeads") || "[]");
       const reference = `TDD-${String(leads.length + 1).padStart(4, "0")}`;
-      leads.push({ reference, createdAt: new Date().toISOString(), ...data });
+      const payload = {
+        reference,
+        createdAt: new Date().toISOString(),
+        page: window.location.pathname,
+        ...data
+      };
+      leads.push(payload);
       localStorage.setItem("deliveryDeskLeads", JSON.stringify(leads));
       sessionStorage.setItem("deliveryDeskLastLead", reference);
+
+      if (leadEndpoint) {
+        try {
+          await fetch(leadEndpoint, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+        } catch (error) {
+          console.warn("Lead endpoint failed; enquiry kept in local prototype storage.", error);
+        }
+      }
+
       window.location.href = form.dataset.thankYou || "thank-you.html";
     });
   });

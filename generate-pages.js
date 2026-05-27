@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const siteUrl = (process.env.SITE_URL || "https://the-delivery-desk.vercel.app").replace(/\/$/, "");
+
 const services = [
   {
     slug: "daily-parcel-collections",
@@ -388,19 +390,65 @@ ${cityLinks}
 }
 
 const generated = [];
+const sitemapPaths = [
+  "/",
+  "/thank-you",
+  "/admin"
+];
 
 for (const service of services) {
   const serviceDir = path.join(__dirname, service.slug);
   fs.mkdirSync(serviceDir, { recursive: true });
   fs.writeFileSync(path.join(serviceDir, "index.html"), serviceIndexHtml(service), "utf8");
+  sitemapPaths.push(`/${service.slug}`);
 
   for (const city of cities) {
     const dir = path.join(__dirname, service.slug, citySlug(city.name));
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, "index.html"), pageHtml(service, city), "utf8");
     generated.push(`${service.slug}/${citySlug(city.name)}/`);
+    sitemapPaths.push(`/${service.slug}/${citySlug(city.name)}`);
   }
 }
 
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapPaths.map((urlPath) => `  <url><loc>${siteUrl}${urlPath}</loc></url>`).join("\n")}
+</urlset>
+`;
+
+const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${siteUrl}/sitemap.xml
+`;
+
+const notFound = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Not Found | The Delivery Desk</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main>
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Page not found</p>
+          <h1>That delivery page is not available.</h1>
+          <p>Start from the homepage and choose the service or location that fits what you need moving.</p>
+          <a class="button primary" href="/">Back to home</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+`;
+
 fs.writeFileSync(path.join(__dirname, "generated-pages.txt"), generated.join("\n") + "\n", "utf8");
+fs.writeFileSync(path.join(__dirname, "sitemap.xml"), sitemap, "utf8");
+fs.writeFileSync(path.join(__dirname, "robots.txt"), robots, "utf8");
+fs.writeFileSync(path.join(__dirname, "404.html"), notFound, "utf8");
 console.log(`Generated ${generated.length} local service pages.`);

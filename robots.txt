@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the-delivery-desk.vercel.app/sitemap.xml
