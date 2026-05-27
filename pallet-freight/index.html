@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pallet and freight | The Delivery Desk</title>
+    <meta name="description" content="Practical help with pallet and freight, including partner selection, service fit and delivery route planning. Powered by SVMK.">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="The Delivery Desk home">
+        <span class="brand-mark">TDD</span>
+        <span>
+          <strong>The Delivery Desk</strong>
+          <small>Powered by SVMK</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#assistant">Assistant</a>
+        <a class="nav-action" href="#lead-form">Get matched</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Service overview</p>
+          <h1>Pallet and freight</h1>
+          <p>Pallet and freight work depends on access, timing, load type and the service promise. It needs a practical look before choosing a partner. We look at the job first, then help you find the right kind of delivery partner.</p>
+          <a class="button primary" href="#lead-form">Ask us to take a look</a>
+        </div>
+      </section>
+
+      <section class="section-inner two-col local-detail">
+        <div>
+          <p class="eyebrow dark">What matters</p>
+          <h2>Make sure the service fits before you chase quotes.</h2>
+          <p>This service is usually relevant for manufacturers, wholesalers, distributors and suppliers moving heavier consignments. Freight problems often start with small details: poor access notes, wrong vehicle type or a delivery window the carrier cannot meet.</p>
+        </div>
+        <aside class="expert-panel">
+          <h3>What we check</h3>
+          <ul class="check-list compact">
+<li>pallet size and weight</li>
+<li>forklift or tail-lift access</li>
+<li>delivery booking requirements</li>
+<li>part-load versus network freight</li>
+<li>damage and claims exposure</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="locations-band">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Local pages</p>
+            <h2>Choose a town or city.</h2>
+          </div>
+          <div class="location-links">
+<a href="birmingham/index.html">Pallet and freight in Birmingham</a>
+<a href="manchester/index.html">Pallet and freight in Manchester</a>
+<a href="leeds/index.html">Pallet and freight in Leeds</a>
+<a href="glasgow/index.html">Pallet and freight in Glasgow</a>
+<a href="bristol/index.html">Pallet and freight in Bristol</a>
+<a href="liverpool/index.html">Pallet and freight in Liverpool</a>
+<a href="sheffield/index.html">Pallet and freight in Sheffield</a>
+<a href="newcastle/index.html">Pallet and freight in Newcastle</a>
+<a href="nottingham/index.html">Pallet and freight in Nottingham</a>
+<a href="cardiff/index.html">Pallet and freight in Cardiff</a>
+<a href="edinburgh/index.html">Pallet and freight in Edinburgh</a>
+<a href="london/index.html">Pallet and freight in London</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-inner lead-section" id="lead-form">
+        <div class="lead-copy">
+          <p class="eyebrow dark">Start here</p>
+          <h2>Ask us about pallet and freight.</h2>
+          <p>Tell us what moves, where it goes and what is not working. We will use that to identify the right service type and next conversation.</p>
+        </div>
+        <form class="lead-form" data-lead-form data-thank-you="../thank-you.html">
+          <div class="form-row">
+            <label>Business name<input name="business" autocomplete="organization" required></label>
+            <label>Contact name<input name="name" autocomplete="name" required></label>
+          </div>
+          <div class="form-row">
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          </div>
+          <div class="form-row">
+            <label>Service needed<select name="service" data-service-options required></select></label>
+            <label>Collection area<input name="location" placeholder="Town or city" required></label>
+          </div>
+          <label>What do you need help with?<textarea name="details" rows="5" placeholder="Tell us what moves, how often, where it goes and what is not working." required></textarea></label>
+          <button class="button primary full" type="submit">Send enquiry</button>
+          <p class="form-status" role="status" data-form-status></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <a href="../index.html">Back to home</a>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>document.querySelectorAll("[data-service-options]").forEach((select) => { select.value = "pallet-freight"; });</script>
+  </body>
+</html>

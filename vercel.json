@@ -1,0 +1,40 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/container-deliveries/:path*",
+      "destination": "/sea-freight-container-logistics/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/courier-business-support/:path*",
+      "destination": "/sea-freight-container-logistics/:path*",
+      "permanent": true
+    }
+  ]
+}

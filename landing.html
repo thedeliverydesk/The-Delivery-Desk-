@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-local-title>The Delivery Desk | Local Delivery Help</title>
+    <meta name="description" content="Local UK delivery and logistics help from The Delivery Desk, powered by SVMK.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="The Delivery Desk home">
+        <span class="brand-mark">TDD</span>
+        <span>
+          <strong>The Delivery Desk</strong>
+          <small>Powered by SVMK</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#locations">Local pages</a>
+        <a class="nav-action" href="#lead-form">Get matched</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Local delivery help</p>
+          <h1 data-local-heading>Delivery solutions for your area</h1>
+          <p data-local-copy>Tell us what needs moving and what is not working. We will help you find the right type of delivery partner to speak to.</p>
+          <a class="button primary" href="#lead-form">Request a local match</a>
+        </div>
+      </section>
+
+      <section class="section-inner two-col">
+        <div>
+          <h2 data-local-subheading>We look at the job before the quote</h2>
+          <p data-local-body>Collection times, item size, route profile, service promises, handling and growth plans all matter. The right answer is not always the cheapest name on a list.</p>
+        </div>
+        <aside class="expert-panel">
+          <h3>Typical fit checks</h3>
+          <ul class="check-list compact">
+            <li>Daily collection reliability</li>
+            <li>Same-day and timed delivery ability</li>
+            <li>White glove 2-man, bulky, fragile or room-of-choice handling</li>
+            <li>Storage, fulfilment and returns support</li>
+            <li>EU, international and specialist requirements</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section-inner lead-section" id="lead-form">
+        <div class="lead-copy">
+          <p class="eyebrow dark">Start here</p>
+          <h2 data-local-form-heading>Ask us to take a look</h2>
+          <p>We will review the enquiry and pass it to a relevant delivery, courier or supply chain partner.</p>
+        </div>
+        <form class="lead-form" data-lead-form>
+          <div class="form-row">
+            <label>Business name<input name="business" autocomplete="organization" required></label>
+            <label>Contact name<input name="name" autocomplete="name" required></label>
+          </div>
+          <div class="form-row">
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          </div>
+          <div class="form-row">
+            <label>Service needed<select name="service" data-service-options required></select></label>
+            <label>Collection area<input name="location" data-local-location required></label>
+          </div>
+          <label>What do you need help with?<textarea name="details" rows="5" required></textarea></label>
+          <button class="button primary full" type="submit">Send enquiry</button>
+          <p class="form-status" role="status" data-form-status></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <a href="index.html">Back to home</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

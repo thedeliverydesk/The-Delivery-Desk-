@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Delivery Desk | Delivery Help for UK Businesses</title>
+    <meta name="description" content="Practical UK delivery and logistics help for businesses that need parcel collections, same-day delivery, white glove 2-man delivery, storage, fulfilment, freight, sea freight, container logistics, or EU and international parcel and freight delivery. Powered by SVMK.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="The Delivery Desk home">
+        <span class="brand-mark">TDD</span>
+        <span>
+          <strong>The Delivery Desk</strong>
+          <small>Powered by SVMK</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#problems">Problems</a>
+        <a href="#services">Services</a>
+        <a href="#assistant">Assistant</a>
+        <a href="#experts">Why us</a>
+        <a class="nav-action" href="#lead-form">Get matched</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img src="assets/logistics-hero.png" alt="A professional warehouse logistics team planning parcel collections and deliveries">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Delivery advice without the carrier sales pitch</p>
+          <h1>Need a better way to move your goods?</h1>
+          <p class="hero-copy">Tell us what you send, where it goes and what is causing problems. We will help you work out the route, service type and delivery partner to speak to next, from local same-day work to sea freight, containers, EU and international parcel and freight.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#lead-form">Request a match</a>
+            <a class="button ghost" href="#assistant">Ask the assistant</a>
+          </div>
+          <div class="hero-services" aria-label="Popular delivery services">
+            <a href="daily-parcel-collections/index.html">Parcel collections</a>
+            <a href="same-day-delivery/index.html">Same-day</a>
+            <a href="white-glove-2-man-delivery/index.html">White glove 2-man</a>
+            <a href="sea-freight-container-logistics/index.html">Sea freight</a>
+          </div>
+          <dl class="hero-proof" aria-label="Experience and independence">
+            <div>
+              <dt>150+ years</dt>
+              <dd>combined team experience</dd>
+            </div>
+            <div>
+              <dt>Independent</dt>
+              <dd>advice before introductions</dd>
+            </div>
+            <div>
+              <dt>UK-wide</dt>
+              <dd>delivery and supply chain support</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-label="What The Delivery Desk does">
+        <div class="section-inner two-col">
+          <div>
+            <p class="eyebrow dark">For businesses sending parcels, pallets or bulky goods</p>
+            <h2>Start with the delivery problem, not the supplier list.</h2>
+          </div>
+          <p>Most businesses already know when delivery is costing too much time, money or hassle. What is harder is knowing whether the answer is a parcel carrier, a same-day courier, a 2-man team, storage, freight, sea freight, container logistics or a completely different setup. That is where we help.</p>
+        </div>
+      </section>
+
+      <section class="section-inner problem-section" id="problems">
+        <div class="section-heading">
+          <p class="eyebrow dark">What we fix</p>
+          <h2>Delivery problems usually show up in the same places.</h2>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <span>01</span>
+            <h3>Collections are unreliable</h3>
+            <p>Missed pickups, unclear cut-offs and drivers arriving at the wrong time can make a cheap parcel rate expensive.</p>
+          </article>
+          <article class="problem-card">
+            <span>02</span>
+            <h3>The service does not fit the goods</h3>
+            <p>Bulky, fragile, urgent, high-value or international shipments need the right handling, paperwork and communication.</p>
+          </article>
+          <article class="problem-card">
+            <span>03</span>
+            <h3>Costs are creeping up</h3>
+            <p>Surcharges, failed deliveries, manual fixes, claims and poor routing quietly eat into margin.</p>
+          </article>
+          <article class="problem-card">
+            <span>04</span>
+            <h3>You need a partner, not a list</h3>
+            <p>We qualify the job first, then point the enquiry towards the kind of delivery partner most likely to handle it properly.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-inner" id="services">
+        <div class="section-heading">
+          <p class="eyebrow dark">What we can help with</p>
+          <h2>From daily parcels to specialist delivery work.</h2>
+          <p class="section-lede">Choose the closest fit. If the job sits across more than one area, tell us the full picture and we will help narrow it down.</p>
+        </div>
+        <div class="service-grid" data-service-grid></div>
+      </section>
+
+      <section class="assistant-section" id="assistant">
+        <div class="section-inner assistant-layout">
+          <div>
+            <p class="eyebrow dark">Delivery assistant</p>
+            <h2>Not sure what service you need?</h2>
+            <p>Describe the delivery problem in normal words. The assistant will point you towards the most likely service and help start the enquiry form.</p>
+            <div class="assistant-prompts" aria-label="Example delivery problems">
+              <button type="button" data-assistant-prompt="We need same-day delivery for urgent parts around Manchester">Same-day job</button>
+              <button type="button" data-assistant-prompt="We sell furniture and need white glove 2-man delivery into customers homes">2-man delivery</button>
+              <button type="button" data-assistant-prompt="We need help with sea freight, a container from port, customs, devanning and onward UK delivery">Sea freight</button>
+            </div>
+          </div>
+          <div class="assistant-card" data-assistant>
+            <div class="assistant-log" data-assistant-log aria-live="polite">
+              <div class="assistant-message bot">Tell me what you move, where it goes and what is going wrong. I will suggest the best starting point.</div>
+            </div>
+            <form class="assistant-form" data-assistant-form>
+              <label class="sr-only" for="assistantInput">Delivery problem</label>
+              <input id="assistantInput" name="message" placeholder="e.g. 40 parcels a day from Leeds, current collections keep failing" autocomplete="off">
+              <button class="button primary" type="submit">Ask</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="split-section" id="experts">
+        <div class="split-copy">
+          <p class="eyebrow dark">Independent, but practical</p>
+          <h2>A cheap quote is not much use if the service fails.</h2>
+          <p>Collections missed, damages, awkward freight, poor tracking and the wrong delivery promise all eat into margin. SVMK brings courier, retail, warehousing and supply chain experience, so we look at the job properly before passing it to a partner.</p>
+          <ul class="check-list">
+            <li>Parcel volumes, collection times and delivery areas</li>
+            <li>Local, national, same-day, sea freight, container, EU and international options</li>
+            <li>Retail, wholesale, manufacturer and SME delivery needs</li>
+            <li>Qualified enquiries before they go to partner companies</li>
+          </ul>
+        </div>
+        <aside class="expert-panel" aria-label="How matching works">
+          <h3>How the match works</h3>
+          <ol>
+            <li>You tell us what moves, how often and what is not working.</li>
+            <li>We work out the likely service type and any red flags.</li>
+            <li>A suitable partner follows up with a relevant proposal.</li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="locations-band" id="locations">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Local service pages</p>
+            <h2>Built so businesses can find help in their own area.</h2>
+          <p>Choose a service and town to see the kind of local delivery support businesses are usually looking for.</p>
+          </div>
+          <div class="location-tool">
+            <label>
+              Service
+              <select id="serviceSelect" aria-label="Choose a service"></select>
+            </label>
+            <label>
+              Town or city
+              <select id="citySelect" aria-label="Choose a town or city"></select>
+            </label>
+            <a class="button primary" id="localPageLink" href="landing.html">Preview local page</a>
+          </div>
+          <div class="location-links" data-location-links></div>
+        </div>
+      </section>
+
+      <section class="section-inner lead-section" id="lead-form">
+        <div class="lead-copy">
+          <p class="eyebrow dark">Get matched</p>
+          <h2>Tell us what needs to move.</h2>
+          <p>A few details are enough to start: what you send, where it goes, how often it moves and what you want to improve. We will use that to work out the right service type and next conversation.</p>
+        </div>
+        <form class="lead-form" data-lead-form>
+          <div class="form-row">
+            <label>Business name<input name="business" autocomplete="organization" required></label>
+            <label>Contact name<input name="name" autocomplete="name" required></label>
+          </div>
+          <div class="form-row">
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          </div>
+          <div class="form-row">
+            <label>Service needed<select name="service" data-service-options required></select></label>
+            <label>Collection area<input name="location" placeholder="e.g. Leeds, Bristol, Glasgow" required></label>
+          </div>
+          <label>What do you need help with?<textarea name="details" rows="5" placeholder="Daily parcel collections, same-day delivery, white glove 2-man delivery, sea freight, containers, storage, EU or international shipments..." required></textarea></label>
+          <button class="button primary full" type="submit">Send enquiry</button>
+          <p class="form-status" role="status" data-form-status></p>
+        </form>
+      </section>
+
+      <section class="final-cta">
+        <div class="section-inner final-cta-inner">
+          <div>
+            <p class="eyebrow">Ready to compare the right options?</p>
+            <h2>Start with the job, then find the partner.</h2>
+          </div>
+          <a class="button primary" href="#lead-form">Send an enquiry</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <a href="#lead-form">Start an enquiry</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
