@@ -639,6 +639,12 @@ textarea {
   font-weight: 800;
 }
 
+.form-note {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .final-cta {
   padding: clamp(48px, 7vw, 76px) 0;
   color: var(--white);

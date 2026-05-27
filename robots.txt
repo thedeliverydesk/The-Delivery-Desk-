@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://the-delivery-desk.vercel.app/sitemap.xml
+Sitemap: https://the-delivery-desk-andy-3048s-projects.vercel.app/sitemap.xml

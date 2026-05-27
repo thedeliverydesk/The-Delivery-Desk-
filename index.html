@@ -5,7 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Delivery Desk | Delivery Help for UK Businesses</title>
     <meta name="description" content="Practical UK delivery and logistics help for businesses that need parcel collections, same-day delivery, white glove 2-man delivery, storage, fulfilment, freight, sea freight, container logistics, or EU and international parcel and freight delivery. Powered by SVMK.">
+    <link rel="canonical" href="https://the-delivery-desk-andy-3048s-projects.vercel.app/">
+    <meta property="og:title" content="The Delivery Desk | Delivery Help for UK Businesses">
+    <meta property="og:description" content="Independent delivery and logistics matching for UK businesses, powered by SVMK.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://the-delivery-desk-andy-3048s-projects.vercel.app/assets/logistics-hero.png">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "The Delivery Desk",
+        "description": "Independent delivery and logistics matching for UK businesses, powered by SVMK.",
+        "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/",
+        "areaServed": "United Kingdom",
+        "serviceType": [
+          "Daily parcel collections",
+          "Same-day delivery",
+          "White glove 2-man delivery",
+          "Storage and fulfilment",
+          "EU and international parcel and freight",
+          "Pallet and freight",
+          "Retail supply chain support",
+          "Sea freight and container logistics"
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -32,7 +57,7 @@
         <div class="hero-content">
           <p class="eyebrow">Delivery advice without the carrier sales pitch</p>
           <h1>Need a better way to move your goods?</h1>
-          <p class="hero-copy">Tell us what you send, where it goes and what is causing problems. We will help you work out the route, service type and delivery partner to speak to next, from local same-day work to sea freight, containers, EU and international parcel and freight.</p>
+          <p class="hero-copy">Tell us what you send, where it goes and what keeps going wrong. We will help you work out whether you need parcels, same-day, 2-man delivery, storage, freight, sea freight, containers, EU or international delivery.</p>
           <div class="hero-actions">
             <a class="button primary" href="#lead-form">Request a match</a>
             <a class="button ghost" href="#assistant">Ask the assistant</a>
@@ -181,7 +206,7 @@
         <div class="lead-copy">
           <p class="eyebrow dark">Get matched</p>
           <h2>Tell us what needs to move.</h2>
-          <p>A few details are enough to start: what you send, where it goes, how often it moves and what you want to improve. We will use that to work out the right service type and next conversation.</p>
+          <p>A few details are enough to start: what you send, where it goes, how often it moves and what you want to improve. We use that to work out the right route, service and partner conversation.</p>
         </div>
         <form class="lead-form" data-lead-form>
           <div class="form-row">
@@ -196,8 +221,26 @@
             <label>Service needed<select name="service" data-service-options required></select></label>
             <label>Collection area<input name="location" placeholder="e.g. Leeds, Bristol, Glasgow" required></label>
           </div>
+          <div class="form-row">
+            <label>Approx volume<select name="volume">
+              <option value="">Not sure yet</option>
+              <option>1-20 shipments a week</option>
+              <option>20-100 shipments a week</option>
+              <option>100+ shipments a week</option>
+              <option>Project or one-off movement</option>
+            </select></label>
+            <label>Main issue<select name="issue">
+              <option value="">Choose if relevant</option>
+              <option>Price has increased</option>
+              <option>Collections are unreliable</option>
+              <option>Service does not fit the goods</option>
+              <option>Need a new delivery partner</option>
+              <option>Need storage or fulfilment</option>
+            </select></label>
+          </div>
           <label>What do you need help with?<textarea name="details" rows="5" placeholder="Daily parcel collections, same-day delivery, white glove 2-man delivery, sea freight, containers, storage, EU or international shipments..." required></textarea></label>
           <button class="button primary full" type="submit">Send enquiry</button>
+          <p class="form-note">No obligation. We use the details to understand the job before making any introduction.</p>
           <p class="form-status" role="status" data-form-status></p>
         </form>
       </section>

@@ -2,6 +2,8 @@
 
 Static first version of the SVMK lead-generation site.
 
+The current build generates 1,152 local SEO pages across 8 logistics services and 144 UK towns/cities.
+
 ## Files
 
 - `index.html` - homepage with service blocks, local page selector and lead form.
@@ -18,7 +20,7 @@ Static first version of the SVMK lead-generation site.
 
 ## Current behaviour
 
-The lead form stores prototype enquiries in browser `localStorage` under `deliveryDeskLeads`.
+The lead form stores prototype enquiries in browser `localStorage` under `deliveryDeskLeads`. It can also post to a Google Apps Script, Genie or CRM handoff endpoint if `DELIVERY_DESK_LEAD_ENDPOINT` is injected before `script.js` loads.
 
 Local pages are generated as folder-based SEO paths, for example:
 
@@ -44,6 +46,6 @@ Also prioritise:
 
 1. Move the static content model into Next.js.
 2. Add real lead routing to Google Sheets, Genie, email or a database.
-3. Generate service and town/city routes from structured data.
-4. Add sitemap, metadata, analytics and conversion tracking.
+3. Add analytics, call tracking and conversion events.
+4. Connect Google Sheets and Genie for real lead routing.
 5. Expand copy for priority commercial locations first.

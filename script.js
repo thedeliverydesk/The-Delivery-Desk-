@@ -55,18 +55,18 @@ const services = [
 ];
 
 const cities = [
-  "Birmingham",
-  "Manchester",
-  "Leeds",
-  "Glasgow",
-  "Bristol",
-  "Liverpool",
-  "Sheffield",
-  "Newcastle",
-  "Nottingham",
-  "Cardiff",
-  "Edinburgh",
-  "London"
+  "London", "Croydon", "Enfield", "Harrow", "Romford",
+  "Birmingham", "Coventry", "Wolverhampton", "Walsall", "Dudley", "Solihull", "West Bromwich", "Stoke-on-Trent", "Telford", "Shrewsbury", "Worcester", "Hereford",
+  "Nottingham", "Leicester", "Derby", "Northampton", "Lincoln", "Mansfield", "Loughborough", "Chesterfield", "Kettering", "Corby",
+  "Manchester", "Liverpool", "Preston", "Blackpool", "Bolton", "Wigan", "Warrington", "Stockport", "Oldham", "Rochdale", "Salford", "Burnley", "Blackburn", "Chester", "Carlisle",
+  "Leeds", "Sheffield", "Bradford", "Hull", "York", "Huddersfield", "Wakefield", "Doncaster", "Rotherham", "Barnsley", "Harrogate", "Halifax", "Scarborough", "Middlesbrough",
+  "Newcastle", "Sunderland", "Durham", "Gateshead", "Darlington", "Hartlepool", "Stockton-on-Tees", "South Shields",
+  "Bristol", "Plymouth", "Exeter", "Gloucester", "Cheltenham", "Swindon", "Bath", "Taunton", "Torquay", "Bournemouth", "Poole", "Truro",
+  "Reading", "Oxford", "Milton Keynes", "Southampton", "Portsmouth", "Brighton", "Slough", "Luton", "Maidstone", "Canterbury", "Guildford", "Crawley", "Worthing", "Eastbourne", "Basingstoke", "High Wycombe", "Aylesbury", "Chatham", "Dover", "Hastings", "Woking", "Bracknell",
+  "Norwich", "Cambridge", "Peterborough", "Ipswich", "Colchester", "Chelmsford", "Southend-on-Sea", "Basildon", "Stevenage", "Watford", "St Albans", "Bedford", "Harlow", "Great Yarmouth", "King's Lynn",
+  "Cardiff", "Swansea", "Newport", "Wrexham", "Bangor", "Aberystwyth", "Bridgend", "Merthyr Tydfil", "Carmarthen", "Llanelli",
+  "Glasgow", "Edinburgh", "Aberdeen", "Dundee", "Inverness", "Perth", "Stirling", "Paisley", "Kilmarnock", "Dumfries", "Ayr", "Falkirk",
+  "Belfast", "Derry", "Lisburn", "Newry", "Armagh", "Craigavon", "Bangor (Northern Ireland)", "Antrim", "Coleraine"
 ];
 
 const params = new URLSearchParams(window.location.search);
@@ -260,7 +260,7 @@ function renderAdminPage() {
   const exportButton = document.querySelector("[data-export-leads]");
   if (exportButton) {
     exportButton.addEventListener("click", () => {
-      const headers = ["reference", "createdAt", "business", "name", "email", "phone", "service", "location", "details"];
+      const headers = ["reference", "createdAt", "business", "name", "email", "phone", "service", "location", "volume", "issue", "details"];
       const rows = [headers.join(","), ...leads.map((lead) => headers.map((header) => escapeCsv(lead[header])).join(","))];
       const blob = new Blob([rows.join("\n")], { type: "text/csv" });
       const url = URL.createObjectURL(blob);

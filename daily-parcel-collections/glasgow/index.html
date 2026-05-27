@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daily parcel collections in Glasgow | The Delivery Desk</title>
-    <meta name="description" content="Need daily parcel collections in Glasgow? Practical courier, delivery and logistics help for businesses in Scotland. Powered by SVMK.">
+    <meta name="description" content="Need daily parcel collections in Glasgow? Independent delivery and logistics help for businesses in Scotland. Powered by SVMK.">
+    <link rel="canonical" href="https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/glasgow">
     <link rel="stylesheet" href="../../styles.css">
   </head>
   <body>
@@ -37,8 +38,8 @@
         <div>
           <p class="eyebrow dark">Why it matters locally</p>
           <h2>Not every delivery partner is right for Glasgow work.</h2>
-          <p>Glasgow delivery work can involve city collections, Scottish regional routes and longer-distance movement into England, Europe or worldwide.</p>
-          <p>Carrier and courier choice needs to account for distance, timing, tracking and how well the partner covers the wider Scottish market.</p>
+          <p>Glasgow delivery work can involve city collections, regional Scottish routes and longer-distance movement into England, Europe or worldwide.</p>
+          <p>Carrier and courier choice needs to account for distance, timing, tracking and how well the partner covers Scottish and national lanes.</p>
           <p>A low parcel rate is not much use if the collection window is wrong or the claims process eats up staff time.</p>
         </div>
         <aside class="expert-panel">
@@ -85,8 +86,26 @@
             <label>Service needed<select name="service" data-service-options required></select></label>
             <label>Collection area<input name="location" value="Glasgow" required></label>
           </div>
+          <div class="form-row">
+            <label>Approx volume<select name="volume">
+              <option value="">Not sure yet</option>
+              <option>1-20 shipments a week</option>
+              <option>20-100 shipments a week</option>
+              <option>100+ shipments a week</option>
+              <option>Project or one-off movement</option>
+            </select></label>
+            <label>Main issue<select name="issue">
+              <option value="">Choose if relevant</option>
+              <option>Price has increased</option>
+              <option>Collections are unreliable</option>
+              <option>Service does not fit the goods</option>
+              <option>Need a new delivery partner</option>
+              <option>Need storage or fulfilment</option>
+            </select></label>
+          </div>
           <label>What do you need help with?<textarea name="details" rows="5" placeholder="Tell us what moves, how often, where it goes and what is not working." required></textarea></label>
           <button class="button primary full" type="submit">Send enquiry</button>
+          <p class="form-note">No obligation. We use the details to understand the job before making any introduction.</p>
           <p class="form-status" role="status" data-form-status></p>
         </form>
       </section>
