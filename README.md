@@ -2,7 +2,7 @@
 
 Static first version of the SVMK lead-generation site.
 
-The current build generates 1,152 local SEO pages across 8 logistics services and 144 UK towns/cities.
+The current build generates 1,280 local service landing pages across 8 logistics services and 160 UK city/town markets. It also generates 160 location hub pages, 8 issues-and-solutions guide pages, 7 sector pages, a guide index, a location index, a sector index and an authority page explaining how The Delivery Desk qualifies enquiries.
 
 ## Files
 
@@ -15,6 +15,9 @@ The current build generates 1,152 local SEO pages across 8 logistics services an
 - `privacy.html` - plain-English enquiry privacy notice.
 - `admin.html` - browser-local prototype lead viewer and CSV export.
 - `generate-pages.js` - static page generator for service and city pages.
+- `audit-site.js` - static QA script for titles, descriptions, internal links, anchors, sitemap checks and JSON-LD.
+- `COMPETITOR_SEO_NOTES.md` - market positioning notes from competitor research.
+- `SEO_CONVERSION_NOTES.md` - working SEO and conversion brief.
 - `vercel.json` - Vercel clean URL, redirect and header configuration.
 - `DEPLOYMENT.md` - Vercel Hobby deployment checklist.
 - `sitemap.xml`, `robots.txt`, `404.html` - generated deployment support files.
@@ -31,6 +34,18 @@ Service overview pages are generated too, for example:
 
 `same-day-delivery/index.html`
 
+Issues-and-solutions guide pages are generated for each service:
+
+`same-day-delivery/issues-solutions/index.html`
+
+Location hub pages are generated too:
+
+`locations/manchester/index.html`
+
+Sector pages are generated too:
+
+`sectors/ecommerce/index.html`
+
 For local file preview, links point directly to:
 
 `same-day-delivery/manchester/index.html`
@@ -45,8 +60,8 @@ Also prioritise:
 
 ## Next build steps
 
-1. Move the static content model into Next.js.
-2. Add real lead routing to Google Sheets, Genie, email or a database.
-3. Add analytics, call tracking and conversion events.
-4. Connect Google Sheets and Genie for real lead routing.
-5. Expand copy for priority commercial locations first.
+1. Add real lead routing to Google Sheets, Genie, email or a CRM.
+2. Add analytics, call tracking and conversion events.
+3. Disable Vercel Deployment Protection before public indexing.
+4. Hand-polish the highest-value city/service pages first.
+5. Hand-expand priority sector pages with proof, examples and stronger commercial CTAs.

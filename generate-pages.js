@@ -192,17 +192,24 @@ const regionCopy = {
 const locationRows = [
   ["London", "london"], ["Croydon", "london"], ["Enfield", "london"], ["Harrow", "london"], ["Romford", "london"],
   ["Birmingham", "westMidlands"], ["Coventry", "westMidlands"], ["Wolverhampton", "westMidlands"], ["Walsall", "westMidlands"], ["Dudley", "westMidlands"], ["Solihull", "westMidlands"], ["West Bromwich", "westMidlands"], ["Stoke-on-Trent", "westMidlands"], ["Telford", "westMidlands"], ["Shrewsbury", "westMidlands"], ["Worcester", "westMidlands"], ["Hereford", "westMidlands"],
-  ["Nottingham", "eastMidlands"], ["Leicester", "eastMidlands"], ["Derby", "eastMidlands"], ["Northampton", "eastMidlands"], ["Lincoln", "eastMidlands"], ["Mansfield", "eastMidlands"], ["Loughborough", "eastMidlands"], ["Chesterfield", "eastMidlands"], ["Kettering", "eastMidlands"], ["Corby", "eastMidlands"],
-  ["Manchester", "northWest"], ["Liverpool", "northWest"], ["Preston", "northWest"], ["Blackpool", "northWest"], ["Bolton", "northWest"], ["Wigan", "northWest"], ["Warrington", "northWest"], ["Stockport", "northWest"], ["Oldham", "northWest"], ["Rochdale", "northWest"], ["Salford", "northWest"], ["Burnley", "northWest"], ["Blackburn", "northWest"], ["Chester", "northWest"], ["Carlisle", "northWest"],
-  ["Leeds", "yorkshire"], ["Sheffield", "yorkshire"], ["Bradford", "yorkshire"], ["Hull", "yorkshire"], ["York", "yorkshire"], ["Huddersfield", "yorkshire"], ["Wakefield", "yorkshire"], ["Doncaster", "yorkshire"], ["Rotherham", "yorkshire"], ["Barnsley", "yorkshire"], ["Harrogate", "yorkshire"], ["Halifax", "yorkshire"], ["Scarborough", "yorkshire"], ["Middlesbrough", "yorkshire"],
-  ["Newcastle", "northEast"], ["Sunderland", "northEast"], ["Durham", "northEast"], ["Gateshead", "northEast"], ["Darlington", "northEast"], ["Hartlepool", "northEast"], ["Stockton-on-Tees", "northEast"], ["South Shields", "northEast"],
-  ["Bristol", "southWest"], ["Plymouth", "southWest"], ["Exeter", "southWest"], ["Gloucester", "southWest"], ["Cheltenham", "southWest"], ["Swindon", "southWest"], ["Bath", "southWest"], ["Taunton", "southWest"], ["Torquay", "southWest"], ["Bournemouth", "southWest"], ["Poole", "southWest"], ["Truro", "southWest"],
-  ["Reading", "southEast"], ["Oxford", "southEast"], ["Milton Keynes", "southEast"], ["Southampton", "southEast"], ["Portsmouth", "southEast"], ["Brighton", "southEast"], ["Slough", "southEast"], ["Luton", "southEast"], ["Maidstone", "southEast"], ["Canterbury", "southEast"], ["Guildford", "southEast"], ["Crawley", "southEast"], ["Worthing", "southEast"], ["Eastbourne", "southEast"], ["Basingstoke", "southEast"], ["High Wycombe", "southEast"], ["Aylesbury", "southEast"], ["Chatham", "southEast"], ["Dover", "southEast"], ["Hastings", "southEast"], ["Woking", "southEast"], ["Bracknell", "southEast"],
-  ["Norwich", "east"], ["Cambridge", "east"], ["Peterborough", "east"], ["Ipswich", "east"], ["Colchester", "east"], ["Chelmsford", "east"], ["Southend-on-Sea", "east"], ["Basildon", "east"], ["Stevenage", "east"], ["Watford", "east"], ["St Albans", "east"], ["Bedford", "east"], ["Harlow", "east"], ["Great Yarmouth", "east"], ["King's Lynn", "east"],
-  ["Cardiff", "wales"], ["Swansea", "wales"], ["Newport", "wales"], ["Wrexham", "wales"], ["Bangor", "wales"], ["Aberystwyth", "wales"], ["Bridgend", "wales"], ["Merthyr Tydfil", "wales"], ["Carmarthen", "wales"], ["Llanelli", "wales"],
-  ["Glasgow", "scotland"], ["Edinburgh", "scotland"], ["Aberdeen", "scotland"], ["Dundee", "scotland"], ["Inverness", "scotland"], ["Perth", "scotland"], ["Stirling", "scotland"], ["Paisley", "scotland"], ["Kilmarnock", "scotland"], ["Dumfries", "scotland"], ["Ayr", "scotland"], ["Falkirk", "scotland"],
-  ["Belfast", "northernIreland"], ["Derry", "northernIreland"], ["Lisburn", "northernIreland"], ["Newry", "northernIreland"], ["Armagh", "northernIreland"], ["Craigavon", "northernIreland"], ["Bangor (Northern Ireland)", "northernIreland"], ["Antrim", "northernIreland"], ["Coleraine", "northernIreland"]
+  ["Nottingham", "eastMidlands"], ["Leicester", "eastMidlands"], ["Derby", "eastMidlands"], ["Northampton", "eastMidlands"], ["Lincoln", "eastMidlands"], ["Mansfield", "eastMidlands"], ["Loughborough", "eastMidlands"], ["Chesterfield", "eastMidlands"], ["Kettering", "eastMidlands"], ["Corby", "eastMidlands"], ["Lichfield", "westMidlands"],
+  ["Manchester", "northWest"], ["Liverpool", "northWest"], ["Preston", "northWest"], ["Blackpool", "northWest"], ["Bolton", "northWest"], ["Wigan", "northWest"], ["Warrington", "northWest"], ["Stockport", "northWest"], ["Oldham", "northWest"], ["Rochdale", "northWest"], ["Salford", "northWest"], ["Burnley", "northWest"], ["Blackburn", "northWest"], ["Chester", "northWest"], ["Carlisle", "northWest"], ["Lancaster", "northWest"],
+  ["Leeds", "yorkshire"], ["Sheffield", "yorkshire"], ["Bradford", "yorkshire"], ["Hull", "yorkshire"], ["Kingston-upon-Hull", "yorkshire"], ["York", "yorkshire"], ["Huddersfield", "yorkshire"], ["Wakefield", "yorkshire"], ["Doncaster", "yorkshire"], ["Rotherham", "yorkshire"], ["Barnsley", "yorkshire"], ["Harrogate", "yorkshire"], ["Halifax", "yorkshire"], ["Scarborough", "yorkshire"], ["Middlesbrough", "yorkshire"], ["Ripon", "yorkshire"],
+  ["Newcastle", "northEast"], ["Newcastle-upon-Tyne", "northEast"], ["Sunderland", "northEast"], ["Durham", "northEast"], ["Gateshead", "northEast"], ["Darlington", "northEast"], ["Hartlepool", "northEast"], ["Stockton-on-Tees", "northEast"], ["South Shields", "northEast"],
+  ["Bristol", "southWest"], ["Plymouth", "southWest"], ["Exeter", "southWest"], ["Gloucester", "southWest"], ["Cheltenham", "southWest"], ["Swindon", "southWest"], ["Bath", "southWest"], ["Taunton", "southWest"], ["Torquay", "southWest"], ["Bournemouth", "southWest"], ["Poole", "southWest"], ["Truro", "southWest"], ["Salisbury", "southWest"], ["Wells", "southWest"],
+  ["Reading", "southEast"], ["Oxford", "southEast"], ["Milton Keynes", "southEast"], ["Southampton", "southEast"], ["Portsmouth", "southEast"], ["Brighton", "southEast"], ["Brighton & Hove", "southEast"], ["Westminster", "london"], ["Winchester", "southEast"], ["Chichester", "southEast"], ["Slough", "southEast"], ["Luton", "southEast"], ["Maidstone", "southEast"], ["Canterbury", "southEast"], ["Guildford", "southEast"], ["Crawley", "southEast"], ["Worthing", "southEast"], ["Eastbourne", "southEast"], ["Basingstoke", "southEast"], ["High Wycombe", "southEast"], ["Aylesbury", "southEast"], ["Chatham", "southEast"], ["Dover", "southEast"], ["Hastings", "southEast"], ["Woking", "southEast"], ["Bracknell", "southEast"],
+  ["Norwich", "east"], ["Cambridge", "east"], ["Peterborough", "east"], ["Ipswich", "east"], ["Colchester", "east"], ["Chelmsford", "east"], ["Southend-on-Sea", "east"], ["Basildon", "east"], ["Stevenage", "east"], ["Watford", "east"], ["St Albans", "east"], ["Bedford", "east"], ["Harlow", "east"], ["Great Yarmouth", "east"], ["King's Lynn", "east"], ["Ely", "east"],
+  ["Cardiff", "wales"], ["Swansea", "wales"], ["Newport", "wales"], ["Wrexham", "wales"], ["Bangor", "wales"], ["St Asaph", "wales"], ["St Davids", "wales"], ["Aberystwyth", "wales"], ["Bridgend", "wales"], ["Merthyr Tydfil", "wales"], ["Carmarthen", "wales"], ["Llanelli", "wales"],
+  ["Glasgow", "scotland"], ["Edinburgh", "scotland"], ["Aberdeen", "scotland"], ["Dundee", "scotland"], ["Dunfermline", "scotland"], ["Inverness", "scotland"], ["Perth", "scotland"], ["Stirling", "scotland"], ["Paisley", "scotland"], ["Kilmarnock", "scotland"], ["Dumfries", "scotland"], ["Ayr", "scotland"], ["Falkirk", "scotland"],
+  ["Belfast", "northernIreland"], ["Derry", "northernIreland"], ["Londonderry", "northernIreland"], ["Lisburn", "northernIreland"], ["Newry", "northernIreland"], ["Armagh", "northernIreland"], ["Craigavon", "northernIreland"], ["Bangor (Northern Ireland)", "northernIreland"], ["Antrim", "northernIreland"], ["Coleraine", "northernIreland"]
 ];
+
+const officialCitySlugs = new Set([
+  "bath", "birmingham", "bradford", "brighton-and-hove", "bristol", "cambridge", "canterbury", "carlisle", "chelmsford", "chester", "chichester", "colchester", "coventry", "derby", "doncaster", "durham", "ely", "exeter", "gloucester", "hereford", "kingston-upon-hull", "leeds", "leicester", "lichfield", "lincoln", "liverpool", "london", "manchester", "milton-keynes", "newcastle-upon-tyne", "norwich", "nottingham", "oxford", "peterborough", "plymouth", "portsmouth", "preston", "ripon", "salford", "salisbury", "sheffield", "southampton", "southend-on-sea", "st-albans", "stoke-on-trent", "sunderland", "truro", "wakefield", "wells", "westminster", "winchester", "wolverhampton", "worcester", "york",
+  "armagh", "bangor-northern-ireland", "belfast", "lisburn", "londonderry", "newry",
+  "aberdeen", "dundee", "dunfermline", "edinburgh", "glasgow", "inverness", "perth", "stirling",
+  "bangor", "cardiff", "newport", "st-asaph", "st-davids", "swansea", "wrexham"
+]);
 
 const cities = locationRows.map(([name, regionKey]) => {
   const copy = regionCopy[regionKey];
@@ -210,9 +217,62 @@ const cities = locationRows.map(([name, regionKey]) => {
     name,
     region: copy.region,
     local: `${name} ${copy.local}`,
-    routes: copy.routes
+    routes: copy.routes,
+    officialCity: officialCitySlugs.has(citySlug(name))
   };
 });
+
+const sectors = [
+  {
+    slug: "ecommerce",
+    name: "Ecommerce and online sellers",
+    intro: "Online sellers need delivery that protects margin, reviews and repeat orders. The right setup depends on parcel volume, collection reliability, returns, peak trading and customer promises.",
+    problems: ["missed daily collections", "rising parcel surcharges", "returns taking too much time", "poor tracking or customer updates"],
+    serviceSlugs: ["daily-parcel-collections", "storage-fulfilment", "international-delivery", "retail-supply-chain"]
+  },
+  {
+    slug: "furniture-interiors",
+    name: "Furniture and interiors businesses",
+    intro: "Furniture, interiors and homeware delivery needs careful handling, booking, access checks and customer communication. A standard delivery service can damage both goods and reputation.",
+    problems: ["damage claims", "failed room-of-choice deliveries", "poor customer booking", "bulky items going through the wrong network"],
+    serviceSlugs: ["white-glove-2-man-delivery", "storage-fulfilment", "same-day-delivery", "retail-supply-chain"]
+  },
+  {
+    slug: "trade-suppliers",
+    name: "Trade suppliers and merchants",
+    intro: "Trade suppliers often need a mix of parcels, pallets, urgent parts, site deliveries and regular customer drops. The delivery partner has to understand access, timing and service pressure.",
+    problems: ["urgent parts missing deadlines", "wrong vehicle type for sites", "pallet access issues", "manual chasing for proof of delivery"],
+    serviceSlugs: ["same-day-delivery", "pallet-freight", "daily-parcel-collections", "storage-fulfilment"]
+  },
+  {
+    slug: "manufacturers",
+    name: "Manufacturers",
+    intro: "Manufacturers need delivery and freight partners that can handle timing, production pressure, inbound materials, outbound pallets, urgent spares and heavier consignments.",
+    problems: ["booking-in failures", "tail-lift or forklift issues", "production delays from late inbound goods", "freight damage and claims"],
+    serviceSlugs: ["pallet-freight", "same-day-delivery", "international-delivery", "sea-freight-container-logistics"]
+  },
+  {
+    slug: "wholesalers-distributors",
+    name: "Wholesalers and distributors",
+    intro: "Wholesalers and distributors need delivery that scales across daily parcels, pallets, regional routes, customer delivery windows and stock movement without creating hidden admin cost.",
+    problems: ["mixed parcel and pallet requirements", "delivery windows missed", "surcharges increasing", "warehouse dispatch pressure"],
+    serviceSlugs: ["daily-parcel-collections", "pallet-freight", "storage-fulfilment", "retail-supply-chain"]
+  },
+  {
+    slug: "importers-exporters",
+    name: "Importers and exporters",
+    intro: "Importers and exporters need customs, documentation, port movement, international parcel or freight and onward UK delivery to work together rather than as disconnected pieces.",
+    problems: ["customs paperwork gaps", "port storage or demurrage risk", "unclear landed cost", "tracking and handover problems"],
+    serviceSlugs: ["sea-freight-container-logistics", "international-delivery", "pallet-freight", "storage-fulfilment"]
+  },
+  {
+    slug: "retail-stores",
+    name: "Retail stores and multi-site businesses",
+    intro: "Retail stores and multi-site businesses often need store replenishment, customer delivery, returns, stock movement and urgent recovery work to be handled without tying up staff.",
+    problems: ["store transfers taking too long", "customer delivery failures", "returns not feeding back into stock", "seasonal pressure"],
+    serviceSlugs: ["retail-supply-chain", "same-day-delivery", "white-glove-2-man-delivery", "storage-fulfilment"]
+  }
+];
 
 function citySlug(value) {
   return value
@@ -261,6 +321,59 @@ function faqSchema(items) {
   };
 }
 
+function serviceNavLinks(prefix) {
+  return services.map((service) => `<a href="${prefix}${service.slug}/index.html">${escapeHtml(service.name)}</a>`).join("\n              ");
+}
+
+function headerHtml(prefix, localCta = false) {
+  const ctaHref = localCta ? "#lead-form" : `${prefix}index.html#lead-form`;
+  return `<header class="site-header">
+      <a class="brand" href="${prefix}index.html" aria-label="The Delivery Desk home">
+        <span class="brand-mark">TDD</span>
+        <span>
+          <strong>The Delivery Desk</strong>
+          <small>Powered by SVMK</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <details class="nav-menu">
+          <summary>Services</summary>
+          <div class="nav-menu-panel">
+              ${serviceNavLinks(prefix)}
+          </div>
+        </details>
+        <a href="${prefix}how-we-work/index.html">How we work</a>
+        <a href="${prefix}insights/index.html">Guides</a>
+        <a href="${prefix}locations/index.html">Locations</a>
+        <a href="${prefix}index.html#assistant">Assistant</a>
+        <a class="nav-action" href="${ctaHref}">Get matched</a>
+      </nav>
+    </header>`;
+}
+
+function breadcrumbs(items) {
+  return `<nav class="breadcrumbs section-inner" aria-label="Breadcrumb">
+        <ol>
+${items.map((item, index) => {
+  const isLast = index === items.length - 1;
+  return `          <li>${isLast ? `<span>${escapeHtml(item.label)}</span>` : `<a href="${item.href}">${escapeHtml(item.label)}</a>`}</li>`;
+}).join("\n")}
+        </ol>
+      </nav>`;
+}
+
+function nearbyCityLinks(service, currentCity) {
+  return cities
+    .filter((city) => city.region === currentCity.region && city.name !== currentCity.name)
+    .slice(0, 8)
+    .map((city) => `<a href="../${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`)
+    .join("\n");
+}
+
+function cityServiceLinks(city, prefix = "../") {
+  return services.map((service) => `<a href="${prefix}${service.slug}/${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`).join("\n");
+}
+
 function pageHtml(service, city) {
   const title = `${service.name} in ${city.name} | The Delivery Desk`;
   const description = `Need ${service.phrase} in ${city.name}? Independent delivery and logistics help for businesses in ${city.region}. Powered by SVMK.`;
@@ -299,25 +412,17 @@ function pageHtml(service, city) {
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../../index.html" aria-label="The Delivery Desk home">
-        <span class="brand-mark">TDD</span>
-        <span>
-          <strong>The Delivery Desk</strong>
-          <small>Powered by SVMK</small>
-        </span>
-      </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="../../index.html#services">Services</a>
-        <a href="../../index.html#locations">Local pages</a>
-        <a class="nav-action" href="#lead-form">Get matched</a>
-      </nav>
-    </header>
+    ${headerHtml("../../", true)}
 
     <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../../index.html" },
+        { label: service.name, href: "../index.html" },
+        { label: city.name }
+      ])}
       <section class="local-hero">
         <div class="section-inner">
-          <p class="eyebrow dark">Delivery help in ${escapeHtml(city.region)}</p>
+          <p class="eyebrow dark">${city.officialCity ? "Official UK city landing page" : `Delivery help in ${escapeHtml(city.region)}`}</p>
           <h1>${escapeHtml(service.name)} in ${escapeHtml(city.name)}</h1>
           <p>${escapeHtml(service.intro)} If you are based in or around ${escapeHtml(city.name)}, tell us what needs to move and what is causing the issue.</p>
           <a class="button primary" href="#lead-form">Ask us to take a look</a>
@@ -390,6 +495,19 @@ ${cardItems(service.redFlags)}
         </div>
         <div class="faq-list">
 ${faqItems(localFaq)}
+        </div>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Keep comparing</p>
+          <h2>Useful next pages.</h2>
+        </div>
+        <div class="related-grid">
+          <a href="../index.html">Service overview: ${escapeHtml(service.name)}</a>
+          <a href="../issues-solutions/index.html">Common ${escapeHtml(service.phrase)} problems</a>
+          <a href="../../locations/${citySlug(city.name)}/index.html">All delivery services in ${escapeHtml(city.name)}</a>
+${nearbyCityLinks(service, city)}
         </div>
       </section>
 
@@ -491,22 +609,13 @@ function serviceIndexHtml(service) {
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="The Delivery Desk home">
-        <span class="brand-mark">TDD</span>
-        <span>
-          <strong>The Delivery Desk</strong>
-          <small>Powered by SVMK</small>
-        </span>
-      </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#assistant">Assistant</a>
-        <a class="nav-action" href="#lead-form">Get matched</a>
-      </nav>
-    </header>
+    ${headerHtml("../", true)}
 
     <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: service.name }
+      ])}
       <section class="local-hero">
         <div class="section-inner">
           <p class="eyebrow dark">Service overview</p>
@@ -568,6 +677,15 @@ ${cardItems(service.redFlags)}
         <div class="faq-list">
 ${faqItems(service.faq)}
         </div>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Common issues</p>
+          <h2>Know what can go wrong before you choose a partner.</h2>
+          <p class="section-lede">We have also built a practical guide to the common problems, warning signs and better ways to handle ${escapeHtml(service.phrase)}.</p>
+        </div>
+        <a class="button primary" href="issues-solutions/index.html">Read the ${escapeHtml(service.name)} guide</a>
       </section>
 
       <section class="locations-band">
@@ -648,17 +766,660 @@ ${cityLinks}
 `;
 }
 
+function serviceGuideHtml(service) {
+  const title = `${service.name} Problems and Solutions | The Delivery Desk`;
+  const description = `Common ${service.phrase} problems, warning signs and practical ways UK businesses can improve service fit before choosing a delivery partner.`;
+  const canonical = `${siteUrl}/${service.slug}/issues-solutions`;
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": `${service.name} problems and solutions`,
+      "description": description,
+      "author": {
+        "@type": "Organization",
+        "name": "The Delivery Desk"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Delivery Desk"
+      }
+    },
+    faqSchema(service.faq)
+  ];
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}">
+    <link rel="canonical" href="${escapeHtml(canonical)}">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
+  </head>
+  <body>
+    ${headerHtml("../../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../../index.html" },
+        { label: service.name, href: "../index.html" },
+        { label: "Problems and solutions" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">High-level delivery guide</p>
+          <h1>${escapeHtml(service.name)} problems and ways to overcome them</h1>
+          <p>${escapeHtml(service.warning)} This guide explains what to check before you change supplier or ask for another rate.</p>
+          <a class="button primary" href="../index.html#lead-form">Ask us to review the job</a>
+        </div>
+      </section>
+
+      <section class="section-inner local-conversion">
+        <div class="section-heading">
+          <p class="eyebrow dark">Warning signs</p>
+          <h2>Problems usually show up before the service fully breaks.</h2>
+          <p class="section-lede">The mistake is treating every issue as a price problem. Often the real cause is route fit, service level, goods type, access, paperwork or communication.</p>
+        </div>
+        <div class="insight-grid">
+${service.redFlags.map((problem, index) => `
+          <article class="insight-card">
+            <span class="service-icon">${index + 1}</span>
+            <h3>${escapeHtml(problem)}</h3>
+            <p>The fix starts with the basics: confirm the collection point, delivery promise, handling needs, volume, timing and what the current provider is being asked to do.</p>
+          </article>`).join("\n")}
+        </div>
+      </section>
+
+      <section class="section-inner two-col local-detail">
+        <div>
+          <p class="eyebrow dark">Better approach</p>
+          <h2>Work out the service fit before the supplier shortlist.</h2>
+          <p>${escapeHtml(service.intro)} The right conversation is not just "how much per shipment?" It is whether the service can actually handle the work without creating hidden cost elsewhere.</p>
+          <p>That means checking operational detail first: collection windows, goods profile, access, paperwork, tracking, customer expectations, failed delivery process and who takes responsibility when something goes wrong.</p>
+        </div>
+        <aside class="expert-panel">
+          <h3>What to prepare</h3>
+          <ul class="check-list compact">
+${listItems(service.checks)}
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section-inner faq-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Quick answers</p>
+          <h2>Questions worth asking.</h2>
+        </div>
+        <div class="faq-list">
+${faqItems(service.faq)}
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="section-inner final-cta-inner">
+          <div>
+            <p class="eyebrow">Need this checked?</p>
+            <h2>Bring us the delivery problem before you choose the partner.</h2>
+          </div>
+          <a class="button primary" href="../index.html#lead-form">Start an enquiry</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Back to service</a>
+        <a href="../../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function insightsIndexHtml() {
+  const guideLinks = services.map((service) => `
+            <article class="service-card">
+              <span class="service-icon" aria-hidden="true">G</span>
+              <h3>${escapeHtml(service.name)}</h3>
+              <p>Common problems, warning signs and practical checks before choosing a delivery partner.</p>
+              <a href="../${service.slug}/issues-solutions/index.html">Read guide</a>
+            </article>`).join("\n");
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delivery and Logistics Guides | The Delivery Desk</title>
+    <meta name="description" content="Independent delivery and logistics guides for UK businesses comparing parcel, same-day, 2-man, freight, storage and international delivery options.">
+    <link rel="canonical" href="${siteUrl}/insights">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Guides" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Subject matter guides</p>
+          <h1>Delivery problems, explained before anyone sells you a fix.</h1>
+          <p>Use these guides to understand common service failures, better qualification questions and the details that make a delivery partner fit properly.</p>
+        </div>
+      </section>
+
+      <section class="section-inner" id="guides">
+        <div class="section-heading">
+          <p class="eyebrow dark">Guides by service</p>
+          <h2>Build the right brief before you ask for quotes.</h2>
+        </div>
+        <div class="service-grid">
+${guideLinks}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function locationsIndexHtml() {
+  const official = cities.filter((city) => city.officialCity);
+  const commercial = cities.filter((city) => !city.officialCity);
+  const links = (items) => items.map((city) => `<a href="${citySlug(city.name)}/index.html">${escapeHtml(city.name)}</a>`).join("\n");
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UK Delivery Service Locations | The Delivery Desk</title>
+    <meta name="description" content="Browse UK city and town landing pages for parcel collections, same-day delivery, 2-man delivery, storage, freight, international delivery and sea freight.">
+    <link rel="canonical" href="${siteUrl}/locations">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Locations" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">UK service locations</p>
+          <h1>Delivery and logistics help across UK cities and trading towns.</h1>
+          <p>Browse the location hubs, then choose the delivery service that best matches what your business needs to move.</p>
+        </div>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Official UK cities</p>
+          <h2>City landing pages.</h2>
+          <p class="section-lede">These pages follow the official UK city list and link into every service line.</p>
+        </div>
+        <div class="related-grid">
+${links(official)}
+        </div>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Commercial towns and delivery markets</p>
+          <h2>Important operating areas.</h2>
+          <p class="section-lede">These are not all official cities, but they are useful business delivery, freight, retail and distribution locations.</p>
+        </div>
+        <div class="related-grid">
+${links(commercial)}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function howWeWorkHtml() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "How The Delivery Desk works",
+    "description": "How The Delivery Desk qualifies delivery and logistics enquiries before introducing suitable UK partners."
+  };
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How We Work | The Delivery Desk</title>
+    <meta name="description" content="How The Delivery Desk uses independent delivery and logistics experience to qualify enquiries and match UK businesses with suitable partners.">
+    <link rel="canonical" href="${siteUrl}/how-we-work">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "How we work" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Independent delivery advice</p>
+          <h1>We qualify the delivery problem before anyone sells the fix.</h1>
+          <p>The Delivery Desk is built for businesses that know delivery is costing too much time, money or trust, but do not yet know which service or partner is right.</p>
+          <a class="button primary" href="../index.html#lead-form">Start an enquiry</a>
+        </div>
+      </section>
+
+      <section class="section-inner problem-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">The method</p>
+          <h2>Three things happen before a proper recommendation.</h2>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <span>01</span>
+            <h3>We understand the work</h3>
+            <p>What moves, how often, where it goes, what can go wrong and what the customer has been promised.</p>
+          </article>
+          <article class="problem-card">
+            <span>02</span>
+            <h3>We identify the service fit</h3>
+            <p>Parcel, same-day, 2-man, storage, freight, international, sea freight or a mixed setup.</p>
+          </article>
+          <article class="problem-card">
+            <span>03</span>
+            <h3>We spot the red flags</h3>
+            <p>Access, timing, customs, claims, surcharges, damaged goods, failed drops or weak communication.</p>
+          </article>
+          <article class="problem-card">
+            <span>04</span>
+            <h3>We route the enquiry</h3>
+            <p>If the enquiry is ready, it can go to a suitable partner instead of being sprayed everywhere.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-inner two-col local-detail">
+        <div>
+          <p class="eyebrow dark">Why this matters</p>
+          <h2>Most delivery problems are not solved by a cheaper rate alone.</h2>
+          <p>Carrier changes fail when the real issue is the wrong vehicle, weak collection process, poor delivery promise, unclear paperwork, hidden surcharges, poor returns handling or a service that was never designed for the goods.</p>
+          <p>That is why The Delivery Desk starts with diagnosis. The right partner conversation becomes much easier when the job has already been framed properly.</p>
+        </div>
+        <aside class="expert-panel">
+          <h3>What we look at</h3>
+          <ul class="check-list compact">
+            <li>Service type and shipment profile</li>
+            <li>Collection windows and delivery promises</li>
+            <li>Handling, access, storage and customs needs</li>
+            <li>Failed delivery, claims and communication issues</li>
+            <li>Total cost, not just the headline rate</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Authority routes</p>
+          <h2>Explore the service guides.</h2>
+        </div>
+        <div class="related-grid">
+${services.map((service) => `<a href="../${service.slug}/issues-solutions/index.html">${escapeHtml(service.name)} guide</a>`).join("\n")}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function cityHubHtml(city) {
+  const title = `Delivery and Logistics Services in ${city.name} | The Delivery Desk`;
+  const description = `Independent delivery and logistics matching in ${city.name}, including parcels, same-day, 2-man delivery, storage, freight, international delivery and sea freight.`;
+  const canonical = `${siteUrl}/locations/${citySlug(city.name)}`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": title,
+    "description": description,
+    "about": services.map((service) => service.name)
+  };
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}">
+    <link rel="canonical" href="${escapeHtml(canonical)}">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
+  </head>
+  <body>
+    ${headerHtml("../../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../../index.html" },
+        { label: "Locations", href: "../index.html" },
+        { label: city.name }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">${city.officialCity ? "Official UK city hub" : `Delivery hub in ${escapeHtml(city.region)}`}</p>
+          <h1>Delivery and logistics services in ${escapeHtml(city.name)}</h1>
+          <p>${escapeHtml(city.local)} Choose the service that matches your job, then tell us what is moving and what needs fixing.</p>
+          <a class="button primary" href="../../index.html#lead-form">Ask us to match the job</a>
+        </div>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Services in ${escapeHtml(city.name)}</p>
+          <h2>Pick the closest delivery problem.</h2>
+          <p class="section-lede">${escapeHtml(city.routes)}</p>
+        </div>
+        <div class="related-grid">
+${cityServiceLinks(city, "../../")}
+        </div>
+      </section>
+
+      <section class="section-inner two-col local-detail">
+        <div>
+          <p class="eyebrow dark">Independent matching</p>
+          <h2>Start with the job, not a supplier list.</h2>
+          <p>Businesses in ${escapeHtml(city.name)} can need anything from daily parcel collections to urgent same-day courier work, white glove 2-man delivery, pallet freight, storage, international delivery or sea freight support. The right answer depends on goods type, timing, access, volume and the promise made to the customer.</p>
+        </div>
+        <aside class="expert-panel">
+          <h3>Useful details to prepare</h3>
+          <ul class="check-list compact">
+            <li>Collection and delivery postcodes</li>
+            <li>Shipment volume, size and weight</li>
+            <li>Current supplier or service issue</li>
+            <li>Any access, storage, customs or handling needs</li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">All locations</a>
+        <a href="../../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function sectorServiceLinks(sector, prefix = "../") {
+  return sector.serviceSlugs.map((slug) => {
+    const service = services.find((item) => item.slug === slug);
+    return `<a href="${prefix}${service.slug}/index.html">${escapeHtml(service.name)}</a>`;
+  }).join("\n");
+}
+
+function sectorsIndexHtml() {
+  const cards = sectors.map((sector) => `
+            <article class="service-card">
+              <span class="service-icon" aria-hidden="true">S</span>
+              <h3>${escapeHtml(sector.name)}</h3>
+              <p>${escapeHtml(sector.intro)}</p>
+              <a href="${sector.slug}/index.html">View sector</a>
+            </article>`).join("\n");
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delivery Support by Sector | The Delivery Desk</title>
+    <meta name="description" content="Delivery and logistics matching for ecommerce, furniture, trade suppliers, manufacturers, wholesalers, importers, exporters and retail businesses.">
+    <link rel="canonical" href="${siteUrl}/sectors">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Sectors" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Sector delivery support</p>
+          <h1>Delivery advice shaped around the way your business actually works.</h1>
+          <p>Different sectors create different delivery problems. Use these pages to find the service mix most likely to fit your operation.</p>
+        </div>
+      </section>
+
+      <section class="section-inner" id="sectors">
+        <div class="section-heading">
+          <p class="eyebrow dark">Business types</p>
+          <h2>Choose the closest operating model.</h2>
+        </div>
+        <div class="service-grid">
+${cards}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function sectorHtml(sector) {
+  const title = `${sector.name} Delivery and Logistics Help | The Delivery Desk`;
+  const description = `Independent delivery and logistics matching for ${sector.name.toLowerCase()}, covering service fit, delivery problems and suitable partner options.`;
+  const canonical = `${siteUrl}/sectors/${sector.slug}`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `${sector.name} delivery and logistics help`,
+    "description": description,
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "The Delivery Desk"
+    }
+  };
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}">
+    <link rel="canonical" href="${escapeHtml(canonical)}">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
+  </head>
+  <body>
+    ${headerHtml("../../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../../index.html" },
+        { label: "Sectors", href: "../index.html" },
+        { label: sector.name }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Sector delivery support</p>
+          <h1>${escapeHtml(sector.name)} delivery and logistics help</h1>
+          <p>${escapeHtml(sector.intro)}</p>
+          <a class="button primary" href="../../index.html#lead-form">Ask us to match the job</a>
+        </div>
+      </section>
+
+      <section class="section-inner local-conversion">
+        <div class="section-heading">
+          <p class="eyebrow dark">Common pressure points</p>
+          <h2>Problems we would qualify before recommending a route.</h2>
+        </div>
+        <div class="insight-grid">
+${sector.problems.map((problem, index) => `
+          <article class="insight-card">
+            <span class="service-icon">${index + 1}</span>
+            <h3>${escapeHtml(problem)}</h3>
+            <p>We would check the goods, route, timing, service promise and current process before deciding which delivery partner type fits.</p>
+          </article>`).join("\n")}
+        </div>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Likely services</p>
+          <h2>Service areas worth comparing.</h2>
+        </div>
+        <div class="related-grid">
+${sectorServiceLinks(sector, "../../")}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">All sectors</a>
+        <a href="../../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>
+`;
+}
+
 const generated = [];
 const sitemapPaths = [
   "/",
-  "/privacy"
+  "/privacy",
+  "/how-we-work",
+  "/insights",
+  "/locations",
+  "/sectors"
 ];
+
+fs.mkdirSync(path.join(__dirname, "how-we-work"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "how-we-work", "index.html"), howWeWorkHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "insights"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "insights", "index.html"), insightsIndexHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "sectors"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "sectors", "index.html"), sectorsIndexHtml(), "utf8");
+for (const sector of sectors) {
+  const sectorDir = path.join(__dirname, "sectors", sector.slug);
+  fs.mkdirSync(sectorDir, { recursive: true });
+  fs.writeFileSync(path.join(sectorDir, "index.html"), sectorHtml(sector), "utf8");
+  sitemapPaths.push(`/sectors/${sector.slug}`);
+}
+
+fs.mkdirSync(path.join(__dirname, "locations"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "locations", "index.html"), locationsIndexHtml(), "utf8");
+for (const city of cities) {
+  const locationDir = path.join(__dirname, "locations", citySlug(city.name));
+  fs.mkdirSync(locationDir, { recursive: true });
+  fs.writeFileSync(path.join(locationDir, "index.html"), cityHubHtml(city), "utf8");
+  sitemapPaths.push(`/locations/${citySlug(city.name)}`);
+}
 
 for (const service of services) {
   const serviceDir = path.join(__dirname, service.slug);
   fs.mkdirSync(serviceDir, { recursive: true });
   fs.writeFileSync(path.join(serviceDir, "index.html"), serviceIndexHtml(service), "utf8");
   sitemapPaths.push(`/${service.slug}`);
+
+  const guideDir = path.join(serviceDir, "issues-solutions");
+  fs.mkdirSync(guideDir, { recursive: true });
+  fs.writeFileSync(path.join(guideDir, "index.html"), serviceGuideHtml(service), "utf8");
+  sitemapPaths.push(`/${service.slug}/issues-solutions`);
 
   for (const city of cities) {
     const dir = path.join(__dirname, service.slug, citySlug(city.name));

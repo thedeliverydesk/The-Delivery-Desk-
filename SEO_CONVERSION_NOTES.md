@@ -17,9 +17,11 @@ The site is positioned as an independent delivery and logistics matching service
 
 ## Page structure
 
-The build now creates 1,152 local landing pages: 8 services across 144 UK towns and cities. The pages are not identical boilerplate. They combine service-specific copy, regional route context, local town/city naming, different checks and service warnings.
+The build now creates 1,280 local service landing pages: 8 services across 160 UK city and town markets. It also includes 160 location hub pages, 8 service overview pages, 8 issues-and-solutions guide pages, 7 sector pages, a guide index, a location index and a sector index. The pages are not identical boilerplate. They combine service-specific copy, regional route context, local town/city naming, different checks, service warnings, FAQs, breadcrumbs and related internal links.
 
 That is enough for an early SEO footprint, but the priority locations should still be hand-polished before serious paid traffic or link building. Best next targets are London, Manchester, Birmingham, Leeds, Liverpool, Glasgow, Bristol, Cardiff and Belfast across the highest intent services.
+
+The official UK city-status coverage is now represented, with broader commercial towns kept for lead generation where they make sense for delivery, freight, retail and distribution demand.
 
 ## Conversion priorities
 
@@ -28,6 +30,8 @@ That is enough for an early SEO footprint, but the priority locations should sti
 - Make the assistant push users into the form once it detects a likely service.
 - Add Google Sheets and Genie routing before collecting real enquiries.
 - Add call tracking, analytics and form conversion events before running ads.
+- Use the issues-and-solutions pages as authority content and link them from service, city and homepage routes.
+- Build sector pages next because those can rank for higher-intent commercial searches.
 
 ## Writing guidance
 

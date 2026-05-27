@@ -90,11 +90,77 @@ img {
   font-size: 14px;
 }
 
+.nav-menu {
+  position: relative;
+}
+
+.nav-menu summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-menu-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  z-index: 30;
+  display: grid;
+  width: min(360px, calc(100vw - 36px));
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.nav-menu-panel a {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.nav-menu-panel a:hover {
+  background: #eef5f2;
+}
+
 .nav-action {
   padding: 10px 14px;
   border-radius: 8px;
   color: var(--white);
   background: var(--green);
+}
+
+.breadcrumbs {
+  padding-top: 18px;
+  padding-bottom: 0;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+  list-style: none;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 8px;
+  color: #8a9995;
+}
+
+.breadcrumbs a {
+  color: var(--green);
 }
 
 .hero {
@@ -610,6 +676,15 @@ textarea {
   font-size: 13px;
 }
 
+.locations-more {
+  margin: 22px 0 0;
+}
+
+.locations-more a {
+  color: var(--teal);
+  font-weight: 900;
+}
+
 .lead-section {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1fr);
@@ -712,6 +787,10 @@ textarea {
   padding: clamp(32px, 6vw, 72px) 0;
 }
 
+.related-section {
+  padding: clamp(34px, 6vw, 76px) 0;
+}
+
 .insight-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -740,6 +819,23 @@ textarea {
 
 .faq-section {
   padding: clamp(24px, 5vw, 54px) 0 clamp(48px, 7vw, 78px);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.related-grid a {
+  min-height: 58px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--green);
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(16, 47, 74, 0.05);
 }
 
 .faq-list {
@@ -854,6 +950,15 @@ th {
     padding-bottom: 2px;
   }
 
+  .nav-menu {
+    position: static;
+  }
+
+  .nav-menu-panel {
+    left: 0;
+    right: auto;
+  }
+
   .hero {
     min-height: auto;
   }
@@ -868,6 +973,7 @@ th {
   .two-col,
   .split-section,
   .insight-grid,
+  .related-grid,
   .assistant-layout,
   .lead-section {
     grid-template-columns: 1fr;
@@ -879,7 +985,7 @@ th {
 }
 
 @media (max-width: 620px) {
-  .main-nav a:not(.nav-action) {
+  .main-nav > a:not(.nav-action) {
     display: none;
   }
 

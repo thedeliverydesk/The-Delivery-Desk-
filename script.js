@@ -57,16 +57,16 @@ const services = [
 const cities = [
   "London", "Croydon", "Enfield", "Harrow", "Romford",
   "Birmingham", "Coventry", "Wolverhampton", "Walsall", "Dudley", "Solihull", "West Bromwich", "Stoke-on-Trent", "Telford", "Shrewsbury", "Worcester", "Hereford",
-  "Nottingham", "Leicester", "Derby", "Northampton", "Lincoln", "Mansfield", "Loughborough", "Chesterfield", "Kettering", "Corby",
-  "Manchester", "Liverpool", "Preston", "Blackpool", "Bolton", "Wigan", "Warrington", "Stockport", "Oldham", "Rochdale", "Salford", "Burnley", "Blackburn", "Chester", "Carlisle",
-  "Leeds", "Sheffield", "Bradford", "Hull", "York", "Huddersfield", "Wakefield", "Doncaster", "Rotherham", "Barnsley", "Harrogate", "Halifax", "Scarborough", "Middlesbrough",
-  "Newcastle", "Sunderland", "Durham", "Gateshead", "Darlington", "Hartlepool", "Stockton-on-Tees", "South Shields",
-  "Bristol", "Plymouth", "Exeter", "Gloucester", "Cheltenham", "Swindon", "Bath", "Taunton", "Torquay", "Bournemouth", "Poole", "Truro",
-  "Reading", "Oxford", "Milton Keynes", "Southampton", "Portsmouth", "Brighton", "Slough", "Luton", "Maidstone", "Canterbury", "Guildford", "Crawley", "Worthing", "Eastbourne", "Basingstoke", "High Wycombe", "Aylesbury", "Chatham", "Dover", "Hastings", "Woking", "Bracknell",
-  "Norwich", "Cambridge", "Peterborough", "Ipswich", "Colchester", "Chelmsford", "Southend-on-Sea", "Basildon", "Stevenage", "Watford", "St Albans", "Bedford", "Harlow", "Great Yarmouth", "King's Lynn",
-  "Cardiff", "Swansea", "Newport", "Wrexham", "Bangor", "Aberystwyth", "Bridgend", "Merthyr Tydfil", "Carmarthen", "Llanelli",
-  "Glasgow", "Edinburgh", "Aberdeen", "Dundee", "Inverness", "Perth", "Stirling", "Paisley", "Kilmarnock", "Dumfries", "Ayr", "Falkirk",
-  "Belfast", "Derry", "Lisburn", "Newry", "Armagh", "Craigavon", "Bangor (Northern Ireland)", "Antrim", "Coleraine"
+  "Nottingham", "Leicester", "Derby", "Northampton", "Lincoln", "Mansfield", "Loughborough", "Chesterfield", "Kettering", "Corby", "Lichfield",
+  "Manchester", "Liverpool", "Preston", "Blackpool", "Bolton", "Wigan", "Warrington", "Stockport", "Oldham", "Rochdale", "Salford", "Burnley", "Blackburn", "Chester", "Carlisle", "Lancaster",
+  "Leeds", "Sheffield", "Bradford", "Hull", "Kingston-upon-Hull", "York", "Huddersfield", "Wakefield", "Doncaster", "Rotherham", "Barnsley", "Harrogate", "Halifax", "Scarborough", "Middlesbrough", "Ripon",
+  "Newcastle", "Newcastle-upon-Tyne", "Sunderland", "Durham", "Gateshead", "Darlington", "Hartlepool", "Stockton-on-Tees", "South Shields",
+  "Bristol", "Plymouth", "Exeter", "Gloucester", "Cheltenham", "Swindon", "Bath", "Taunton", "Torquay", "Bournemouth", "Poole", "Truro", "Salisbury", "Wells",
+  "Reading", "Oxford", "Milton Keynes", "Southampton", "Portsmouth", "Brighton", "Brighton & Hove", "Westminster", "Winchester", "Chichester", "Slough", "Luton", "Maidstone", "Canterbury", "Guildford", "Crawley", "Worthing", "Eastbourne", "Basingstoke", "High Wycombe", "Aylesbury", "Chatham", "Dover", "Hastings", "Woking", "Bracknell",
+  "Norwich", "Cambridge", "Peterborough", "Ipswich", "Colchester", "Chelmsford", "Southend-on-Sea", "Basildon", "Stevenage", "Watford", "St Albans", "Bedford", "Harlow", "Great Yarmouth", "King's Lynn", "Ely",
+  "Cardiff", "Swansea", "Newport", "Wrexham", "Bangor", "St Asaph", "St Davids", "Aberystwyth", "Bridgend", "Merthyr Tydfil", "Carmarthen", "Llanelli",
+  "Glasgow", "Edinburgh", "Aberdeen", "Dundee", "Dunfermline", "Inverness", "Perth", "Stirling", "Paisley", "Kilmarnock", "Dumfries", "Ayr", "Falkirk",
+  "Belfast", "Derry", "Londonderry", "Lisburn", "Newry", "Armagh", "Craigavon", "Bangor (Northern Ireland)", "Antrim", "Coleraine"
 ];
 
 const params = new URLSearchParams(window.location.search);

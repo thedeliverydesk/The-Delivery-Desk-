@@ -2,7 +2,179 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/privacy</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/how-we-work</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/insights</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/ecommerce</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/furniture-interiors</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/trade-suppliers</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/manufacturers</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/wholesalers-distributors</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/importers-exporters</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/retail-stores</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/london</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/croydon</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/enfield</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/harrow</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/romford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/birmingham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/coventry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/wolverhampton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/walsall</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/dudley</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/solihull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/west-bromwich</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/stoke-on-trent</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/telford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/shrewsbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/worcester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/hereford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/nottingham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/leicester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/derby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/northampton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/lincoln</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/mansfield</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/loughborough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/chesterfield</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/kettering</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/lichfield</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/manchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/liverpool</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/preston</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/blackpool</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bolton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/wigan</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/warrington</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/stockport</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/oldham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/rochdale</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/salford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/burnley</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/blackburn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/chester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/lancaster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/leeds</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/sheffield</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bradford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/kingston-upon-hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/york</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/huddersfield</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/wakefield</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/doncaster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/rotherham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/barnsley</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/harrogate</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/halifax</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/scarborough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/ripon</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/newcastle-upon-tyne</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/sunderland</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/durham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/gateshead</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/darlington</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/hartlepool</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/stockton-on-tees</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/south-shields</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bristol</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/plymouth</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/exeter</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/gloucester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/cheltenham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/swindon</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bath</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/taunton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/torquay</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bournemouth</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/poole</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/wells</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/reading</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/oxford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/milton-keynes</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/southampton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/portsmouth</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/chichester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/slough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/luton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/maidstone</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/canterbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/guildford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/crawley</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/worthing</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/eastbourne</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/basingstoke</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/high-wycombe</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/aylesbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/chatham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/dover</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/hastings</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/woking</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bracknell</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/norwich</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/cambridge</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/peterborough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/ipswich</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/colchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/chelmsford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/southend-on-sea</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/basildon</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/stevenage</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/watford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/st-albans</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bedford</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/harlow</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/great-yarmouth</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/ely</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/cardiff</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/swansea</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/newport</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/wrexham</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/st-davids</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/aberystwyth</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bridgend</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/merthyr-tydfil</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/carmarthen</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/llanelli</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/glasgow</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/edinburgh</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/aberdeen</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/dunfermline</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/inverness</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/perth</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/stirling</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/paisley</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/kilmarnock</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/dumfries</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/ayr</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/falkirk</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/belfast</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/londonderry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/lisburn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/newry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/armagh</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/craigavon</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/bangor-northern-ireland</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/antrim</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/locations/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/enfield</loc></url>
@@ -30,6 +202,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/preston</loc></url>
@@ -45,10 +218,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/wakefield</loc></url>
@@ -59,7 +234,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/gateshead</loc></url>
@@ -79,12 +256,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/maidstone</loc></url>
@@ -116,11 +299,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/merthyr-tydfil</loc></url>
@@ -130,6 +316,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/stirling</loc></url>
@@ -140,6 +327,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/armagh</loc></url>
@@ -148,6 +336,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/antrim</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/enfield</loc></url>
@@ -175,6 +364,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/preston</loc></url>
@@ -190,10 +380,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/wakefield</loc></url>
@@ -204,7 +396,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/gateshead</loc></url>
@@ -224,12 +418,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/maidstone</loc></url>
@@ -261,11 +461,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/merthyr-tydfil</loc></url>
@@ -275,6 +478,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/stirling</loc></url>
@@ -285,6 +489,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/armagh</loc></url>
@@ -293,6 +498,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/antrim</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/enfield</loc></url>
@@ -320,6 +526,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/preston</loc></url>
@@ -335,10 +542,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/wakefield</loc></url>
@@ -349,7 +558,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/gateshead</loc></url>
@@ -369,12 +580,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/maidstone</loc></url>
@@ -406,11 +623,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/merthyr-tydfil</loc></url>
@@ -420,6 +640,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/stirling</loc></url>
@@ -430,6 +651,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/armagh</loc></url>
@@ -438,6 +660,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/antrim</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/enfield</loc></url>
@@ -465,6 +688,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/preston</loc></url>
@@ -480,10 +704,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/wakefield</loc></url>
@@ -494,7 +720,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/gateshead</loc></url>
@@ -514,12 +742,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/maidstone</loc></url>
@@ -551,11 +785,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/merthyr-tydfil</loc></url>
@@ -565,6 +802,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/stirling</loc></url>
@@ -575,6 +813,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/armagh</loc></url>
@@ -583,6 +822,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/antrim</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/enfield</loc></url>
@@ -610,6 +850,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/preston</loc></url>
@@ -625,10 +866,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/wakefield</loc></url>
@@ -639,7 +882,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/gateshead</loc></url>
@@ -659,12 +904,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/maidstone</loc></url>
@@ -696,11 +947,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/merthyr-tydfil</loc></url>
@@ -710,6 +964,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/stirling</loc></url>
@@ -720,6 +975,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/armagh</loc></url>
@@ -728,6 +984,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/antrim</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/enfield</loc></url>
@@ -755,6 +1012,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/preston</loc></url>
@@ -770,10 +1028,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/wakefield</loc></url>
@@ -784,7 +1044,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/gateshead</loc></url>
@@ -804,12 +1066,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/maidstone</loc></url>
@@ -841,11 +1109,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/merthyr-tydfil</loc></url>
@@ -855,6 +1126,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/stirling</loc></url>
@@ -865,6 +1137,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/armagh</loc></url>
@@ -873,6 +1146,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/antrim</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/enfield</loc></url>
@@ -900,6 +1174,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/preston</loc></url>
@@ -915,10 +1190,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/wakefield</loc></url>
@@ -929,7 +1206,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/gateshead</loc></url>
@@ -949,12 +1228,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/maidstone</loc></url>
@@ -986,11 +1271,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/merthyr-tydfil</loc></url>
@@ -1000,6 +1288,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/stirling</loc></url>
@@ -1010,6 +1299,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/armagh</loc></url>
@@ -1018,6 +1308,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/antrim</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/coleraine</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/issues-solutions</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/london</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/croydon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/enfield</loc></url>
@@ -1045,6 +1336,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/chesterfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/kettering</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/corby</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/lichfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/manchester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/liverpool</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/preston</loc></url>
@@ -1060,10 +1352,12 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/blackburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/chester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/carlisle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/lancaster</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/leeds</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/sheffield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/bradford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/hull</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/kingston-upon-hull</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/york</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/huddersfield</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/wakefield</loc></url>
@@ -1074,7 +1368,9 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/halifax</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/scarborough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/middlesbrough</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/ripon</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/newcastle</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/newcastle-upon-tyne</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/sunderland</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/durham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/gateshead</loc></url>
@@ -1094,12 +1390,18 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/bournemouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/poole</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/truro</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/salisbury</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/wells</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/reading</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/oxford</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/milton-keynes</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/southampton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/portsmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/brighton</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/brighton-and-hove</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/westminster</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/winchester</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/chichester</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/slough</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/luton</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/maidstone</loc></url>
@@ -1131,11 +1433,14 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/harlow</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/great-yarmouth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/king-s-lynn</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/ely</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/cardiff</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/swansea</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/newport</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/wrexham</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/bangor</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/st-asaph</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/st-davids</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/aberystwyth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/bridgend</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/merthyr-tydfil</loc></url>
@@ -1145,6 +1450,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/edinburgh</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/aberdeen</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/dundee</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/dunfermline</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/inverness</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/perth</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/stirling</loc></url>
@@ -1155,6 +1461,7 @@
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/falkirk</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/belfast</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/derry</loc></url>
+  <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/londonderry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/lisburn</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/newry</loc></url>
   <url><loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/armagh</loc></url>

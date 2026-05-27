@@ -24,8 +24,15 @@ Use Vercel Hobby while the site is being tested. Upgrade before running the site
 
 - Service overview: `/same-day-delivery`
 - Local page: `/same-day-delivery/manchester`
+- Service guide: `/same-day-delivery/issues-solutions`
+- Location hub: `/locations/manchester`
+- Guide hub: `/insights`
 - Sea freight overview: `/sea-freight-container-logistics`
 - Sea freight local page: `/sea-freight-container-logistics/london`
+
+## Public indexing note
+
+Vercel Deployment Protection / Vercel Authentication must be switched off before Google can crawl the site. If it is left on, public checks will return `401 Unauthorized` and Vercel will send `X-Robots-Tag: noindex`.
 
 ## Next setup step
 
