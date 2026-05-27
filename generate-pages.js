@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 
 const siteUrl = (process.env.SITE_URL || "https://the-delivery-desk-andy-3048s-projects.vercel.app").replace(/\/$/, "");
+const inboundEmail = "andy@svmk.co.uk";
+const driveFolderUrl = "https://drive.google.com/drive/folders/1kJmxRjpcgwWjP00Nht1NxiMsL7Gl0Wfd?usp=sharing";
 
 const services = [
   {
@@ -125,6 +127,57 @@ const services = [
     ]
   }
 ];
+
+const serviceScenarioExamples = {
+  "daily-parcel-collections": [
+    ["Growing ecommerce seller", "Daily collections keep slipping after peak periods, so we would check cut-off times, backup carrier options, returns flow and where staff are losing time."],
+    ["Multi-site retailer", "Several shops send small parcels from different sites, so we would look at collection consistency, label process, reporting and whether one carrier can really cover every location."],
+    ["Wholesale parcel flow", "Regular trade orders are moving as parcels rather than pallets, so the key checks are weight bands, surcharges, failed collections and proof of delivery quality."],
+    ["Carrier review", "The existing carrier mostly works, but claims and missed pickups are costing margin, so we would compare the total operating cost rather than the headline parcel rate."]
+  ],
+  "same-day-delivery": [
+    ["Urgent parts movement", "A supplier needs parts moved the same day to protect a customer deadline, so we would check ready time, vehicle size, delivery deadline and proof of delivery."],
+    ["Planned local route", "A business has regular time-sensitive drops, so the right answer may be a planned same-day route rather than repeated emergency bookings."],
+    ["Retail rescue delivery", "A store or warehouse needs stock moved quickly between sites, so we would check access, waiting time, customer promise and whether direct delivery is essential."],
+    ["Engineer support", "Field teams need critical items moved to site, so the partner must understand timing, contact points, tracking and what happens if the recipient is not ready."]
+  ],
+  "white-glove-2-man-delivery": [
+    ["Furniture retailer", "Customer complaints are rising because bulky goods are being pushed through the wrong network, so we would check booking, access, room-of-choice and damage handling."],
+    ["Interiors project", "High-value items need careful delivery into homes or commercial spaces, so the partner must manage communication, handling standards and failed delivery risk."],
+    ["Equipment supplier", "Large items need two-person handling and a controlled handover, so we would check weight, access, stairs, unpacking and customer appointment process."],
+    ["Damage reduction", "The issue is not just delivery cost; damages and re-deliveries are eroding margin, so we would review packaging, handling route and claims process together."]
+  ],
+  "storage-fulfilment": [
+    ["Seasonal seller", "Orders spike at certain times of year, so we would check storage charging, pick-and-pack speed, carrier options and how returns come back into stock."],
+    ["Space pressure", "Stock is taking over the business premises, so the decision is whether fulfilment would remove pressure or add a new layer of cost."],
+    ["Returns-heavy operation", "Returns are eating staff time, so we would check inspection process, stock visibility, resale flow and how returns connect to outbound dispatch."],
+    ["New product range", "A brand is adding SKUs and needs a cleaner dispatch setup, so we would map SKU count, order profile, packaging needs and peak capacity."]
+  ],
+  "international-delivery": [
+    ["EU parcel growth", "A UK seller is sending more orders into Europe, so we would check customs data, duties, tracking, returns and whether the service fits each destination."],
+    ["Worldwide samples", "A business sends small international shipments, so paperwork accuracy, commodity details and delivery visibility matter more than just a cheap label."],
+    ["Export freight enquiry", "Goods are moving as pallets or freight, so we would check incoterms, collection access, destination requirements and who owns each stage."],
+    ["Customs issue", "Shipments are being delayed after export, so we would review data quality, goods description, value, EORI details and broker responsibility."]
+  ],
+  "pallet-freight": [
+    ["Trade supplier", "Pallets are reaching sites late or with access problems, so we would check tail-lift needs, booking-in, contact details and delivery restrictions."],
+    ["Manufacturer movement", "Outbound loads vary in size, so the fit may be pallet network, part-load or dedicated freight depending on timing, weight and damage risk."],
+    ["Retail replenishment", "Stock needs moving between warehouse and stores, so we would check delivery windows, unloading requirements and proof of delivery process."],
+    ["One-off project freight", "A heavy or awkward consignment needs moving once, so the brief must cover dimensions, weight, access, equipment and realistic delivery timing."]
+  ],
+  "retail-supply-chain": [
+    ["Independent retailer", "Delivery issues are linked to stock flow, returns and staff time, so we would look beyond carrier price and map the whole movement."],
+    ["Multi-channel seller", "Orders move through shops, ecommerce and suppliers, so the key is aligning inbound stock, outbound delivery and returns."],
+    ["Margin leakage review", "Costs are hidden in rework, failed drops and manual chasing, so we would identify where delivery is quietly draining profit."],
+    ["Peak planning", "Retail demand jumps around campaigns or seasons, so we would check capacity, carrier backup, stock availability and customer messaging."]
+  ],
+  "sea-freight-container-logistics": [
+    ["Importer container arrival", "A container is due into port, so we would check customs, haulage, devanning, storage, onward UK delivery and demurrage risk before it lands."],
+    ["LCL shipment", "Goods are moving as less-than-container load, so the key checks are consolidation, arrival timing, paperwork, collection and onward delivery."],
+    ["Wholesale stock movement", "Imported stock needs splitting after arrival, so we would look at devanning, warehouse handling, palletisation and delivery into customers or stores."],
+    ["Export container planning", "A business is exporting stock by sea, so we would check loading plan, documentation, container type, cut-off times and who controls each handover."]
+  ]
+};
 
 const regionCopy = {
   london: {
@@ -325,6 +378,44 @@ function serviceNavLinks(prefix) {
   return services.map((service) => `<a href="${prefix}${service.slug}/index.html">${escapeHtml(service.name)}</a>`).join("\n              ");
 }
 
+function scenarioCards(service, seed = 0, count = 4) {
+  const examples = serviceScenarioExamples[service.slug] || [];
+  const rotated = examples.length
+    ? [...examples.slice(seed % examples.length), ...examples.slice(0, seed % examples.length)]
+    : [];
+  return rotated.slice(0, count).map(([title, copy]) => `
+          <article class="proof-card">
+            <p class="eyebrow dark">Example situation</p>
+            <h3>${escapeHtml(title)}</h3>
+            <p>${escapeHtml(copy)}</p>
+          </article>`).join("\n");
+}
+
+function trustProofHtml(prefix = "") {
+  return `<section class="section-inner proof-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Why businesses use us</p>
+          <h2>Independent logistics experience before the sales call.</h2>
+          <p class="section-lede">These are practical example situations, not invented reviews. They show the kinds of delivery problems The Delivery Desk is built to qualify.</p>
+        </div>
+        <div class="trust-strip">
+          <article>
+            <strong>150+ years</strong>
+            <span>combined courier, freight, retail and supply chain knowledge across the team.</span>
+          </article>
+          <article>
+            <strong>No spray-and-pray</strong>
+            <span>enquiries are framed first, then routed to a suitable delivery or logistics partner.</span>
+          </article>
+          <article>
+            <strong>Total cost view</strong>
+            <span>we look at failed deliveries, claims, staff time, surcharges and customer promise.</span>
+          </article>
+        </div>
+        <p class="proof-note">For direct enquiries, email <a href="mailto:${inboundEmail}">${inboundEmail}</a>.</p>
+      </section>`;
+}
+
 function headerHtml(prefix, localCta = false) {
   const ctaHref = localCta ? "#lead-form" : `${prefix}index.html#lead-form`;
   return `<header class="site-header">
@@ -343,8 +434,11 @@ function headerHtml(prefix, localCta = false) {
           </div>
         </details>
         <a href="${prefix}how-we-work/index.html">How we work</a>
+        <a href="${prefix}sectors/index.html">Sectors</a>
         <a href="${prefix}insights/index.html">Guides</a>
         <a href="${prefix}locations/index.html">Locations</a>
+        <a href="${prefix}partners/index.html">Partners</a>
+        <a href="${prefix}customer-account/index.html">Account</a>
         <a href="${prefix}index.html#assistant">Assistant</a>
         <a class="nav-action" href="${ctaHref}">Get matched</a>
       </nav>
@@ -488,6 +582,17 @@ ${cardItems(service.redFlags)}
         </div>
       </section>
 
+      <section class="section-inner proof-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Example situations</p>
+          <h2>Typical ${escapeHtml(service.phrase)} problems we would qualify.</h2>
+          <p class="section-lede">These are sample situations, not customer reviews. They show the type of detail we would check before introducing a partner in ${escapeHtml(city.name)}.</p>
+        </div>
+        <div class="proof-grid">
+${scenarioCards(service, city.name.length, 4)}
+        </div>
+      </section>
+
       <section class="section-inner faq-section">
         <div class="section-heading">
           <p class="eyebrow dark">Questions businesses ask</p>
@@ -553,7 +658,7 @@ ${nearbyCityLinks(service, city)}
           <label>What do you need help with?<textarea name="details" rows="5" placeholder="Tell us what moves, how often, where it goes and what is not working." required></textarea></label>
           <label class="consent-line"><input name="consent" type="checkbox" required> I am happy for The Delivery Desk and SVMK to use these details to contact me and, where relevant, introduce a suitable delivery or logistics partner.</label>
           <button class="button primary full" type="submit">Send enquiry</button>
-          <p class="form-note">No obligation. We use the details to understand the job before making any introduction. Read the <a href="../../privacy.html">privacy notice</a>.</p>
+          <p class="form-note">No obligation. We use the details to understand the job before making any introduction. You can also email <a href="mailto:${inboundEmail}">${inboundEmail}</a>. Read the <a href="../../privacy.html">privacy notice</a>.</p>
           <p class="form-status" role="status" data-form-status></p>
         </form>
       </section>
@@ -669,6 +774,17 @@ ${cardItems(service.redFlags)}
         </div>
       </section>
 
+      <section class="section-inner proof-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Example situations</p>
+          <h2>Where ${escapeHtml(service.phrase)} needs proper qualification.</h2>
+          <p class="section-lede">These are sample scenarios to explain the type of work we handle. Real customer reviews and case studies should be added as soon as they are approved.</p>
+        </div>
+        <div class="proof-grid">
+${scenarioCards(service, 0, 4)}
+        </div>
+      </section>
+
       <section class="section-inner faq-section">
         <div class="section-heading">
           <p class="eyebrow dark">Questions businesses ask</p>
@@ -742,7 +858,7 @@ ${cityLinks}
           <label>What do you need help with?<textarea name="details" rows="5" placeholder="Tell us what moves, how often, where it goes and what is not working." required></textarea></label>
           <label class="consent-line"><input name="consent" type="checkbox" required> I am happy for The Delivery Desk and SVMK to use these details to contact me and, where relevant, introduce a suitable delivery or logistics partner.</label>
           <button class="button primary full" type="submit">Send enquiry</button>
-          <p class="form-note">No obligation. We use the details to understand the job before making any introduction. Read the <a href="../privacy.html">privacy notice</a>.</p>
+          <p class="form-note">No obligation. We use the details to understand the job before making any introduction. You can also email <a href="mailto:${inboundEmail}">${inboundEmail}</a>. Read the <a href="../privacy.html">privacy notice</a>.</p>
           <p class="form-status" role="status" data-form-status></p>
         </form>
       </section>
@@ -1376,15 +1492,410 @@ ${sectorServiceLinks(sector, "../../")}
 `;
 }
 
+function partnersHtml() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Delivery partner network",
+    "description": "Apply to receive qualified delivery, courier, freight, storage and logistics enquiries from The Delivery Desk."
+  };
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Partner Network | The Delivery Desk</title>
+    <meta name="description" content="Delivery, courier, freight, storage and logistics companies can apply to receive qualified UK business enquiries from The Delivery Desk.">
+    <link rel="canonical" href="${siteUrl}/partners">
+    <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Partners" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Partner network</p>
+          <h1>Want qualified delivery and logistics enquiries?</h1>
+          <p>The Delivery Desk is being built to match UK businesses with the right kind of courier, carrier, freight, storage, fulfilment, same-day, 2-man or sea freight partner.</p>
+          <a class="button primary" href="#partner-form">Apply to become a partner</a>
+        </div>
+      </section>
+
+      <section class="section-inner problem-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">What partners get</p>
+          <h2>Fewer cold leads. Better-framed enquiries.</h2>
+          <p class="section-lede">The aim is to send partners enquiries that already have context: service type, location, volume, goods profile and the reason the business needs help.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <span>01</span>
+            <h3>Qualified fit</h3>
+            <p>We check whether the enquiry fits your service area before it is routed.</p>
+          </article>
+          <article class="problem-card">
+            <span>02</span>
+            <h3>Service lanes</h3>
+            <p>Choose the work you actually want: parcels, same-day, 2-man, storage, freight, international or sea freight.</p>
+          </article>
+          <article class="problem-card">
+            <span>03</span>
+            <h3>Coverage profile</h3>
+            <p>Tell us your strongest towns, cities, regions and specialist routes so we do not waste your time.</p>
+          </article>
+          <article class="problem-card">
+            <span>04</span>
+            <h3>Partner login</h3>
+            <p>A secure partner dashboard can follow once lead volume and partner coverage are ready.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-inner lead-section" id="partner-form">
+        <div class="lead-copy">
+          <p class="eyebrow dark">Apply</p>
+          <h2>Tell us what work you want.</h2>
+          <p>Use this to start a partner profile so SVMK can understand your coverage, services and preferred work.</p>
+        </div>
+        <form class="lead-form" data-partner-form>
+          <div class="form-row">
+            <label>Company name<input name="company" autocomplete="organization" required></label>
+            <label>Contact name<input name="name" autocomplete="name" required></label>
+          </div>
+          <div class="form-row">
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          </div>
+          <div class="form-row">
+            <label>Core service<select name="service" data-service-options required></select></label>
+            <label>Coverage area<input name="coverage" placeholder="e.g. Midlands, London, UK-wide, EU lanes" required></label>
+          </div>
+          <label>What should we know?<textarea name="details" rows="5" placeholder="Fleet, depot locations, specialist handling, insurance, service levels, regions, sectors you serve..." required></textarea></label>
+          <label class="consent-line"><input name="consent" type="checkbox" required> I am happy for The Delivery Desk and SVMK to contact me about joining the partner network.</label>
+          <button class="button primary full" type="submit">Save partner application</button>
+          <p class="form-note">You can also email partner details to <a href="mailto:${inboundEmail}">${inboundEmail}</a>.</p>
+          <p class="form-status" role="status" data-partner-status></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../partner-login/index.html">Partner login</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function partnerLoginHtml() {
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Partner Login | The Delivery Desk</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    ${headerHtml("../")}
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Partners", href: "../partners/index.html" },
+        { label: "Partner login" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Partner area</p>
+          <h1>Partner login.</h1>
+          <p>This preview shows how partners could manage service coverage, preferred work and lead notes once secure access is added.</p>
+        </div>
+      </section>
+      <section class="section-inner lead-section">
+        <div class="lead-copy">
+          <p class="eyebrow dark">Partner dashboard</p>
+          <h2>Sign in with your partner email.</h2>
+          <p>Secure authentication still needs to be connected before partners can use this for real lead management.</p>
+        </div>
+        <form class="lead-form" data-preview-login data-login-type="partner">
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Company<input name="company" autocomplete="organization"></label>
+          <button class="button primary full" type="submit">Open partner area</button>
+          <p class="form-status" role="status" data-login-status></p>
+        </form>
+      </section>
+      <section class="section-inner dashboard-section" data-partner-dashboard hidden>
+        <div class="section-heading">
+          <p class="eyebrow dark">Partner dashboard</p>
+          <h2>Your service profile.</h2>
+          <p class="section-lede">Use this account preview to shape what the real dashboard should hold.</p>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>Service coverage</h3>
+            <p>Store preferred services, regions, fleet notes and specialist handling rules.</p>
+          </article>
+          <article class="insight-card">
+            <h3>Lead preferences</h3>
+            <p>Set minimum volume, work types, sectors and routes you want to receive.</p>
+          </article>
+          <article class="insight-card">
+            <h3>Documents</h3>
+            <p>Insurance, accreditations and service documents can be linked during live onboarding.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../partners/index.html">Partner application</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function customerAccountHtml() {
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Account | The Delivery Desk</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    ${headerHtml("../")}
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Customer account" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Customer account</p>
+          <h1>Keep your delivery details ready for the next enquiry.</h1>
+          <p>This account preview lets customers keep business, service and shipment information ready for future enquiries. Secure account access should be connected before holding live customer records online.</p>
+        </div>
+      </section>
+      <section class="section-inner lead-section">
+        <div class="lead-copy">
+          <p class="eyebrow dark">Your delivery profile</p>
+          <h2>Save the basics once.</h2>
+          <p>Useful for businesses that regularly compare parcel collections, same-day jobs, 2-man delivery, freight, storage, international or sea freight requirements.</p>
+        </div>
+        <form class="lead-form" data-customer-profile>
+          <div class="form-row">
+            <label>Business name<input name="business" autocomplete="organization" required></label>
+            <label>Contact email<input name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="form-row">
+            <label>Usual service<select name="service" data-service-options required></select></label>
+            <label>Main collection area<input name="location" placeholder="Town, city or postcode area"></label>
+          </div>
+          <div class="form-row">
+            <label>Approx volume<select name="volume">
+              <option value="">Not sure yet</option>
+              <option>1-20 shipments a week</option>
+              <option>20-100 shipments a week</option>
+              <option>100+ shipments a week</option>
+              <option>Project or one-off movement</option>
+            </select></label>
+            <label>Main issue<input name="issue" placeholder="e.g. failed collections, damage, customs"></label>
+          </div>
+          <label>Delivery profile<textarea name="details" rows="5" placeholder="Goods, routes, dimensions, access notes, customs details, storage needs, customer promise..."></textarea></label>
+          <button class="button primary full" type="submit">Save account details</button>
+          <p class="form-note">This stores details in this browser only. A secure account system is needed before holding live customer records online.</p>
+          <p class="form-status" role="status" data-customer-status></p>
+        </form>
+      </section>
+      <section class="section-inner dashboard-section" data-customer-summary hidden>
+        <div class="section-heading">
+          <p class="eyebrow dark">Saved profile</p>
+          <h2>Ready for the next enquiry.</h2>
+          <p class="section-lede" data-customer-summary-text></p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function termsHtml() {
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terms | The Delivery Desk</title>
+    <meta name="description" content="Website terms for The Delivery Desk, an independent logistics matching site powered by SVMK.">
+    <link rel="canonical" href="${siteUrl}/terms">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    ${headerHtml("")}
+    <main>
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Terms</p>
+          <h1>Website terms and introduction notice.</h1>
+          <p>The Delivery Desk helps businesses frame delivery and logistics enquiries and, where appropriate, introduces suitable partners.</p>
+        </div>
+      </section>
+      <section class="section-inner local-detail">
+        <div class="faq-list">
+          <details open>
+            <summary>Independent matching</summary>
+            <p>We provide practical enquiry qualification and partner matching. We are not the carrier, courier, warehouse, freight forwarder or final service provider unless separately agreed in writing.</p>
+          </details>
+          <details open>
+            <summary>Partner introductions</summary>
+            <p>Any partner introduction is based on the information provided by the business and the known partner fit at the time. The final service agreement, pricing, liability and service terms are agreed directly with the relevant provider.</p>
+          </details>
+          <details open>
+            <summary>Information accuracy</summary>
+            <p>Businesses should provide accurate shipment, goods, customs, access, timing and handling information. Wrong or incomplete details can affect pricing, service availability and delivery performance.</p>
+          </details>
+          <details open>
+            <summary>Contact</summary>
+            <p>Questions can be sent to <a href="mailto:${inboundEmail}">${inboundEmail}</a>.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function cookiesHtml() {
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cookie Notice | The Delivery Desk</title>
+    <meta name="description" content="Cookie notice for The Delivery Desk website.">
+    <link rel="canonical" href="${siteUrl}/cookies">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    ${headerHtml("")}
+    <main>
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Cookie notice</p>
+          <h1>How this website uses browser storage.</h1>
+          <p>The live marketing site should use only essential cookies unless analytics, advertising or account tools are added and properly disclosed.</p>
+        </div>
+      </section>
+      <section class="section-inner local-detail">
+        <div class="faq-list">
+          <details open>
+            <summary>Essential browser storage</summary>
+            <p>Account, enquiry and partner forms may store information in the browser you are using so details can be reused during the journey.</p>
+          </details>
+          <details open>
+            <summary>Analytics</summary>
+            <p>If analytics is added, the cookie notice should be updated with the provider, purpose, retention period and consent controls.</p>
+          </details>
+          <details open>
+            <summary>Questions</summary>
+            <p>Contact <a href="mailto:${inboundEmail}">${inboundEmail}</a> with questions about site privacy or cookies.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+`;
+}
+
 const generated = [];
 const sitemapPaths = [
   "/",
   "/privacy",
+  "/terms",
+  "/cookies",
   "/how-we-work",
   "/insights",
   "/locations",
-  "/sectors"
+  "/sectors",
+  "/partners"
 ];
+
+fs.writeFileSync(path.join(__dirname, "terms.html"), termsHtml(), "utf8");
+fs.writeFileSync(path.join(__dirname, "cookies.html"), cookiesHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "partners"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "partners", "index.html"), partnersHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "partner-login"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "partner-login", "index.html"), partnerLoginHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "customer-account"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "customer-account", "index.html"), customerAccountHtml(), "utf8");
 
 fs.mkdirSync(path.join(__dirname, "how-we-work"), { recursive: true });
 fs.writeFileSync(path.join(__dirname, "how-we-work", "index.html"), howWeWorkHtml(), "utf8");

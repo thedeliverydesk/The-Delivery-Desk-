@@ -71,6 +71,7 @@ const cities = [
 
 const params = new URLSearchParams(window.location.search);
 const leadEndpoint = window.DELIVERY_DESK_LEAD_ENDPOINT || "";
+const inboundEmail = "andy@svmk.co.uk";
 
 function titleCaseSlug(value) {
   return (value || "")
@@ -275,6 +276,78 @@ function renderAdminPage() {
   }
 }
 
+function wirePartnerForms() {
+  document.querySelectorAll("[data-partner-form]").forEach((form) => {
+    const status = form.querySelector("[data-partner-status]");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const applications = JSON.parse(localStorage.getItem("deliveryDeskPartnerApplications") || "[]");
+      const payload = {
+        reference: `TDD-P-${String(applications.length + 1).padStart(4, "0")}`,
+        createdAt: new Date().toISOString(),
+        ...Object.fromEntries(new FormData(form).entries())
+      };
+      applications.push(payload);
+      localStorage.setItem("deliveryDeskPartnerApplications", JSON.stringify(applications));
+      if (status) status.textContent = `Saved. You can also email the details to ${inboundEmail}.`;
+      form.reset();
+      fillServiceOptions();
+    });
+  });
+}
+
+function wirePrototypeLogins() {
+  document.querySelectorAll("[data-preview-login]").forEach((form) => {
+    const status = form.querySelector("[data-login-status]");
+    const dashboard = document.querySelector("[data-partner-dashboard]");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      localStorage.setItem("deliveryDeskPrototypeLogin", JSON.stringify({
+        type: form.dataset.loginType || "prototype",
+        createdAt: new Date().toISOString(),
+        ...data
+      }));
+      if (status) status.textContent = "Partner area opened. Secure authentication still needs to be added before launch.";
+      if (dashboard) dashboard.hidden = false;
+    });
+  });
+}
+
+function wireCustomerProfile() {
+  document.querySelectorAll("[data-customer-profile]").forEach((form) => {
+    const status = form.querySelector("[data-customer-status]");
+    const summary = document.querySelector("[data-customer-summary]");
+    const summaryText = document.querySelector("[data-customer-summary-text]");
+    const saved = JSON.parse(localStorage.getItem("deliveryDeskCustomerProfile") || "null");
+
+    if (saved) {
+      Object.entries(saved).forEach(([key, value]) => {
+        const field = form.elements[key];
+        if (field && typeof value === "string") field.value = value;
+      });
+      if (summary && summaryText) {
+        summary.hidden = false;
+        summaryText.textContent = `${saved.business || "Your business"} profile saved for ${saved.service || "delivery services"} around ${saved.location || "your collection area"}.`;
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const payload = {
+        updatedAt: new Date().toISOString(),
+        ...Object.fromEntries(new FormData(form).entries())
+      };
+      localStorage.setItem("deliveryDeskCustomerProfile", JSON.stringify(payload));
+      if (status) status.textContent = "Saved in this browser. Secure customer accounts can replace this browser profile later.";
+      if (summary && summaryText) {
+        summary.hidden = false;
+        summaryText.textContent = `${payload.business || "Your business"} profile saved for ${payload.service || "delivery services"} around ${payload.location || "your collection area"}.`;
+      }
+    });
+  });
+}
+
 function detectService(message) {
   const text = message.toLowerCase();
   const rules = [
@@ -415,3 +488,6 @@ wireLeadForms();
 renderThankYouPage();
 renderAdminPage();
 wireAssistant();
+wirePartnerForms();
+wirePrototypeLogins();
+wireCustomerProfile();

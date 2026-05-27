@@ -791,6 +791,52 @@ textarea {
   padding: clamp(34px, 6vw, 76px) 0;
 }
 
+.proof-section,
+.partner-band,
+.dashboard-section {
+  padding: clamp(42px, 7vw, 86px) 0;
+}
+
+.proof-grid,
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proof-card,
+.trust-strip article {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(16, 47, 74, 0.06);
+}
+
+.proof-card p:last-child,
+.trust-strip span {
+  color: var(--muted);
+}
+
+.trust-strip strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.proof-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+}
+
+.proof-note a,
+.insight-card a {
+  color: var(--green);
+  font-weight: 900;
+}
+
 .insight-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -972,6 +1018,8 @@ th {
   .problem-grid,
   .two-col,
   .split-section,
+  .proof-grid,
+  .trust-strip,
   .insight-grid,
   .related-grid,
   .assistant-layout,

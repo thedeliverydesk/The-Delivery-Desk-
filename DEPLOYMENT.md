@@ -18,7 +18,8 @@ Use Vercel Hobby while the site is being tested. Upgrade before running the site
 - Start on Vercel Hobby for prototype/testing.
 - Upgrade to Pro or move to Cloudflare Pages before paid ads or live lead collection.
 - Keep lead capture low-cost by sending forms into Google Sheets first.
-- Use Genie for follow-up/qualification if it can read or receive the sheet/form leads.
+- Send new enquiry alerts to `andy@svmk.co.uk`.
+- Keep working setup files in the shared Drive folder: `https://drive.google.com/drive/folders/1kJmxRjpcgwWjP00Nht1NxiMsL7Gl0Wfd?usp=sharing`
 
 ## URL structure
 
@@ -27,6 +28,8 @@ Use Vercel Hobby while the site is being tested. Upgrade before running the site
 - Service guide: `/same-day-delivery/issues-solutions`
 - Location hub: `/locations/manchester`
 - Guide hub: `/insights`
+- Partner application: `/partners`
+- Customer account preview: `/customer-account`
 - Sea freight overview: `/sea-freight-container-logistics`
 - Sea freight local page: `/sea-freight-container-logistics/london`
 
@@ -36,10 +39,10 @@ Vercel Deployment Protection / Vercel Authentication must be switched off before
 
 ## Next setup step
 
-Replace prototype browser-local lead storage with Google Sheets routing before the site is used for real enquiries.
+Replace browser-local enquiry storage with Google Sheets routing before the site is used for real enquiries.
 
 For sitemap generation on the live domain, add a Vercel environment variable:
 
 `SITE_URL=https://your-domain.co.uk`
 
-For Google Sheets lead routing, add the Apps Script web app URL to `script.js` as `DELIVERY_DESK_LEAD_ENDPOINT`, or inject it before `script.js` loads.
+For Google Sheets lead routing, add the Apps Script web app URL to `script.js` as `DELIVERY_DESK_LEAD_ENDPOINT`, or inject it before `script.js` loads. The Apps Script should append rows to the lead sheet and send an email notification to `andy@svmk.co.uk`.

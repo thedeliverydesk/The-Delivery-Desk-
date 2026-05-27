@@ -9,11 +9,15 @@ The current build generates 1,280 local service landing pages across 8 logistics
 - `index.html` - homepage with service blocks, local page selector and lead form.
 - `landing.html` - reusable local-service landing page template.
 - `styles.css` - responsive layout and brand styling.
-- `script.js` - service/city data, local landing page rendering and prototype lead storage.
+- `script.js` - service/city data, local landing page rendering, enquiry storage and account preview behaviour.
 - `assets/logistics-hero.png` - generated hero image for the homepage.
-- `thank-you.html` - prototype confirmation page after form submission.
+- `thank-you.html` - confirmation page after form submission.
 - `privacy.html` - plain-English enquiry privacy notice.
-- `admin.html` - browser-local prototype lead viewer and CSV export.
+- `admin.html` - browser-local enquiry viewer and CSV export.
+- `partners/index.html` - partner network application page.
+- `partner-login/index.html` - partner account preview.
+- `customer-account/index.html` - customer account preview.
+- `terms.html`, `cookies.html` - legal support pages.
 - `generate-pages.js` - static page generator for service and city pages.
 - `audit-site.js` - static QA script for titles, descriptions, internal links, anchors, sitemap checks and JSON-LD.
 - `COMPETITOR_SEO_NOTES.md` - market positioning notes from competitor research.
@@ -24,7 +28,13 @@ The current build generates 1,280 local service landing pages across 8 logistics
 
 ## Current behaviour
 
-The lead form stores prototype enquiries in browser `localStorage` under `deliveryDeskLeads`. It can also post to a Google Apps Script, Genie or CRM handoff endpoint if `DELIVERY_DESK_LEAD_ENDPOINT` is injected before `script.js` loads.
+The lead form stores browser-local enquiries under `deliveryDeskLeads` while the site is being tested. It can also post to a Google Apps Script or lead handoff endpoint if `DELIVERY_DESK_LEAD_ENDPOINT` is injected before `script.js` loads.
+
+Inbound enquiry email: `andy@svmk.co.uk`
+
+Shared Drive folder for working lead assets and setup documents:
+
+`https://drive.google.com/drive/folders/1kJmxRjpcgwWjP00Nht1NxiMsL7Gl0Wfd?usp=sharing`
 
 Local pages are generated as folder-based SEO paths, for example:
 
@@ -60,7 +70,7 @@ Also prioritise:
 
 ## Next build steps
 
-1. Add real lead routing to Google Sheets, Genie, email or a CRM.
+1. Add real lead routing to Google Sheets and email alerts to `andy@svmk.co.uk`.
 2. Add analytics, call tracking and conversion events.
 3. Disable Vercel Deployment Protection before public indexing.
 4. Hand-polish the highest-value city/service pages first.
