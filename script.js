@@ -93,6 +93,47 @@ function findService(slug) {
   return services.find((service) => service.slug === slug || (service.aliases || []).includes(slug)) || services[0];
 }
 
+function serviceLabel(value) {
+  if (Array.isArray(value)) return value.map(serviceLabel).join(", ");
+  const match = services.find((service) => service.slug === value);
+  return match ? match.name : value;
+}
+
+function formatValue(value) {
+  if (Array.isArray(value)) return value.map((item) => serviceLabel(item)).join(", ");
+  return serviceLabel(value || "");
+}
+
+function formDataToObject(form) {
+  const data = {};
+  for (const [key, value] of new FormData(form).entries()) {
+    if (Object.prototype.hasOwnProperty.call(data, key)) {
+      data[key] = Array.isArray(data[key]) ? [...data[key], value] : [data[key], value];
+    } else {
+      data[key] = value;
+    }
+  }
+  return data;
+}
+
+function setFieldValue(field, value) {
+  if (!field) return;
+  if (field instanceof RadioNodeList) {
+    Array.from(field).forEach((item) => {
+      item.checked = Array.isArray(value) ? value.includes(item.value) : item.value === value;
+    });
+    return;
+  }
+  if (field.tagName === "SELECT" && field.multiple) {
+    const values = Array.isArray(value) ? value : [value];
+    Array.from(field.options).forEach((option) => {
+      option.selected = values.includes(option.value);
+    });
+    return;
+  }
+  field.value = Array.isArray(value) ? value.join(", ") : value;
+}
+
 function localUrl(service, city) {
   return `${service.slug}/${citySlug(city)}/index.html`;
 }
@@ -184,7 +225,7 @@ function renderLocalPage() {
   if (locationField) locationField.value = city;
 
   document.querySelectorAll("[data-service-options]").forEach((select) => {
-    select.value = service.slug;
+    setFieldValue(select, service.slug);
   });
 }
 
@@ -194,7 +235,7 @@ function wireLeadForms() {
       event.preventDefault();
       const submitButton = form.querySelector("button[type='submit']");
       if (submitButton) submitButton.disabled = true;
-      const data = Object.fromEntries(new FormData(form).entries());
+      const data = formDataToObject(form);
       const leads = JSON.parse(localStorage.getItem("deliveryDeskLeads") || "[]");
       const reference = `TDD-${String(leads.length + 1).padStart(4, "0")}`;
       const payload = {
@@ -253,7 +294,7 @@ function renderAdminPage() {
       <td>${lead.business || ""}</td>
       <td>${lead.name || ""}</td>
       <td>${lead.email || ""}</td>
-      <td>${lead.service || ""}</td>
+      <td>${formatValue(lead.service)}</td>
       <td>${lead.location || ""}</td>
       <td>${lead.volume || ""}</td>
       <td>${lead.issue || ""}</td>
@@ -264,7 +305,7 @@ function renderAdminPage() {
   if (exportButton) {
     exportButton.addEventListener("click", () => {
       const headers = ["reference", "createdAt", "business", "name", "email", "phone", "service", "location", "volume", "issue", "consent", "details"];
-      const rows = [headers.join(","), ...leads.map((lead) => headers.map((header) => escapeCsv(lead[header])).join(","))];
+      const rows = [headers.join(","), ...leads.map((lead) => headers.map((header) => escapeCsv(formatValue(lead[header]))).join(","))];
       const blob = new Blob([rows.join("\n")], { type: "text/csv" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
@@ -285,7 +326,7 @@ function wirePartnerForms() {
       const payload = {
         reference: `TDD-P-${String(applications.length + 1).padStart(4, "0")}`,
         createdAt: new Date().toISOString(),
-        ...Object.fromEntries(new FormData(form).entries())
+        ...formDataToObject(form)
       };
       applications.push(payload);
       localStorage.setItem("deliveryDeskPartnerApplications", JSON.stringify(applications));
@@ -302,7 +343,7 @@ function wirePrototypeLogins() {
     const dashboard = document.querySelector("[data-partner-dashboard]");
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
+      const data = formDataToObject(form);
       localStorage.setItem("deliveryDeskPrototypeLogin", JSON.stringify({
         type: form.dataset.loginType || "prototype",
         createdAt: new Date().toISOString(),
@@ -324,11 +365,11 @@ function wireCustomerProfile() {
     if (saved) {
       Object.entries(saved).forEach(([key, value]) => {
         const field = form.elements[key];
-        if (field && typeof value === "string") field.value = value;
+        setFieldValue(field, value);
       });
       if (summary && summaryText) {
         summary.hidden = false;
-        summaryText.textContent = `${saved.business || "Your business"} profile saved for ${saved.service || "delivery services"} around ${saved.location || "your collection area"}.`;
+        summaryText.textContent = `${saved.business || "Your business"} profile saved for ${formatValue(saved.service) || "delivery services"} around ${saved.location || "your collection area"}.`;
       }
     }
 
@@ -336,13 +377,13 @@ function wireCustomerProfile() {
       event.preventDefault();
       const payload = {
         updatedAt: new Date().toISOString(),
-        ...Object.fromEntries(new FormData(form).entries())
+        ...formDataToObject(form)
       };
       localStorage.setItem("deliveryDeskCustomerProfile", JSON.stringify(payload));
       if (status) status.textContent = "Saved in this browser. Secure customer accounts can replace this browser profile later.";
       if (summary && summaryText) {
         summary.hidden = false;
-        summaryText.textContent = `${payload.business || "Your business"} profile saved for ${payload.service || "delivery services"} around ${payload.location || "your collection area"}.`;
+        summaryText.textContent = `${payload.business || "Your business"} profile saved for ${formatValue(payload.service) || "delivery services"} around ${payload.location || "your collection area"}.`;
       }
     });
   });
@@ -432,7 +473,7 @@ function prefillLeadForm(service, city, message, issue) {
   const detailsInput = leadForm.querySelector("[name='details']");
   const issueSelect = leadForm.querySelector("[name='issue']");
 
-  if (serviceSelect && service) serviceSelect.value = service.slug;
+  if (serviceSelect && service) setFieldValue(serviceSelect, service.slug);
   if (locationInput && city) locationInput.value = city;
   if (detailsInput && !detailsInput.value) detailsInput.value = message;
   if (issueSelect && issue) issueSelect.value = issue;

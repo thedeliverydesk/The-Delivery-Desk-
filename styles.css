@@ -638,6 +638,12 @@ label {
   font-weight: 800;
 }
 
+label small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
 input,
 select,
 textarea {
@@ -653,6 +659,16 @@ textarea {
 
 textarea {
   resize: vertical;
+}
+
+select[multiple] {
+  min-height: 158px;
+  padding: 8px;
+}
+
+select[multiple] option {
+  padding: 7px 8px;
+  border-radius: 6px;
 }
 
 .location-tool label {

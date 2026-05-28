@@ -632,7 +632,7 @@ ${nearbyCityLinks(service, city)}
             <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
           </div>
           <div class="form-row">
-            <label>Service needed<select name="service" data-service-options required></select></label>
+            <label>Services needed<select name="service" data-service-options multiple size="6" required></select><small>Choose one or more services.</small></label>
             <label>Collection area<input name="location" value="${escapeHtml(city.name)}" required></label>
           </div>
           <div class="form-row">
@@ -676,7 +676,7 @@ ${nearbyCityLinks(service, city)}
     </footer>
 
     <script src="../../script.js"></script>
-    <script>document.querySelectorAll("[data-service-options]").forEach((select) => { select.value = "${service.slug}"; });</script>
+    <script>document.querySelectorAll("[data-service-options]").forEach((select) => { setFieldValue(select, "${service.slug}"); });</script>
   </body>
 </html>
 `;
@@ -832,7 +832,7 @@ ${cityLinks}
             <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
           </div>
           <div class="form-row">
-            <label>Service needed<select name="service" data-service-options required></select></label>
+            <label>Services needed<select name="service" data-service-options multiple size="6" required></select><small>Choose one or more services.</small></label>
             <label>Collection area<input name="location" placeholder="Town or city" required></label>
           </div>
           <div class="form-row">
@@ -876,7 +876,7 @@ ${cityLinks}
     </footer>
 
     <script src="../script.js"></script>
-    <script>document.querySelectorAll("[data-service-options]").forEach((select) => { select.value = "${service.slug}"; });</script>
+    <script>document.querySelectorAll("[data-service-options]").forEach((select) => { setFieldValue(select, "${service.slug}"); });</script>
   </body>
 </html>
 `;
@@ -1574,7 +1574,7 @@ function partnersHtml() {
             <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
           </div>
           <div class="form-row">
-            <label>Core service<select name="service" data-service-options required></select></label>
+            <label>Core services<select name="service" data-service-options multiple size="6" required></select><small>Choose every service you want to receive leads for.</small></label>
             <label>Coverage area<input name="coverage" placeholder="e.g. Midlands, London, UK-wide, EU lanes" required></label>
           </div>
           <label>What should we know?<textarea name="details" rows="5" placeholder="Fleet, depot locations, specialist handling, insurance, service levels, regions, sectors you serve..." required></textarea></label>
@@ -1716,7 +1716,7 @@ function customerAccountHtml() {
             <label>Contact email<input name="email" type="email" autocomplete="email" required></label>
           </div>
           <div class="form-row">
-            <label>Usual service<select name="service" data-service-options required></select></label>
+            <label>Usual services<select name="service" data-service-options multiple size="6" required></select><small>Choose one or more services.</small></label>
             <label>Main collection area<input name="location" placeholder="Town, city or postcode area"></label>
           </div>
           <div class="form-row">

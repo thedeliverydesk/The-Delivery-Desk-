@@ -222,7 +222,7 @@
             <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
           </div>
           <div class="form-row">
-            <label>Service needed<select name="service" data-service-options required></select></label>
+            <label>Services needed<select name="service" data-service-options multiple size="6" required></select><small>Choose one or more services.</small></label>
             <label>Collection area<input name="location" value="St Asaph" required></label>
           </div>
           <div class="form-row">
@@ -266,6 +266,6 @@
     </footer>
 
     <script src="../../script.js"></script>
-    <script>document.querySelectorAll("[data-service-options]").forEach((select) => { select.value = "pallet-freight"; });</script>
+    <script>document.querySelectorAll("[data-service-options]").forEach((select) => { setFieldValue(select, "pallet-freight"); });</script>
   </body>
 </html>
