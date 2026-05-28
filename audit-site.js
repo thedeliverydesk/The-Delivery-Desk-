@@ -51,6 +51,8 @@ let titles = 0;
 let descriptions = 0;
 let canonicals = 0;
 let schemaBlocks = 0;
+let openGraph = 0;
+let twitterCards = 0;
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
@@ -67,6 +69,9 @@ for (const file of htmlFiles) {
   }
 
   if (/<link rel=["']canonical["']/.test(html)) canonicals += 1;
+
+  if (/<meta property=["']og:title["']/.test(html) && /<meta property=["']og:description["']/.test(html)) openGraph += 1;
+  if (/<meta name=["']twitter:card["']/.test(html)) twitterCards += 1;
 
   for (const block of jsonLdBlocks(html)) {
     try {
@@ -104,12 +109,16 @@ if (!sitemap.includes("/same-day-delivery/issues-solutions")) failures.push("sit
 if (!sitemap.includes("/how-we-work")) failures.push("sitemap: missing how-we-work page");
 if (!sitemap.includes("/sectors/ecommerce")) failures.push("sitemap: missing ecommerce sector page");
 if (sitemap.includes("/admin") || sitemap.includes("/thank-you")) failures.push("sitemap: contains noindex support pages");
+if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(sitemap)) failures.push("sitemap: missing lastmod dates");
+if (!/<priority>/.test(sitemap)) failures.push("sitemap: missing priority hints");
 
 console.log(JSON.stringify({
   htmlFiles: htmlFiles.length,
   titles,
   descriptions,
   canonicals,
+  openGraph,
+  twitterCards,
   schemaBlocks,
   sitemapUrls: sitemapUrls.length,
   failures

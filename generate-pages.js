@@ -443,6 +443,34 @@ function faqSchema(items) {
   };
 }
 
+function seoMeta({ title, description, canonical, image = `${siteUrl}/assets/logistics-hero.png`, type = "website" }) {
+  return `<title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}">
+    <link rel="canonical" href="${escapeHtml(canonical)}">
+    <meta property="og:title" content="${escapeHtml(title)}">
+    <meta property="og:description" content="${escapeHtml(description)}">
+    <meta property="og:type" content="${escapeHtml(type)}">
+    <meta property="og:url" content="${escapeHtml(canonical)}">
+    <meta property="og:image" content="${escapeHtml(image)}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeHtml(title)}">
+    <meta name="twitter:description" content="${escapeHtml(description)}">
+    <meta name="twitter:image" content="${escapeHtml(image)}">`;
+}
+
+function breadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.label,
+      "item": item.url || `${siteUrl}${item.path || "/"}`
+    }))
+  };
+}
+
 function serviceNavLinks(prefix) {
   return services.map((service) => `<a href="${prefix}${service.slug}/index.html">${escapeHtml(service.name)}</a>`).join("\n              ");
 }
@@ -643,8 +671,16 @@ ${regions}
 
 function pageHtml(service, city) {
   const title = `${service.name} in ${city.name} | The Delivery Desk`;
-  const description = `Need ${service.phrase} in ${city.name}? Independent delivery and logistics help for businesses in ${city.region}. Powered by SVMK.`;
+  const areas = businessAreasFor(city);
+  const nearby = nearbyCitiesFor(city, 3);
+  const nearbyText = nearby.length ? ` Routes can include ${nearby.map((nearbyCity) => nearbyCity.name).join(", ")}.` : "";
+  const description = `Need ${service.phrase} in ${city.name}? Independent matching for businesses around ${areas[0]}, ${areas[1]} and ${city.region}.${nearbyText}`;
   const canonical = `${siteUrl}/${service.slug}/${citySlug(city.name)}`;
+  const breadcrumbItems = [
+    { label: "Home", path: "/" },
+    { label: service.name, path: `/${service.slug}` },
+    { label: city.name, path: `/${service.slug}/${citySlug(city.name)}` }
+  ];
   const localFaq = [
     ...service.faq,
     [
@@ -661,10 +697,27 @@ function pageHtml(service, city) {
       "areaServed": city.name,
       "provider": {
         "@type": "ProfessionalService",
-        "name": "The Delivery Desk"
+        "name": "The Delivery Desk",
+        "url": siteUrl
+      },
+      "serviceArea": {
+        "@type": "Place",
+        "name": city.name
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": `${service.name} coverage in ${city.name}`,
+        "itemListElement": areas.map((area) => ({
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": `${service.name} around ${area}`
+          }
+        }))
       }
     },
-    faqSchema(localFaq)
+    faqSchema(localFaq),
+    breadcrumbSchema(breadcrumbItems)
   ];
 
   return `<!doctype html>
@@ -672,9 +725,7 @@ function pageHtml(service, city) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}">
-    <link rel="canonical" href="${escapeHtml(canonical)}">
+    ${seoMeta({ title, description, canonical, type: "article" })}
     <link rel="stylesheet" href="../../styles.css">
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
@@ -861,6 +912,10 @@ function serviceIndexHtml(service) {
   const title = `${service.name} | The Delivery Desk`;
   const description = `Practical help with ${service.phrase}, including partner selection, service fit and delivery route planning. Powered by SVMK.`;
   const canonical = `${siteUrl}/${service.slug}`;
+  const breadcrumbItems = [
+    { label: "Home", path: "/" },
+    { label: service.name, path: `/${service.slug}` }
+  ];
   const schema = [
     {
       "@context": "https://schema.org",
@@ -870,10 +925,12 @@ function serviceIndexHtml(service) {
       "areaServed": "United Kingdom",
       "provider": {
         "@type": "ProfessionalService",
-        "name": "The Delivery Desk"
+        "name": "The Delivery Desk",
+        "url": siteUrl
       }
     },
-    faqSchema(service.faq)
+    faqSchema(service.faq),
+    breadcrumbSchema(breadcrumbItems)
   ];
 
   return `<!doctype html>
@@ -881,9 +938,7 @@ function serviceIndexHtml(service) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}">
-    <link rel="canonical" href="${escapeHtml(canonical)}">
+    ${seoMeta({ title, description, canonical })}
     <link rel="stylesheet" href="../styles.css">
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
@@ -1054,6 +1109,11 @@ function serviceGuideHtml(service) {
   const title = `${service.name} Problems and Solutions | The Delivery Desk`;
   const description = `Common ${service.phrase} problems, warning signs and practical ways UK businesses can improve service fit before choosing a delivery partner.`;
   const canonical = `${siteUrl}/${service.slug}/issues-solutions`;
+  const breadcrumbItems = [
+    { label: "Home", path: "/" },
+    { label: service.name, path: `/${service.slug}` },
+    { label: "Problems and solutions", path: `/${service.slug}/issues-solutions` }
+  ];
   const schema = [
     {
       "@context": "https://schema.org",
@@ -1069,7 +1129,8 @@ function serviceGuideHtml(service) {
         "name": "The Delivery Desk"
       }
     },
-    faqSchema(service.faq)
+    faqSchema(service.faq),
+    breadcrumbSchema(breadcrumbItems)
   ];
 
   return `<!doctype html>
@@ -1077,9 +1138,7 @@ function serviceGuideHtml(service) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}">
-    <link rel="canonical" href="${escapeHtml(canonical)}">
+    ${seoMeta({ title, description, canonical, type: "article" })}
     <link rel="stylesheet" href="../../styles.css">
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
@@ -1171,6 +1230,13 @@ ${faqItems(service.faq)}
 }
 
 function insightsIndexHtml() {
+  const title = "Delivery and Logistics Guides | The Delivery Desk";
+  const description = "Independent delivery and logistics guides for UK businesses comparing parcel, same-day, 2-man, freight, storage and international delivery options.";
+  const canonical = `${siteUrl}/insights`;
+  const schema = breadcrumbSchema([
+    { label: "Home", path: "/" },
+    { label: "Guides", path: "/insights" }
+  ]);
   const guideLinks = services.map((service) => `
             <article class="service-card">
               <span class="service-icon" aria-hidden="true">G</span>
@@ -1184,10 +1250,9 @@ function insightsIndexHtml() {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Delivery and Logistics Guides | The Delivery Desk</title>
-    <meta name="description" content="Independent delivery and logistics guides for UK businesses comparing parcel, same-day, 2-man, freight, storage and international delivery options.">
-    <link rel="canonical" href="${siteUrl}/insights">
+    ${seoMeta({ title, description, canonical })}
     <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
   <body>
     ${headerHtml("../")}
@@ -1234,6 +1299,13 @@ ${guideLinks}
 }
 
 function locationsIndexHtml() {
+  const title = "UK Delivery Service Locations | The Delivery Desk";
+  const description = "Browse UK city and town landing pages for parcel collections, same-day delivery, 2-man delivery, storage, freight, international delivery and sea freight.";
+  const canonical = `${siteUrl}/locations`;
+  const schema = breadcrumbSchema([
+    { label: "Home", path: "/" },
+    { label: "Locations", path: "/locations" }
+  ]);
   const official = cities.filter((city) => city.officialCity);
   const commercial = cities.filter((city) => !city.officialCity);
   const links = (items) => items.map((city) => `<a href="${citySlug(city.name)}/index.html">${escapeHtml(city.name)}</a>`).join("\n");
@@ -1243,10 +1315,9 @@ function locationsIndexHtml() {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UK Delivery Service Locations | The Delivery Desk</title>
-    <meta name="description" content="Browse UK city and town landing pages for parcel collections, same-day delivery, 2-man delivery, storage, freight, international delivery and sea freight.">
-    <link rel="canonical" href="${siteUrl}/locations">
+    ${seoMeta({ title, description, canonical })}
     <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
   <body>
     ${headerHtml("../")}
@@ -1418,24 +1489,35 @@ ${services.map((service) => `<a href="../${service.slug}/issues-solutions/index.
 
 function cityHubHtml(city) {
   const title = `Delivery and Logistics Services in ${city.name} | The Delivery Desk`;
-  const description = `Independent delivery and logistics matching in ${city.name}, including parcels, same-day, 2-man delivery, storage, freight, international delivery and sea freight.`;
+  const areas = businessAreasFor(city);
+  const description = `Independent delivery and logistics matching in ${city.name}, covering parcels, same-day, 2-man, storage, freight, international delivery and local business areas like ${areas[0]}.`;
   const canonical = `${siteUrl}/locations/${citySlug(city.name)}`;
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": title,
-    "description": description,
-    "about": services.map((service) => service.name)
-  };
+  const breadcrumbItems = [
+    { label: "Home", path: "/" },
+    { label: "Locations", path: "/locations" },
+    { label: city.name, path: `/locations/${citySlug(city.name)}` }
+  ];
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": title,
+      "description": description,
+      "about": services.map((service) => service.name),
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": city.name
+      }
+    },
+    breadcrumbSchema(breadcrumbItems)
+  ];
 
   return `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}">
-    <link rel="canonical" href="${escapeHtml(canonical)}">
+    ${seoMeta({ title, description, canonical })}
     <link rel="stylesheet" href="../../styles.css">
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
@@ -1511,6 +1593,13 @@ function sectorServiceLinks(sector, prefix = "../") {
 }
 
 function sectorsIndexHtml() {
+  const title = "Delivery Support by Sector | The Delivery Desk";
+  const description = "Delivery and logistics matching for ecommerce, furniture, trade suppliers, manufacturers, wholesalers, importers, exporters and retail businesses.";
+  const canonical = `${siteUrl}/sectors`;
+  const schema = breadcrumbSchema([
+    { label: "Home", path: "/" },
+    { label: "Sectors", path: "/sectors" }
+  ]);
   const cards = sectors.map((sector) => `
             <article class="service-card">
               <span class="service-icon" aria-hidden="true">S</span>
@@ -1524,10 +1613,9 @@ function sectorsIndexHtml() {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Delivery Support by Sector | The Delivery Desk</title>
-    <meta name="description" content="Delivery and logistics matching for ecommerce, furniture, trade suppliers, manufacturers, wholesalers, importers, exporters and retail businesses.">
-    <link rel="canonical" href="${siteUrl}/sectors">
+    ${seoMeta({ title, description, canonical })}
     <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
   <body>
     ${headerHtml("../")}
@@ -1577,25 +1665,32 @@ function sectorHtml(sector) {
   const title = `${sector.name} Delivery and Logistics Help | The Delivery Desk`;
   const description = `Independent delivery and logistics matching for ${sector.name.toLowerCase()}, covering service fit, delivery problems and suitable partner options.`;
   const canonical = `${siteUrl}/sectors/${sector.slug}`;
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `${sector.name} delivery and logistics help`,
-    "description": description,
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "The Delivery Desk"
-    }
-  };
+  const breadcrumbItems = [
+    { label: "Home", path: "/" },
+    { label: "Sectors", path: "/sectors" },
+    { label: sector.name, path: `/sectors/${sector.slug}` }
+  ];
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": `${sector.name} delivery and logistics help`,
+      "description": description,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "The Delivery Desk",
+        "url": siteUrl
+      }
+    },
+    breadcrumbSchema(breadcrumbItems)
+  ];
 
   return `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}">
-    <link rel="canonical" href="${escapeHtml(canonical)}">
+    ${seoMeta({ title, description, canonical })}
     <link rel="stylesheet" href="../../styles.css">
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   </head>
@@ -2109,9 +2204,22 @@ for (const service of services) {
   }
 }
 
+const sitemapLastmod = new Date().toISOString().slice(0, 10);
+function sitemapEntry(urlPath) {
+  const depth = urlPath.split("/").filter(Boolean).length;
+  const priority = urlPath === "/" ? "1.0" : depth === 1 ? "0.8" : depth === 2 ? "0.7" : "0.6";
+  const changefreq = urlPath === "/" || depth === 1 ? "weekly" : "monthly";
+  return `  <url>
+    <loc>${siteUrl}${urlPath}</loc>
+    <lastmod>${sitemapLastmod}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapPaths.map((urlPath) => `  <url><loc>${siteUrl}${urlPath}</loc></url>`).join("\n")}
+${sitemapPaths.map(sitemapEntry).join("\n")}
 </urlset>
 `;
 
