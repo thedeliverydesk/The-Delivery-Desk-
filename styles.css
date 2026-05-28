@@ -692,6 +692,85 @@ select[multiple] option {
   font-size: 13px;
 }
 
+.location-finder {
+  display: grid;
+  gap: 24px;
+}
+
+.location-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.location-featured-grid a {
+  display: grid;
+  gap: 4px;
+  min-height: 82px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.location-featured-grid strong {
+  color: var(--white);
+  font-size: 18px;
+}
+
+.location-featured-grid span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.location-directory {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.location-directory summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  color: var(--white);
+  font-weight: 900;
+}
+
+.location-region-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0 20px 20px;
+}
+
+.location-region-grid article {
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.location-region-grid h3 {
+  margin-bottom: 12px;
+  color: var(--white);
+  font-size: 17px;
+}
+
+.location-region-grid article div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.location-region-grid a {
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .locations-more {
   margin: 22px 0 0;
 }
@@ -1036,6 +1115,8 @@ th {
   .split-section,
   .proof-grid,
   .trust-strip,
+  .location-featured-grid,
+  .location-region-grid,
   .insight-grid,
   .related-grid,
   .assistant-layout,

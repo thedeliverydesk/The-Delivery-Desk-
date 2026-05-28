@@ -468,6 +468,52 @@ function cityServiceLinks(city, prefix = "../") {
   return services.map((service) => `<a href="${prefix}${service.slug}/${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`).join("\n");
 }
 
+function serviceLocationDirectory(service) {
+  const featuredNames = [
+    "London", "Birmingham", "Manchester", "Leeds", "Glasgow", "Bristol",
+    "Liverpool", "Cardiff", "Edinburgh", "Belfast", "Southampton", "Nottingham"
+  ];
+  const featured = featuredNames
+    .map((name) => cities.find((city) => city.name === name))
+    .filter(Boolean)
+    .map((city) => `
+              <a href="${citySlug(city.name)}/index.html">
+                <strong>${escapeHtml(city.name)}</strong>
+                <span>${escapeHtml(service.name)} support</span>
+              </a>`).join("\n");
+
+  const regionMap = new Map();
+  for (const city of cities) {
+    if (!regionMap.has(city.region)) regionMap.set(city.region, []);
+    regionMap.get(city.region).push(city);
+  }
+
+  const regions = [...regionMap.entries()].map(([region, regionCities]) => `
+              <article>
+                <h3>${escapeHtml(region)}</h3>
+                <div>
+${regionCities.map((city) => `                  <a href="${citySlug(city.name)}/index.html">${escapeHtml(city.name)}</a>`).join("\n")}
+                </div>
+              </article>`).join("\n");
+
+  return `<div class="location-finder">
+            <div class="section-heading">
+              <p class="eyebrow">Local pages</p>
+              <h2>Find ${escapeHtml(service.phrase)} near you.</h2>
+              <p>Start with a major city, or open the full UK directory below. The full list stays on the page so people and search engines can still reach every local service page.</p>
+            </div>
+            <div class="location-featured-grid" aria-label="Popular locations">
+${featured}
+            </div>
+            <details class="location-directory">
+              <summary>Browse all towns and cities</summary>
+              <div class="location-region-grid">
+${regions}
+              </div>
+            </details>
+          </div>`;
+}
+
 function pageHtml(service, city) {
   const title = `${service.name} in ${city.name} | The Delivery Desk`;
   const description = `Need ${service.phrase} in ${city.name}? Independent delivery and logistics help for businesses in ${city.region}. Powered by SVMK.`;
@@ -685,7 +731,6 @@ ${nearbyCityLinks(service, city)}
 function serviceIndexHtml(service) {
   const title = `${service.name} | The Delivery Desk`;
   const description = `Practical help with ${service.phrase}, including partner selection, service fit and delivery route planning. Powered by SVMK.`;
-  const cityLinks = cities.map((city) => `<a href="${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`).join("\n");
   const canonical = `${siteUrl}/${service.slug}`;
   const schema = [
     {
@@ -806,13 +851,7 @@ ${faqItems(service.faq)}
 
       <section class="locations-band">
         <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">Local pages</p>
-            <h2>Choose a town or city.</h2>
-          </div>
-          <div class="location-links">
-${cityLinks}
-          </div>
+${serviceLocationDirectory(service)}
         </div>
       </section>
 
@@ -1303,8 +1342,8 @@ ${cityServiceLinks(city, "../../")}
       <section class="section-inner two-col local-detail">
         <div>
           <p class="eyebrow dark">Independent matching</p>
-          <h2>Start with the job, not a supplier list.</h2>
-          <p>Businesses in ${escapeHtml(city.name)} can need anything from daily parcel collections to urgent same-day courier work, white glove 2-man delivery, pallet freight, storage, international delivery or sea freight support. The right answer depends on goods type, timing, access, volume and the promise made to the customer.</p>
+          <h2>Tell us what needs moving in ${escapeHtml(city.name)}.</h2>
+          <p>Businesses in ${escapeHtml(city.name)} might need daily parcel collections, urgent same-day courier work, white glove 2-man delivery, pallet freight, storage, EU and international delivery or sea freight support. The right answer depends on the goods, timings, access, volume and the promise made to the customer.</p>
         </div>
         <aside class="expert-panel">
           <h3>Useful details to prepare</h3>
