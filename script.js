@@ -257,7 +257,7 @@ function wireLeadForms() {
             body: JSON.stringify(payload)
           });
         } catch (error) {
-          console.warn("Lead endpoint failed; enquiry kept in local prototype storage.", error);
+          console.warn("Lead endpoint failed; enquiry kept in local fallback storage.", error);
         }
       }
 
@@ -349,7 +349,7 @@ function wirePrototypeLogins() {
         createdAt: new Date().toISOString(),
         ...data
       }));
-      if (status) status.textContent = "Partner area opened. Secure authentication still needs to be added before launch.";
+      if (status) status.textContent = "Partner area opened. We will verify partner details before live lead routing is enabled.";
       if (dashboard) dashboard.hidden = false;
     });
   });
@@ -380,7 +380,7 @@ function wireCustomerProfile() {
         ...formDataToObject(form)
       };
       localStorage.setItem("deliveryDeskCustomerProfile", JSON.stringify(payload));
-      if (status) status.textContent = "Saved in this browser. Secure customer accounts can replace this browser profile later.";
+      if (status) status.textContent = "Profile saved on this device. Use the enquiry form when you are ready for us to review it.";
       if (summary && summaryText) {
         summary.hidden = false;
         summaryText.textContent = `${payload.business || "Your business"} profile saved for ${formatValue(payload.service) || "delivery services"} around ${payload.location || "your collection area"}.`;

@@ -275,6 +275,75 @@ const cities = locationRows.map(([name, regionKey]) => {
   };
 });
 
+const localBusinessAreas = {
+  london: ["Park Royal", "Heathrow cargo area", "Enfield industrial estates", "Thames Gateway logistics sites"],
+  croydon: ["Purley Way", "Beddington industrial area", "Croydon Airport Industrial Estate", "Mitcham and South London trade routes"],
+  enfield: ["Brimsdown Industrial Estate", "Innova Park", "Enfield Lock", "North London distribution routes"],
+  harrow: ["Harrow industrial areas", "Wealdstone trade routes", "Northolt and Wembley business routes", "North West London delivery corridors"],
+  romford: ["Romford trading estates", "Rainham industrial areas", "Dagenham logistics routes", "East London and Essex delivery corridors"],
+  birmingham: ["Aston", "Tyseley", "Fort Dunlop", "Birmingham Business Park"],
+  coventry: ["Prologis Park Coventry", "Bayton Road Industrial Estate", "Binley Industrial Estate", "Coventry Airport trading areas"],
+  wolverhampton: ["Fordhouses", "Bilston industrial areas", "Wednesfield trading estates", "Black Country delivery routes"],
+  walsall: ["Aldridge", "Darlaston", "Walsall Enterprise Park", "Black Country logistics routes"],
+  dudley: ["Dudley trading estates", "Brierley Hill", "Pensnett", "Black Country manufacturing routes"],
+  solihull: ["Blythe Valley", "Monkspath", "Solihull business parks", "Birmingham Airport linked routes"],
+  "stoke-on-trent": ["Festival Park", "Etruria", "Trentham Lakes", "A500 corridor business areas"],
+  telford: ["Hortonwood", "Stafford Park", "Halesfield", "Telford industrial estates"],
+  shrewsbury: ["Battlefield Enterprise Park", "Shrewsbury Business Park", "Oxon Business Park", "A5 route businesses"],
+  worcester: ["Blackpole", "Warndon Business Park", "Shrub Hill industrial areas", "M5 corridor routes"],
+  nottingham: ["Colwick Industrial Estate", "Lenton Lane", "Blenheim Industrial Estate", "Queens Drive industrial areas"],
+  leicester: ["Meridian Business Park", "Troon Industrial Estate", "Beaumont Leys", "Bardon and Leicester logistics routes"],
+  derby: ["Pride Park", "Raynesway", "Ascot Drive", "Sinfin and Derby trade routes"],
+  northampton: ["Brackmills Industrial Estate", "Moulton Park", "Swan Valley", "Northampton logistics parks"],
+  lincoln: ["Sadler Road Industrial Estate", "Allenby Road", "Teal Park", "Lincoln business parks"],
+  manchester: ["Trafford Park", "Salford Quays logistics routes", "Central Park", "Manchester Airport freight routes"],
+  liverpool: ["Speke", "Knowsley Industrial Park", "Liverpool port routes", "Estuary Commerce Park"],
+  preston: ["Red Scar Industrial Estate", "Walton Summit", "Riversway", "Preston Docks business areas"],
+  blackpool: ["Squires Gate", "Blackpool Airport Enterprise Zone", "Whitehills Business Park", "Fylde Coast delivery routes"],
+  bolton: ["Wingates Industrial Estate", "Raikes Lane", "Horwich business areas", "Greater Manchester delivery routes"],
+  warrington: ["Omega", "Woolston Grange", "Winwick Quay", "Birchwood Park"],
+  stockport: ["Bredbury Industrial Estate", "Heaton Mersey", "South Manchester routes", "M60 corridor businesses"],
+  leeds: ["Cross Green Industrial Estate", "Gelderd Road", "Thorp Arch trading estate", "Leeds Bradford corridor routes"],
+  sheffield: ["Darnall", "Parkway industrial areas", "Meadowhall trade routes", "Tinsley and Attercliffe business areas"],
+  bradford: ["Euroway Trading Estate", "Tong Street", "Low Moor", "Bradford trade and textile routes"],
+  "kingston-upon-hull": ["Priory Park", "Hedon Road", "Hull port routes", "Sutton Fields Industrial Estate"],
+  hull: ["Priory Park", "Hedon Road", "Hull port routes", "Sutton Fields Industrial Estate"],
+  york: ["Clifton Moor", "Monks Cross", "Elvington industrial areas", "A64 corridor routes"],
+  newcastle: ["Team Valley routes", "Newcastle business parks", "Tyne Dock linked routes", "Tyneside industrial areas"],
+  "newcastle-upon-tyne": ["Team Valley routes", "Newcastle business parks", "Tyne Dock linked routes", "Tyneside industrial areas"],
+  sunderland: ["Doxford International Business Park", "Pallion Industrial Estate", "Port of Sunderland routes", "Wearside business areas"],
+  bristol: ["Avonmouth", "Portbury", "Aztec West", "St Philips trading areas"],
+  plymouth: ["Estover Industrial Estate", "Langage Business Park", "Plymouth port routes", "Cattedown business areas"],
+  exeter: ["Marsh Barton", "Sowton Industrial Estate", "Exeter Business Park", "M5 and A30 routes"],
+  gloucester: ["Gloucester Business Park", "Quedgeley", "Hempsted", "M5 corridor business areas"],
+  swindon: ["South Marston", "Kembrey Park", "Cheney Manor", "M4 corridor logistics routes"],
+  reading: ["Green Park", "Winnersh Triangle", "Thames Valley Park", "M4 corridor business routes"],
+  oxford: ["Cowley", "Oxford Business Park", "Osney Mead", "Kidlington and Oxfordshire routes"],
+  "milton-keynes": ["Magna Park", "Tongwell", "Kiln Farm", "Bletchley business areas"],
+  southampton: ["Nursling Industrial Estate", "Marchwood", "Hedge End", "Southampton docks routes"],
+  portsmouth: ["Portsmouth port routes", "Hilsea", "Farlington", "Dundas Spur business areas"],
+  maidstone: ["Parkwood", "Aylesford", "Larkfield", "M20 corridor routes"],
+  dover: ["Dover port routes", "Whitfield", "Aycliffe industrial areas", "Channel freight corridors"],
+  norwich: ["Broadland Business Park", "Hellesdon Hall Industrial Estate", "Airport Industrial Estate", "A11 and A47 routes"],
+  cambridge: ["Cambridge Science Park", "Bar Hill", "Waterbeach", "South Cambridge business routes"],
+  peterborough: ["Fengate", "Orton Southgate", "Lynch Wood", "A1 and A47 distribution routes"],
+  ipswich: ["Ransomes Europark", "Whitehouse Industrial Estate", "Hadleigh Road", "Port of Felixstowe linked routes"],
+  chelmsford: ["Widford Industrial Estate", "Chelmsford Business Park", "Springfield business areas", "A12 corridor routes"],
+  cardiff: ["Wentloog", "Ocean Park", "Capital Business Park", "Cardiff Bay and port routes"],
+  swansea: ["Fforestfach", "Swansea Enterprise Park", "Llansamlet", "Swansea docks routes"],
+  newport: ["Leeway Industrial Estate", "Maesglas", "Queensway Meadows", "Newport docks routes"],
+  wrexham: ["Wrexham Industrial Estate", "Rhosddu Industrial Estate", "Marchwiel", "North Wales trade routes"],
+  glasgow: ["Hillington Park", "Queenslie Industrial Estate", "Eurocentral routes", "Glasgow Airport freight routes"],
+  edinburgh: ["Sighthill Industrial Estate", "Newbridge", "Leith port routes", "Edinburgh Park"],
+  aberdeen: ["Altens Industrial Estate", "Dyce", "Aberdeen Harbour routes", "Bridge of Don business areas"],
+  dundee: ["Dunsinane Industrial Estate", "Dryburgh Industrial Estate", "Dundee port routes", "Technology Park"],
+  inverness: ["Longman Industrial Estate", "Inverness Harbour routes", "Dalcross", "Highlands distribution routes"],
+  belfast: ["Duncrue Industrial Estate", "Belfast Harbour Estate", "Mallusk", "Titanic Quarter business routes"],
+  derry: ["Springtown Industrial Estate", "Maydown", "Campsie", "North West logistics routes"],
+  londonderry: ["Springtown Industrial Estate", "Maydown", "Campsie", "North West logistics routes"],
+  lisburn: ["Knockmore Industrial Estate", "Lissue Industrial Estate", "Blaris", "Belfast-Lisburn corridor routes"]
+};
+
 const sectors = [
   {
     slug: "ecommerce",
@@ -396,7 +465,7 @@ function trustProofHtml(prefix = "") {
         <div class="section-heading">
           <p class="eyebrow dark">Why businesses use us</p>
           <h2>Independent logistics experience before the sales call.</h2>
-          <p class="section-lede">These are practical example situations, not invented reviews. They show the kinds of delivery problems The Delivery Desk is built to qualify.</p>
+          <p class="section-lede">These practical examples show the kinds of delivery problems The Delivery Desk is built to qualify before a partner conversation starts.</p>
         </div>
         <div class="trust-strip">
           <article>
@@ -462,6 +531,64 @@ function nearbyCityLinks(service, currentCity) {
     .slice(0, 8)
     .map((city) => `<a href="../${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`)
     .join("\n");
+}
+
+function nearbyCitiesFor(currentCity, count = 6) {
+  const regionCities = cities.filter((city) => city.region === currentCity.region);
+  const currentIndex = regionCities.findIndex((city) => city.name === currentCity.name);
+  if (currentIndex === -1 || regionCities.length < 2) return [];
+  const nearby = [
+    ...regionCities.slice(currentIndex + 1),
+    ...regionCities.slice(0, currentIndex)
+  ].filter((city) => city.name !== currentCity.name);
+  return nearby.slice(0, count);
+}
+
+function businessAreasFor(city) {
+  const specific = localBusinessAreas[citySlug(city.name)];
+  if (specific) return specific;
+  return [
+    `${city.name} business parks`,
+    `${city.name} industrial estates`,
+    `${city.name} trading estates`,
+    `${city.name} warehouse and retail park routes`
+  ];
+}
+
+function localSearchSection(service, city) {
+  const nearby = nearbyCitiesFor(city, 6);
+  const areaLinks = businessAreasFor(city).map((area) => `<li>${escapeHtml(area)}</li>`).join("\n");
+  const nearbyLinks = nearby
+    .map((nearbyCity) => `<a href="../${citySlug(nearbyCity.name)}/index.html">${escapeHtml(nearbyCity.name)}</a>`)
+    .join("\n");
+  const nearbyNames = nearby.map((nearbyCity) => nearbyCity.name).join(", ");
+
+  return `<section class="section-inner local-search-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Local delivery coverage</p>
+          <h2>${escapeHtml(service.name)} for ${escapeHtml(city.name)} business areas and nearby towns.</h2>
+          <p class="section-lede">Many enquiries come from businesses based on industrial estates, trading estates, retail parks, warehouses and business parks around ${escapeHtml(city.name)}. We use the location detail to match the job with a partner that can actually cover the route.</p>
+        </div>
+        <div class="local-area-grid">
+          <article>
+            <h3>Business areas we consider</h3>
+            <ul>
+${areaLinks}
+            </ul>
+          </article>
+          <article>
+            <h3>Nearby towns and cities</h3>
+            <p>This ${escapeHtml(service.phrase)} enquiry may also involve routes around ${escapeHtml(nearbyNames || city.region)}.</p>
+            <div class="area-pill-list">
+${nearbyLinks}
+            </div>
+          </article>
+          <article>
+            <h3>Why this helps the match</h3>
+            <p>Collection access, loading time, vehicle size, delivery window and local route knowledge can change which partner is right for the job.</p>
+          </article>
+        </div>
+      </section>`;
 }
 
 function cityServiceLinks(city, prefix = "../") {
@@ -598,6 +725,8 @@ ${listItems(service.checks)}
         </div>
       </section>
 
+      ${localSearchSection(service, city)}
+
       <section class="section-inner local-conversion">
         <div class="section-heading">
           <p class="eyebrow dark">How to know if it fits</p>
@@ -632,7 +761,7 @@ ${cardItems(service.redFlags)}
         <div class="section-heading">
           <p class="eyebrow dark">Example situations</p>
           <h2>Typical ${escapeHtml(service.phrase)} problems we would qualify.</h2>
-          <p class="section-lede">These are sample situations, not customer reviews. They show the type of detail we would check before introducing a partner in ${escapeHtml(city.name)}.</p>
+          <p class="section-lede">These examples show the type of detail we check before matching an enquiry with a relevant partner in ${escapeHtml(city.name)}.</p>
         </div>
         <div class="proof-grid">
 ${scenarioCards(service, city.name.length, 4)}
@@ -770,7 +899,7 @@ function serviceIndexHtml(service) {
         <div class="section-inner">
           <p class="eyebrow dark">Service overview</p>
           <h1>${escapeHtml(service.name)}</h1>
-          <p>${escapeHtml(service.intro)} We look at the job first, then help you find the right kind of delivery partner.</p>
+          <p>${escapeHtml(service.intro)} We look at the job first, then match the enquiry with the right kind of delivery partner from our network.</p>
           <a class="button primary" href="#lead-form">Find the right delivery solution</a>
         </div>
       </section>
@@ -823,7 +952,7 @@ ${cardItems(service.redFlags)}
         <div class="section-heading">
           <p class="eyebrow dark">Example situations</p>
           <h2>Where ${escapeHtml(service.phrase)} needs proper qualification.</h2>
-          <p class="section-lede">These are sample scenarios to explain the type of work we handle. Real customer reviews and case studies should be added as soon as they are approved.</p>
+          <p class="section-lede">These examples show the kind of detail we check before matching an enquiry. Approved customer stories can be added once clients are happy for us to share them.</p>
         </div>
         <div class="proof-grid">
 ${scenarioCards(service, 0, 4)}
@@ -859,7 +988,7 @@ ${serviceLocationDirectory(service)}
         <div class="lead-copy">
           <p class="eyebrow dark">Start here</p>
           <h2>Ask us about ${escapeHtml(service.phrase)}.</h2>
-          <p>Tell us what moves, where it goes and what is not working. We will use that to identify the right service type and next conversation.</p>
+          <p>Tell us what moves, where it goes and what is not working. We will use that to identify the right service type and the right partner conversation.</p>
         </div>
         <form class="lead-form" data-lead-form data-thank-you="../thank-you.html">
           <div class="form-row">
@@ -1770,7 +1899,7 @@ function customerAccountHtml() {
           </div>
           <label>Delivery profile<textarea name="details" rows="5" placeholder="Goods, routes, dimensions, access notes, customs details, storage needs, customer promise..."></textarea></label>
           <button class="button primary full" type="submit">Save account details</button>
-          <p class="form-note">This stores details in this browser only. A secure account system is needed before holding live customer records online.</p>
+          <p class="form-note">Your profile is saved on this device so you can reuse it on this computer. Send a live enquiry when you are ready for us to review the details.</p>
           <p class="form-status" role="status" data-customer-status></p>
         </form>
       </section>
