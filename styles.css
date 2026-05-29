@@ -1032,6 +1032,10 @@ select[multiple] option {
   gap: 16px;
 }
 
+.featured-guides {
+  margin-bottom: 28px;
+}
+
 .insight-card {
   padding: 22px;
   border: 1px solid var(--line);
@@ -1071,6 +1075,43 @@ select[multiple] option {
   color: var(--green);
   font-weight: 900;
   box-shadow: 0 8px 24px rgba(16, 47, 74, 0.05);
+}
+
+.comparison-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(16, 47, 74, 0.05);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparison-table thead th {
+  color: var(--navy);
+  background: #edf5f2;
+}
+
+.comparison-table tbody th {
+  width: 20%;
+  color: var(--green);
+}
+
+.comparison-table tr:last-child th,
+.comparison-table tr:last-child td {
+  border-bottom: 0;
 }
 
 .faq-list {

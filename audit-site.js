@@ -108,7 +108,9 @@ if (!sitemap.includes("/locations/manchester")) failures.push("sitemap: missing 
 if (!sitemap.includes("/same-day-delivery/issues-solutions")) failures.push("sitemap: missing same-day guide");
 if (!sitemap.includes("/how-we-work")) failures.push("sitemap: missing how-we-work page");
 if (!sitemap.includes("/about")) failures.push("sitemap: missing about page");
+if (!sitemap.includes("/service-finder")) failures.push("sitemap: missing service finder page");
 if (!sitemap.includes("/delivery-review")) failures.push("sitemap: missing delivery review page");
+if (!sitemap.includes("/delivery-costs")) failures.push("sitemap: missing delivery costs page");
 if (!sitemap.includes("/ai-search")) failures.push("sitemap: missing AI search page");
 if (!sitemap.includes("/sectors/ecommerce")) failures.push("sitemap: missing ecommerce sector page");
 if (sitemap.includes("/admin") || sitemap.includes("/thank-you")) failures.push("sitemap: contains noindex support pages");

@@ -515,7 +515,9 @@ function siteFacts() {
       { name: "Home", url: `${siteUrl}/` },
       { name: "About", url: `${siteUrl}/about` },
       { name: "How we work", url: `${siteUrl}/how-we-work` },
+      { name: "Service finder", url: `${siteUrl}/service-finder` },
       { name: "Delivery review checklist", url: `${siteUrl}/delivery-review` },
+      { name: "Delivery costs guide", url: `${siteUrl}/delivery-costs` },
       { name: "Services", url: `${siteUrl}/#services` },
       { name: "Locations", url: `${siteUrl}/locations` },
       { name: "Sectors", url: `${siteUrl}/sectors` },
@@ -591,6 +593,7 @@ function headerHtml(prefix, localCta = false) {
               ${serviceNavLinks(prefix)}
           </div>
         </details>
+        <a href="${prefix}service-finder/index.html">Finder</a>
         <a href="${prefix}about/index.html">About</a>
         <a href="${prefix}how-we-work/index.html">How we work</a>
         <a href="${prefix}sectors/index.html">Sectors</a>
@@ -1337,6 +1340,23 @@ function insightsIndexHtml() {
           <p class="eyebrow dark">Guides by service</p>
           <h2>Build the right brief before you ask for quotes.</h2>
         </div>
+        <div class="insight-grid featured-guides">
+          <article class="insight-card">
+            <h3>Service finder</h3>
+            <p>Compare the main delivery and logistics routes when you are not sure whether the problem is parcel, freight, fulfilment, same-day, 2-man or sea freight.</p>
+            <a href="../service-finder/index.html">Find the right starting point</a>
+          </article>
+          <article class="insight-card">
+            <h3>Delivery costs guide</h3>
+            <p>Understand the factors that change delivery cost before comparing quotes, including failure cost, access, handling, timing and service level.</p>
+            <a href="../delivery-costs/index.html">Read the cost guide</a>
+          </article>
+          <article class="insight-card">
+            <h3>Delivery review checklist</h3>
+            <p>Prepare the details a delivery partner needs before pricing or recommending the work.</p>
+            <a href="../delivery-review/index.html">Open the checklist</a>
+          </article>
+        </div>
         <div class="service-grid">
 ${guideLinks}
         </div>
@@ -1787,6 +1807,269 @@ ${services.map((service) => `<a href="../${service.slug}/issues-solutions/index.
       <div class="footer-links">
         <a href="../index.html#lead-form">Start an enquiry</a>
         <a href="../about/index.html">About</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function serviceFinderHtml() {
+  const title = "Delivery Service Finder | The Delivery Desk";
+  const description = "Compare parcel collections, same-day delivery, 2-man delivery, fulfilment, freight, international delivery and sea freight to find the right starting point.";
+  const canonical = `${siteUrl}/service-finder`;
+  const rows = [
+    ["Daily parcel collections", "Regular parcels leaving a shop, warehouse or office", "Collection cut-offs, parcel profile, returns, claims and failed pickup history", "Bulky goods, fragile room-of-choice work or urgent direct delivery"],
+    ["Same-day delivery", "Urgent, timed or direct point-to-point jobs", "Ready time, deadline, vehicle type, waiting time, tracking and proof of delivery", "Routine low-urgency parcels that can move through a network"],
+    ["White glove 2-man delivery", "Bulky, fragile, high-value or room-of-choice deliveries", "Access, stairs, booking process, packaging, damage handling and customer handover", "Small standard parcels or palletised freight with forklift access"],
+    ["Storage and fulfilment", "Stock, pick-and-pack, dispatch or returns pressure", "SKU count, order pattern, storage volume, returns and stock visibility", "One-off transport issues where stock control is not part of the problem"],
+    ["EU and international parcel and freight", "Parcels, pallets or freight moving into Europe or worldwide", "Destination, goods description, customs data, value, incoterms, tracking and duties", "Purely UK domestic delivery problems"],
+    ["Pallet and freight", "Heavier consignments, pallets, part loads or business freight", "Pallet size, weight, tail-lift, forklift, booking-in, access notes and damage risk", "Small parcels or customer room-of-choice deliveries"],
+    ["Retail supply chain support", "Delivery issues linked to stock, returns, fulfilment or staff time", "Inbound flow, outbound delivery, returns, manual fixes and true operating cost", "A simple one-off delivery with no wider process problem"],
+    ["Sea freight and container logistics", "Imports, exports, FCL/LCL, port collection, devanning or onward delivery", "Container type, arrival dates, customs, port charges, storage, unloading and onward transport", "Small domestic parcels or local same-day work"]
+  ];
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Delivery service finder",
+      "description": description,
+      "itemListElement": services.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": service.name,
+        "url": `${siteUrl}/${service.slug}`
+      }))
+    },
+    breadcrumbSchema([
+      { label: "Home", path: "/" },
+      { label: "Service finder", path: "/service-finder" }
+    ])
+  ];
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${seoMeta({ title, description, canonical })}
+    <link rel="stylesheet" href="../styles.css">
+    ${jsonScript(schema)}
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Service finder" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Service finder</p>
+          <h1>Not sure which delivery service fits? Start here.</h1>
+          <p>Many businesses ask for a courier quote when the real answer is freight, fulfilment, 2-man delivery, same-day routing, international support or a mixed supply chain fix. Use this page to narrow the starting point.</p>
+          <a class="button primary" href="../index.html#lead-form">Ask us to match the requirement</a>
+        </div>
+      </section>
+
+      <section class="section-inner local-detail">
+        <div class="section-heading">
+          <p class="eyebrow dark">Comparison</p>
+          <h2>Choose by the problem, not by the label.</h2>
+          <p class="section-lede">The right delivery solution depends on what moves, where it goes, timing, access, handling risk and the cost of failure.</p>
+        </div>
+        <div class="comparison-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Best fit</th>
+                <th>Check first</th>
+                <th>Usually not right for</th>
+              </tr>
+            </thead>
+            <tbody>
+${rows.map(([service, fit, check, avoid]) => `
+              <tr>
+                <th>${escapeHtml(service)}</th>
+                <td>${escapeHtml(fit)}</td>
+                <td>${escapeHtml(check)}</td>
+                <td>${escapeHtml(avoid)}</td>
+              </tr>`).join("\n")}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-inner proof-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Fast routes</p>
+          <h2>Common starting points.</h2>
+        </div>
+        <div class="proof-grid">
+          <article class="proof-card">
+            <h3>We send parcels most days</h3>
+            <p>Start with daily parcel collections unless the goods are bulky, fragile, urgent or unusually heavy.</p>
+          </article>
+          <article class="proof-card">
+            <h3>It must arrive today</h3>
+            <p>Start with same-day delivery and check ready time, vehicle size, deadline and proof of delivery.</p>
+          </article>
+          <article class="proof-card">
+            <h3>It needs two people</h3>
+            <p>Start with white glove 2-man delivery if customer handover, damage risk or room-of-choice service matters.</p>
+          </article>
+          <article class="proof-card">
+            <h3>It is stuck in the process</h3>
+            <p>Start with supply chain, fulfilment or freight if the problem sits across stock, storage, returns or transport.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Next step</p>
+          <h2>Read the service guide or send the brief.</h2>
+        </div>
+        <div class="related-grid">
+${services.map((service) => `<a href="../${service.slug}/index.html">${escapeHtml(service.name)}</a>`).join("\n")}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../delivery-costs/index.html">Delivery costs</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function deliveryCostsHtml() {
+  const title = "Delivery Costs Guide | The Delivery Desk";
+  const description = "Understand what affects parcel, same-day, 2-man, freight, fulfilment, international and sea freight delivery costs before comparing quotes.";
+  const canonical = `${siteUrl}/delivery-costs`;
+  const factors = [
+    ["Service type", "Parcel networks, same-day couriers, 2-man delivery, pallets, fulfilment, international freight and sea freight are priced in different ways."],
+    ["Volume and pattern", "Regular volume, peak periods, collection frequency, route density and predictability can all change the right commercial setup."],
+    ["Size, weight and handling", "Bulky, fragile, heavy, high-value, palletised or room-of-choice deliveries usually need more planning than standard parcels."],
+    ["Timing", "Same-day deadlines, timed delivery windows, cut-offs, waiting time and booking-in requirements can change the service and cost."],
+    ["Distance and destination", "Local, national, EU, worldwide, port-to-door and remote-area deliveries all carry different routing and handover considerations."],
+    ["Failure cost", "Missed collections, damages, failed drops, redelivery, claims, storage, demurrage and customer service time can matter more than the headline rate."]
+  ];
+  const schema = [
+    faqSchema([
+      ["Can The Delivery Desk give exact delivery prices online?", "No. The right cost depends on the goods, route, timing, volume, handling, customs and service level. The Delivery Desk helps frame the requirement before a suitable partner conversation."],
+      ["Why can the cheapest delivery quote be the wrong option?", "A cheaper headline rate can become expensive if collections fail, goods are damaged, access is wrong, customs data is weak or staff spend time fixing avoidable problems."],
+      ["What information helps compare delivery quotes?", "Shipment size, weight, volume, collection postcode, delivery areas, timing, service issues, access notes, customs information and any claims or damage history."]
+    ]),
+    breadcrumbSchema([
+      { label: "Home", path: "/" },
+      { label: "Delivery costs", path: "/delivery-costs" }
+    ])
+  ];
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${seoMeta({ title, description, canonical })}
+    <link rel="stylesheet" href="../styles.css">
+    ${jsonScript(schema)}
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Delivery costs" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Delivery costs guide</p>
+          <h1>The cheapest delivery quote is not always the lowest-cost answer.</h1>
+          <p>Delivery cost depends on more than a rate card. The right comparison includes the service type, shipment profile, failure risk, staff time and the promise made to your customer.</p>
+          <a class="button primary" href="../index.html#lead-form">Ask us to review the requirement</a>
+        </div>
+      </section>
+
+      <section class="section-inner proof-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Cost drivers</p>
+          <h2>What changes the answer.</h2>
+          <p class="section-lede">These are the factors we would want clear before putting an enquiry in front of a delivery, freight, fulfilment or logistics partner.</p>
+        </div>
+        <div class="proof-grid">
+${factors.map(([name, text]) => `
+          <article class="proof-card">
+            <h3>${escapeHtml(name)}</h3>
+            <p>${escapeHtml(text)}</p>
+          </article>`).join("\n")}
+        </div>
+      </section>
+
+      <section class="section-inner two-col local-detail">
+        <div>
+          <p class="eyebrow dark">Better quote comparison</p>
+          <h2>Compare the full operating cost, not just the shipment price.</h2>
+          <p>Two suppliers can quote for the same route and still be offering very different services. One may include better collection reliability, customer booking, claims handling, customs support, proof of delivery, storage options or escalation when something goes wrong.</p>
+          <p>That is why The Delivery Desk asks what is failing now. If missed collections, damages, returns, customs delays or manual admin are draining margin, the cheapest label may not fix the real problem.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="../service-finder/index.html">Use the service finder</a>
+            <a class="button secondary" href="../delivery-review/index.html">Open the checklist</a>
+          </div>
+        </div>
+        <aside class="expert-panel">
+          <h3>Useful details to share</h3>
+          <ul class="check-list compact">
+            <li>Collection and delivery postcodes or regions</li>
+            <li>Average size, weight, volume and frequency</li>
+            <li>Current supplier issue or cost pressure</li>
+            <li>Access, timing, customs or handling notes</li>
+            <li>What happens when delivery fails</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section-inner faq-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Cost questions</p>
+          <h2>What businesses usually need to know.</h2>
+        </div>
+        <div class="faq-list">
+          ${faqItems([
+            ["Can you tell me the cheapest courier?", "Not honestly without the detail. A cheap supplier can be the wrong fit if the goods, timing, access, customs or customer promise need a different service."],
+            ["What should I compare beyond price?", "Collection reliability, delivery performance, proof of delivery, claims, surcharges, communication, returns, customs handling and the time your team spends fixing issues."],
+            ["Can The Delivery Desk help if we already have quotes?", "Yes. Existing quotes can be reviewed against the actual requirement so you can see where the risk, service gap or hidden cost may sit."]
+          ])}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../service-finder/index.html">Service finder</a>
         <a href="../privacy.html">Privacy</a>
       </div>
     </footer>
@@ -2685,7 +2968,9 @@ const sitemapPaths = [
   "/terms",
   "/cookies",
   "/how-we-work",
+  "/service-finder",
   "/delivery-review",
+  "/delivery-costs",
   "/insights",
   "/locations",
   "/sectors",
@@ -2701,6 +2986,12 @@ fs.writeFileSync(path.join(__dirname, "about", "index.html"), aboutHtml(), "utf8
 
 fs.mkdirSync(path.join(__dirname, "delivery-review"), { recursive: true });
 fs.writeFileSync(path.join(__dirname, "delivery-review", "index.html"), deliveryReviewHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "service-finder"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "service-finder", "index.html"), serviceFinderHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "delivery-costs"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "delivery-costs", "index.html"), deliveryCostsHtml(), "utf8");
 
 fs.mkdirSync(path.join(__dirname, "partners"), { recursive: true });
 fs.writeFileSync(path.join(__dirname, "partners", "index.html"), partnersHtml(), "utf8");

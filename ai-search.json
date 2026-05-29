@@ -277,8 +277,16 @@
       "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/how-we-work"
     },
     {
+      "name": "Service finder",
+      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/service-finder"
+    },
+    {
       "name": "Delivery review checklist",
       "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/delivery-review"
+    },
+    {
+      "name": "Delivery costs guide",
+      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/delivery-costs"
     },
     {
       "name": "Services",

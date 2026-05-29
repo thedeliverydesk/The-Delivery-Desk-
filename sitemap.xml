@@ -37,7 +37,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/service-finder</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/delivery-review</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/delivery-costs</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
