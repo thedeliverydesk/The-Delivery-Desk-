@@ -398,7 +398,7 @@ function detectService(message) {
     },
     {
       slug: "same-day-delivery",
-      terms: ["same day", "sameday", "urgent", "today", "asap", "timed", "direct courier", "point to point"]
+      terms: ["same day", "same-day", "sameday", "urgent", "today", "asap", "timed", "direct courier", "point to point"]
     },
     {
       slug: "international-delivery",
@@ -464,6 +464,38 @@ function addAssistantMessage(log, text, type) {
   log.scrollTop = log.scrollHeight;
 }
 
+function focusLeadForm() {
+  const leadForm = document.querySelector("[data-lead-form]");
+  if (!leadForm) return;
+
+  leadForm.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  const firstEmptyField = Array.from(leadForm.querySelectorAll("input, select, textarea"))
+    .find((field) => field.required && !field.value);
+  const fallbackField = leadForm.querySelector("[name='business']") || leadForm.querySelector("input, select, textarea");
+
+  window.setTimeout(() => {
+    (firstEmptyField || fallbackField)?.focus({ preventScroll: true });
+  }, 450);
+}
+
+function addAssistantAction(log, text) {
+  const message = document.createElement("div");
+  const button = document.createElement("button");
+
+  message.className = "assistant-message bot assistant-action-message";
+  message.textContent = text;
+
+  button.type = "button";
+  button.className = "assistant-action-button";
+  button.textContent = "Continue enquiry";
+  button.addEventListener("click", focusLeadForm);
+
+  message.appendChild(button);
+  log.appendChild(message);
+  log.scrollTop = log.scrollHeight;
+}
+
 function prefillLeadForm(service, city, message, issue) {
   const leadForm = document.querySelector("[data-lead-form]");
   if (!leadForm) return;
@@ -475,7 +507,10 @@ function prefillLeadForm(service, city, message, issue) {
 
   if (serviceSelect && service) setFieldValue(serviceSelect, service.slug);
   if (locationInput && city) locationInput.value = city;
-  if (detailsInput && !detailsInput.value) detailsInput.value = message;
+  if (detailsInput && (!detailsInput.value || detailsInput.dataset.assistantPrefilled === "true")) {
+    detailsInput.value = message;
+    detailsInput.dataset.assistantPrefilled = "true";
+  }
   if (issueSelect && issue) issueSelect.value = issue;
 }
 
@@ -497,10 +532,10 @@ function wireAssistant() {
     if (service) {
       prefillLeadForm(service, city, message, issue);
       const locationText = city ? ` in ${city}` : "";
-      addAssistantMessage(log, `This sounds like ${service.name}${locationText}. I have selected that service in the enquiry form. The useful details are volume, collection area, delivery area, timing and what is going wrong now.`, "bot");
+      addAssistantAction(log, `This sounds like ${service.name}${locationText}. I have selected that service in the enquiry form. Add the business and contact details next, then send it through.`);
     } else {
       prefillLeadForm(null, city, message, issue);
-      addAssistantMessage(log, "I would need a bit more detail to choose the right service. Is it parcels, same-day, 2-man, storage, pallet freight, sea freight/container logistics, EU/international or retail supply chain?", "bot");
+      addAssistantMessage(log, "I need a bit more detail to choose the right service. Is it parcels, same-day, 2-man, storage, pallet freight, sea freight/container logistics, EU/international or retail supply chain?", "bot");
     }
   };
 
