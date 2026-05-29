@@ -389,49 +389,106 @@ function wireCustomerProfile() {
   });
 }
 
+const assistantServiceRules = [
+  {
+    slug: "sea-freight-container-logistics",
+    terms: [
+      ["sea freight", 8], ["ocean freight", 8], ["shipping container", 8], ["import container", 8], ["export container", 8],
+      ["container haulage", 7], ["customs clearance", 6], ["devanning", 6], ["de-vanning", 6], ["fcl", 6], ["lcl", 6],
+      ["port", 4], ["ports", 4], ["dock", 3], ["container", 5], ["containers", 5], ["freight forwarder", 5], ["demurrage", 5]
+    ]
+  },
+  {
+    slug: "white-glove-2-man-delivery",
+    terms: [
+      ["white glove", 8], ["2 man", 8], ["two man", 8], ["room of choice", 7], ["furniture", 6], ["sofa", 5], ["sofas", 5],
+      ["bulky", 4], ["fragile", 4], ["heavy", 3], ["installation", 4], ["assembled", 3], ["high value", 3]
+    ]
+  },
+  {
+    slug: "same-day-delivery",
+    terms: [
+      ["same day", 8], ["sameday", 8], ["urgent", 6], ["today", 6], ["asap", 5],
+      ["timed", 4], ["direct courier", 7], ["point to point", 7], ["medical", 4], ["parts", 3], ["emergency", 5]
+    ]
+  },
+  {
+    slug: "storage-fulfilment",
+    terms: [
+      ["storage", 7], ["fulfilment", 7], ["fulfillment", 7], ["warehouse", 6], ["pick and pack", 7],
+      ["returns", 5], ["stock", 4], ["space", 3], ["inventory", 4], ["dispatch", 3]
+    ]
+  },
+  {
+    slug: "international-delivery",
+    terms: [
+      ["international", 7], ["europe", 6], ["eu", 5], ["worldwide", 6], ["overseas", 6], ["export", 5],
+      ["import", 4], ["customs", 3], ["duties", 4], ["commercial invoice", 5], ["eori", 5]
+    ]
+  },
+  {
+    slug: "pallet-freight",
+    terms: [
+      ["pallet", 8], ["pallets", 8], ["freight", 3], ["haulage", 5], ["part load", 6],
+      ["tail lift", 5], ["forklift", 4], ["heavy goods", 5], ["ltl", 5], ["groupage", 5]
+    ]
+  },
+  {
+    slug: "retail-supply-chain",
+    terms: [
+      ["retail", 6], ["supply chain", 8], ["inbound", 5], ["outbound", 4], ["supplier", 4],
+      ["stock flow", 6], ["returns process", 6], ["multi site", 5], ["store", 3], ["stores", 3]
+    ]
+  },
+  {
+    slug: "daily-parcel-collections",
+    terms: [
+      ["daily parcel", 8], ["parcel collections", 8], ["parcels", 5], ["parcel", 5], ["daily", 3],
+      ["collections", 5], ["carrier", 4], ["shipments", 3], ["ecommerce", 5], ["online orders", 5], ["missed pickup", 4]
+    ]
+  }
+];
+
+function normalizeMessage(message) {
+  return ` ${(message || "").toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ")} `;
+}
+
+function hasTerm(text, term) {
+  const normalizedTerm = term.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim();
+  return text.includes(` ${normalizedTerm} `);
+}
+
+function scoreServiceMatches(message) {
+  const text = normalizeMessage(message);
+  return assistantServiceRules
+    .map((rule) => {
+      const matched = rule.terms.filter(([term]) => hasTerm(text, term));
+      return {
+        service: findService(rule.slug),
+        score: matched.reduce((total, [, weight]) => total + weight, 0),
+        matchedTerms: matched.map(([term]) => term)
+      };
+    })
+    .filter((match) => match.score > 0)
+    .sort((a, b) => b.score - a.score);
+}
+
+function analyseAssistantMessage(message) {
+  const ranked = scoreServiceMatches(message);
+  const top = ranked[0] || null;
+  const second = ranked[1] || null;
+  const ambiguous = Boolean(top && second && second.score >= Math.max(6, top.score * 0.72));
+
+  return {
+    service: top && !ambiguous ? top.service : null,
+    ranked,
+    ambiguous,
+    confidence: top ? Math.min(95, Math.round(45 + top.score * 5 - (second ? second.score * 2 : 0))) : 0
+  };
+}
+
 function detectService(message) {
-  const text = message.toLowerCase();
-  const rules = [
-    {
-      slug: "white-glove-2-man-delivery",
-      terms: ["2 man", "two man", "white glove", "furniture", "sofa", "room of choice", "bulky", "fragile", "heavy", "installation"]
-    },
-    {
-      slug: "same-day-delivery",
-      terms: ["same day", "same-day", "sameday", "urgent", "today", "asap", "timed", "direct courier", "point to point"]
-    },
-    {
-      slug: "international-delivery",
-      terms: ["international", "europe", "eu", "customs", "export", "import", "worldwide", "overseas", "duties"]
-    },
-    {
-      slug: "storage-fulfilment",
-      terms: ["storage", "fulfilment", "fulfillment", "warehouse", "pick and pack", "returns", "stock", "space"]
-    },
-    {
-      slug: "pallet-freight",
-      terms: ["pallet", "freight", "haulage", "part load", "tail lift", "forklift", "heavy goods"]
-    },
-    {
-      slug: "retail-supply-chain",
-      terms: ["retail", "supply chain", "inbound", "outbound", "supplier", "stock flow", "returns process"]
-    },
-    {
-      slug: "sea-freight-container-logistics",
-      terms: ["sea freight", "ocean freight", "container", "containers", "shipping container", "fcl", "lcl", "devanning", "de-vanning", "port", "ports", "import container", "export container", "container haulage", "dock", "freight forwarder", "customs clearance"]
-    },
-    {
-      slug: "daily-parcel-collections",
-      terms: ["parcel", "parcels", "daily", "collections", "carrier", "shipments", "ecommerce", "online orders"]
-    }
-  ];
-
-  const scored = rules.map((rule) => ({
-    slug: rule.slug,
-    score: rule.terms.reduce((total, term) => total + (text.includes(term) ? 1 : 0), 0)
-  })).sort((a, b) => b.score - a.score);
-
-  return scored[0].score > 0 ? findService(scored[0].slug) : null;
+  return analyseAssistantMessage(message).service;
 }
 
 function detectCity(message) {
@@ -439,11 +496,34 @@ function detectCity(message) {
   return cities.find((city) => text.includes(city.toLowerCase())) || "";
 }
 
+function detectVolume(message) {
+  const text = normalizeMessage(message);
+  const weeklyMatch = text.match(/\b(\d+)\s*(parcels|orders|shipments|drops|deliveries|pallets)\s*(a|per)?\s*(week|weekly)\b/);
+  const dailyMatch = text.match(/\b(\d+)\s*(parcels|orders|shipments|drops|deliveries|pallets)\s*(a|per)?\s*(day|daily)\b/);
+  const numberMatch = weeklyMatch || dailyMatch;
+
+  if (numberMatch) {
+    const count = Number(numberMatch[1]);
+    const period = numberMatch[4];
+    const weeklyCount = period.startsWith("day") || period === "daily" ? count * 5 : count;
+
+    if (weeklyCount > 100) return "100+ shipments a week";
+    if (weeklyCount >= 20) return "20-100 shipments a week";
+    return "1-20 shipments a week";
+  }
+
+  if (hasTerm(text, "one off") || hasTerm(text, "one-off") || hasTerm(text, "project") || hasTerm(text, "container")) {
+    return "Project or one-off movement";
+  }
+
+  return "";
+}
+
 function detectIssue(message) {
-  const text = message.toLowerCase();
+  const text = normalizeMessage(message);
   const rules = [
     { issue: "Price has increased", terms: ["price", "cost", "expensive", "surcharge", "rates", "margin"] },
-    { issue: "Collections are unreliable", terms: ["collection", "pickup", "pick up", "missed", "late", "cut off", "cut-off"] },
+    { issue: "Collections are unreliable", terms: ["pickup", "pickups", "pick up", "missed pickup", "missed collection", "missed collections", "late collection", "late collections", "late pickup", "cut off", "cut-off"] },
     { issue: "Service does not fit the goods", terms: ["fragile", "bulky", "heavy", "awkward", "high value", "room of choice"] },
     { issue: "Need storage or fulfilment", terms: ["storage", "fulfilment", "fulfillment", "warehouse", "pick and pack", "stock"] },
     { issue: "Customs or international paperwork", terms: ["customs", "duties", "taxes", "paperwork", "commercial invoice", "eori"] },
@@ -452,8 +532,29 @@ function detectIssue(message) {
     { issue: "Need a new delivery partner", terms: ["new partner", "new supplier", "replace", "switch", "change carrier"] }
   ];
 
-  const match = rules.find((rule) => rule.terms.some((term) => text.includes(term)));
+  const match = rules.find((rule) => rule.terms.some((term) => hasTerm(text, term)));
   return match ? match.issue : "";
+}
+
+function serviceReason(match) {
+  if (!match || match.matchedTerms.length === 0) return "";
+
+  const terms = match.matchedTerms.slice(0, 3).map((term) => term.replace(/-/g, " "));
+  if (terms.length === 1) return `I picked up "${terms[0]}".`;
+  if (terms.length === 2) return `I picked up "${terms[0]}" and "${terms[1]}".`;
+  return `I picked up "${terms[0]}", "${terms[1]}" and "${terms[2]}".`;
+}
+
+function rankedServiceNames(matches) {
+  return matches.slice(0, 3).map((match) => match.service.name).join(", ");
+}
+
+function buildClarifyingQuestion(analysis) {
+  if (analysis.ranked.length > 1) {
+    return `This could go a couple of ways: ${rankedServiceNames(analysis.ranked)}. Which matters most right now: speed, handling, storage, freight size, or paperwork?`;
+  }
+
+  return "I can help narrow it down. Is this mainly parcels, urgent same-day work, 2-man delivery, storage/fulfilment, pallets/freight, sea freight/containers, EU/international, or a wider retail supply chain issue?";
 }
 
 function addAssistantMessage(log, text, type) {
@@ -496,7 +597,7 @@ function addAssistantAction(log, text) {
   log.scrollTop = log.scrollHeight;
 }
 
-function prefillLeadForm(service, city, message, issue) {
+function prefillLeadForm(service, city, message, issue, volume) {
   const leadForm = document.querySelector("[data-lead-form]");
   if (!leadForm) return;
 
@@ -504,6 +605,7 @@ function prefillLeadForm(service, city, message, issue) {
   const locationInput = leadForm.querySelector("[name='location']");
   const detailsInput = leadForm.querySelector("[name='details']");
   const issueSelect = leadForm.querySelector("[name='issue']");
+  const volumeSelect = leadForm.querySelector("[name='volume']");
 
   if (serviceSelect && service) setFieldValue(serviceSelect, service.slug);
   if (locationInput && city) locationInput.value = city;
@@ -512,6 +614,7 @@ function prefillLeadForm(service, city, message, issue) {
     detailsInput.dataset.assistantPrefilled = "true";
   }
   if (issueSelect && issue) issueSelect.value = issue;
+  if (volumeSelect && volume) volumeSelect.value = volume;
 }
 
 function wireAssistant() {
@@ -525,17 +628,21 @@ function wireAssistant() {
     if (!message) return;
 
     addAssistantMessage(log, message, "user");
-    const service = detectService(message);
+    const analysis = analyseAssistantMessage(message);
+    const service = analysis.service;
     const city = detectCity(message);
     const issue = detectIssue(message);
+    const volume = detectVolume(message);
 
     if (service) {
-      prefillLeadForm(service, city, message, issue);
+      prefillLeadForm(service, city, message, issue, volume);
       const locationText = city ? ` in ${city}` : "";
-      addAssistantAction(log, `This sounds like ${service.name}${locationText}. I have selected that service in the enquiry form. Add the business and contact details next, then send it through.`);
+      const reason = serviceReason(analysis.ranked[0]);
+      const confidenceText = analysis.confidence >= 75 ? "That feels like a strong fit." : "That looks like the best starting point.";
+      addAssistantAction(log, `${confidenceText} ${reason} I would start with ${service.name}${locationText}. I have filled what I can in the enquiry form; add the contact details and we can pass it on properly.`);
     } else {
-      prefillLeadForm(null, city, message, issue);
-      addAssistantMessage(log, "I need a bit more detail to choose the right service. Is it parcels, same-day, 2-man, storage, pallet freight, sea freight/container logistics, EU/international or retail supply chain?", "bot");
+      prefillLeadForm(null, city, message, issue, volume);
+      addAssistantMessage(log, buildClarifyingQuestion(analysis), "bot");
     }
   };
 
