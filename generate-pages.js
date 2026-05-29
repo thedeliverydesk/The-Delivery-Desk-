@@ -2440,7 +2440,11 @@ function partnersHtml() {
           <fieldset class="form-section">
             <legend>Services and coverage</legend>
             <div class="form-row">
-              <label>Core services<select name="service" data-service-options multiple size="8" required></select><small>Choose every service you want to receive leads for.</small></label>
+              <div class="form-field">
+                <span class="field-label">Core services</span>
+                <div class="checkbox-grid" data-service-options data-service-checkboxes></div>
+                <small>Choose every service you want to receive leads for.</small>
+              </div>
               <label>Best-fit work<textarea name="bestFit" rows="8" placeholder="e.g. B2B parcels from ecommerce brands, urgent same-day medical parts, 2-man furniture with room-of-choice, port collections and devanning..." required></textarea></label>
             </div>
             <div class="form-row">

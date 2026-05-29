@@ -750,10 +750,23 @@ label {
   font-weight: 800;
 }
 
-label small {
+label small,
+.form-field small {
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.field-label {
+  display: block;
 }
 
 input,
@@ -781,6 +794,33 @@ select[multiple] {
 select[multiple] option {
   padding: 7px 8px;
   border-radius: 6px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.checkbox-option {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  min-height: 46px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfc;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.checkbox-option input {
+  width: 18px;
+  min-height: 18px;
+  margin: 1px 0 0;
+  padding: 0;
 }
 
 .location-tool label {
@@ -1312,6 +1352,7 @@ th {
   .hero-proof,
   .service-grid,
   .assistant-form,
+  .checkbox-grid,
   .form-row {
     grid-template-columns: 1fr;
   }

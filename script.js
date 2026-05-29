@@ -72,6 +72,7 @@ const cities = [
 const params = new URLSearchParams(window.location.search);
 const leadEndpoint = window.DELIVERY_DESK_LEAD_ENDPOINT || "/api/leads";
 const inboundEmail = "andy@svmk.co.uk";
+const partnerReferenceStart = 103;
 
 function titleCaseSlug(value) {
   return (value || "")
@@ -150,6 +151,13 @@ function setFieldValue(field, value) {
     });
     return;
   }
+  if (field.matches?.("[data-service-options]")) {
+    const values = Array.isArray(value) ? value : [value];
+    field.querySelectorAll("input[type='checkbox']").forEach((item) => {
+      item.checked = values.includes(item.value);
+    });
+    return;
+  }
   field.value = Array.isArray(value) ? value.join(", ") : value;
 }
 
@@ -176,8 +184,18 @@ function renderServices() {
 }
 
 function fillServiceOptions() {
-  document.querySelectorAll("[data-service-options], #serviceSelect").forEach((select) => {
-    select.innerHTML = services.map((service) => `<option value="${service.slug}">${service.name}</option>`).join("");
+  document.querySelectorAll("[data-service-options], #serviceSelect").forEach((target) => {
+    if (target.tagName === "SELECT") {
+      target.innerHTML = services.map((service) => `<option value="${service.slug}">${service.name}</option>`).join("");
+      return;
+    }
+
+    target.innerHTML = services.map((service) => `
+      <label class="checkbox-option">
+        <input type="checkbox" name="service" value="${service.slug}">
+        <span>${service.name}</span>
+      </label>
+    `).join("");
   });
 }
 
@@ -335,12 +353,18 @@ function wirePartnerForms() {
     const status = form.querySelector("[data-partner-status]");
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const serviceGroup = form.querySelector("[data-service-checkboxes]");
+      if (serviceGroup && !serviceGroup.querySelector("input[type='checkbox']:checked")) {
+        if (status) status.textContent = "Choose at least one core service.";
+        serviceGroup.querySelector("input[type='checkbox']")?.focus();
+        return;
+      }
       const submitButton = form.querySelector("button[type='submit']");
       if (submitButton) submitButton.disabled = true;
       const applications = JSON.parse(localStorage.getItem("deliveryDeskPartnerApplications") || "[]");
       const payload = {
         type: "partner",
-        reference: `TDD-P-${String(applications.length + 1).padStart(4, "0")}`,
+        reference: nextPartnerReference(applications),
         createdAt: new Date().toISOString(),
         page: window.location.pathname,
         ...formDataToObject(form)
@@ -360,6 +384,15 @@ function wirePartnerForms() {
       }
     });
   });
+}
+
+function nextPartnerReference(applications) {
+  const highestExisting = applications.reduce((highest, application) => {
+    const match = String(application.reference || "").match(/^TDD-P-(\d+)$/);
+    return match ? Math.max(highest, Number(match[1])) : highest;
+  }, 0);
+  const nextNumber = Math.max(partnerReferenceStart, highestExisting + 1);
+  return `TDD-P-${String(nextNumber).padStart(4, "0")}`;
 }
 
 function wirePrototypeLogins() {
