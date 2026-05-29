@@ -914,6 +914,22 @@ select[multiple] option {
   gap: 14px;
 }
 
+.form-section {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  padding: 0 0 18px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-section legend {
+  padding: 0 0 10px;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 900;
+}
+
 .form-status {
   min-height: 22px;
   margin: 0;

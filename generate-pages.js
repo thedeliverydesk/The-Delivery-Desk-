@@ -2421,19 +2421,70 @@ function partnersHtml() {
           <p>Use this to start a partner profile so SVMK can understand your coverage, services and preferred work.</p>
         </div>
         <form class="lead-form" data-partner-form>
-          <div class="form-row">
-            <label>Company name<input name="company" autocomplete="organization" required></label>
-            <label>Contact name<input name="name" autocomplete="name" required></label>
-          </div>
-          <div class="form-row">
-            <label>Email<input name="email" type="email" autocomplete="email" required></label>
-            <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
-          </div>
-          <div class="form-row">
-            <label>Core services<select name="service" data-service-options multiple size="6" required></select><small>Choose every service you want to receive leads for.</small></label>
-            <label>Coverage area<input name="coverage" placeholder="e.g. Midlands, London, UK-wide, EU lanes" required></label>
-          </div>
-          <label>What should we know?<textarea name="details" rows="5" placeholder="Fleet, depot locations, specialist handling, insurance, service levels, regions, sectors you serve..." required></textarea></label>
+          <fieldset class="form-section">
+            <legend>Business contact</legend>
+            <div class="form-row">
+              <label>Company name<input name="company" autocomplete="organization" required></label>
+              <label>Website<input name="website" type="url" placeholder="https://"></label>
+            </div>
+            <div class="form-row">
+              <label>Contact name<input name="name" autocomplete="name" required></label>
+              <label>Role or job title<input name="role" autocomplete="organization-title"></label>
+            </div>
+            <div class="form-row">
+              <label>Email<input name="email" type="email" autocomplete="email" required></label>
+              <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Services and coverage</legend>
+            <div class="form-row">
+              <label>Core services<select name="service" data-service-options multiple size="8" required></select><small>Choose every service you want to receive leads for.</small></label>
+              <label>Best-fit work<textarea name="bestFit" rows="8" placeholder="e.g. B2B parcels from ecommerce brands, urgent same-day medical parts, 2-man furniture with room-of-choice, port collections and devanning..." required></textarea></label>
+            </div>
+            <div class="form-row">
+              <label>Coverage area<input name="coverage" placeholder="e.g. Midlands, London, UK-wide, EU lanes" required></label>
+              <label>Depot or operating base<input name="base" placeholder="e.g. Birmingham B24, London, Felixstowe, Manchester"></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Lead preferences</legend>
+            <div class="form-row">
+              <label>Ideal lead size<select name="leadSize">
+                <option value="">Choose the closest fit</option>
+                <option>1-20 shipments a week</option>
+                <option>20-100 shipments a week</option>
+                <option>100+ shipments a week</option>
+                <option>Project or one-off movement</option>
+                <option>Contract or retained work only</option>
+              </select></label>
+              <label>Response time<select name="responseTime">
+                <option value="">Choose if known</option>
+                <option>Same day</option>
+                <option>Within 24 hours</option>
+                <option>Within 2 working days</option>
+                <option>Depends on enquiry type</option>
+              </select></label>
+            </div>
+            <label>Work you do not want<textarea name="exclusions" rows="3" placeholder="e.g. residential only, single parcels, hazardous goods, loose-load freight, low-margin ad hoc work..."></textarea></label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Checks before routing</legend>
+            <div class="form-row">
+              <label>Insurance or accreditations<input name="compliance" placeholder="e.g. goods in transit cover, FORS, BIFA, ISO, operator licence"></label>
+              <label>Preferred handoff<select name="handoff">
+                <option value="">Choose if relevant</option>
+                <option>Email lead summary</option>
+                <option>Phone call first</option>
+                <option>Partner dashboard later</option>
+                <option>Depends on lead value</option>
+              </select></label>
+            </div>
+            <label>Anything else SVMK should know?<textarea name="details" rows="4" placeholder="Fleet, depot locations, specialist handling, service levels, sectors, current capacity, pricing approach or partner fit..." required></textarea></label>
+          </fieldset>
           <label class="consent-line"><input name="consent" type="checkbox" required> I am happy for The Delivery Desk and SVMK to contact me about joining the partner network.</label>
           <button class="button primary full" type="submit">Save partner application</button>
           <p class="form-note">You can also email partner details to <a href="mailto:${inboundEmail}">${inboundEmail}</a>.</p>

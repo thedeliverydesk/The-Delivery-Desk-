@@ -330,7 +330,7 @@ function wirePartnerForms() {
       };
       applications.push(payload);
       localStorage.setItem("deliveryDeskPartnerApplications", JSON.stringify(applications));
-      if (status) status.textContent = `Saved. You can also email the details to ${inboundEmail}.`;
+      if (status) status.textContent = `Partner profile saved on this device. You can also email the details to ${inboundEmail}.`;
       form.reset();
       fillServiceOptions();
     });
