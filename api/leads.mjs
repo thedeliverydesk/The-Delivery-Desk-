@@ -73,6 +73,7 @@ function highLevelPayload(lead) {
 
   return {
     source: "The Delivery Desk Website",
+    type: lead.type,
     formType: lead.type === "partner" ? "partner_application" : "customer_enquiry",
     leadName: cleanValue(lead.name || `${firstName} ${lastName}`),
     firstName,
@@ -89,6 +90,7 @@ function highLevelPayload(lead) {
     pipeline: "D Desk Pipeline",
     stage: "New Lead",
     assignedTo: "Andy Smith",
+    notes: leadSummary(lead),
     submittedAt: lead.createdAt,
     lead
   };
