@@ -28,23 +28,70 @@ function normalizeLead(input) {
   };
 }
 
+function displayValue(value) {
+  if (Array.isArray(value)) return value.length ? value.join(", ") : "Not provided";
+  return cleanValue(value) || "Not provided";
+}
+
+function detailsLine(label, value) {
+  return `${label}: ${displayValue(value)}`;
+}
+
+function additionalFields(lead, knownFields) {
+  return Object.entries(lead)
+    .filter(([key, value]) => !knownFields.has(key) && displayValue(value) !== "Not provided")
+    .map(([key, value]) => detailsLine(key, value));
+}
+
 function leadSummary(lead) {
   const label = lead.type === "partner" ? "Partner application" : "Customer enquiry";
   const name = lead.business || lead.company || "Unknown business";
-  const service = Array.isArray(lead.service) ? lead.service.join(", ") : lead.service || "Not specified";
-  const area = lead.location || lead.coverage || "Not specified";
+  const knownFields = new Set([
+    "type", "reference", "createdAt", "page", "business", "company", "website", "name", "role", "email", "phone",
+    "service", "location", "coverage", "postcode", "base", "volume", "issue", "bestFit", "leadSize", "responseTime",
+    "exclusions", "compliance", "handoff", "details", "consent"
+  ]);
+
+  const commonLines = [
+    detailsLine("Reference", lead.reference),
+    detailsLine("Submitted", lead.createdAt),
+    detailsLine("Page", lead.page),
+    detailsLine("Business", name),
+    detailsLine("Contact", lead.name),
+    detailsLine("Email", lead.email),
+    detailsLine("Phone", lead.phone)
+  ];
+
+  const typeLines = lead.type === "partner"
+    ? [
+        detailsLine("Website", lead.website),
+        detailsLine("Role or job title", lead.role),
+        detailsLine("Core services", lead.service),
+        detailsLine("Coverage area", lead.coverage),
+        detailsLine("Depot or operating base", lead.base),
+        detailsLine("Best-fit work", lead.bestFit),
+        detailsLine("Ideal lead size", lead.leadSize),
+        detailsLine("Response time", lead.responseTime),
+        detailsLine("Work they do not want", lead.exclusions),
+        detailsLine("Insurance or accreditations", lead.compliance),
+        detailsLine("Preferred handoff", lead.handoff),
+        detailsLine("Anything else", lead.details),
+        detailsLine("Consent", lead.consent)
+      ]
+    : [
+        detailsLine("Services needed", lead.service),
+        detailsLine("Location", lead.location),
+        detailsLine("Volume", lead.volume),
+        detailsLine("Issue", lead.issue),
+        detailsLine("Details", lead.details),
+        detailsLine("Consent", lead.consent)
+      ];
+
+  const extraLines = additionalFields(lead, knownFields);
 
   return `${label}: ${lead.reference}
 
-Business: ${name}
-Contact: ${lead.name || "Not provided"}
-Email: ${lead.email || "Not provided"}
-Phone: ${lead.phone || "Not provided"}
-Service: ${service}
-Area / coverage: ${area}
-
-Details:
-${lead.details || lead.bestFit || "Not provided"}
+${[...commonLines, ...typeLines, ...extraLines].join("\n")}
 
 Raw payload:
 ${JSON.stringify(lead, null, 2)}
@@ -70,8 +117,11 @@ function splitName(lead) {
 function highLevelPayload(lead) {
   const company = cleanValue(lead.company || lead.business);
   const { firstName, lastName } = splitName(lead);
+  const notes = leadSummary(lead);
+  const serviceText = displayValue(lead.service);
 
   return {
+    ...lead,
     source: "The Delivery Desk Website",
     type: lead.type,
     formType: lead.type === "partner" ? "partner_application" : "customer_enquiry",
@@ -85,12 +135,16 @@ function highLevelPayload(lead) {
     postcode: cleanValue(lead.postcode || lead.location || lead.coverage),
     serviceArea: cleanValue(lead.coverage || lead.location),
     service: cleanValue(lead.service),
+    serviceText,
+    coreServices: serviceText,
     message: cleanValue(lead.details || lead.bestFit || lead.issue),
     reference: lead.reference,
     pipeline: "D Desk Pipeline",
     stage: "New Lead",
     assignedTo: "Andy Smith",
-    notes: leadSummary(lead),
+    notes,
+    fullDetails: notes,
+    rawPayload: JSON.stringify(lead),
     submittedAt: lead.createdAt,
     lead
   };
