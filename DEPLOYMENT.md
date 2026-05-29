@@ -45,4 +45,16 @@ For sitemap generation on the live domain, add a Vercel environment variable:
 
 `SITE_URL=https://your-domain.co.uk`
 
-For Google Sheets lead routing, add the Apps Script web app URL to `script.js` as `DELIVERY_DESK_LEAD_ENDPOINT`, or inject it before `script.js` loads. The Apps Script should append rows to the lead sheet and send an email notification to `andy@svmk.co.uk`.
+For Google Sheets lead routing, add the Apps Script web app URL to Vercel as `LEAD_WEBHOOK_URL`. The Apps Script should append rows to the lead sheet and send an email notification to `andy@svmk.co.uk`.
+
+## Lead routing variables
+
+The live forms now post to `/api/leads`. Add the routing variables in Vercel before using the site for real enquiries:
+
+- `LEAD_WEBHOOK_URL` for the Google Apps Script web app URL.
+- `LEAD_WEBHOOK_SECRET` if the Apps Script checks a shared secret.
+- `GENIE_WEBHOOK_URL` if leads should also go into Genie / HighLevel.
+- `GENIE_API_KEY` if Genie requires a bearer token.
+- `RESEND_API_KEY`, `LEAD_EMAIL_FROM` and `LEAD_EMAIL_TO` if using direct Resend email alerts.
+
+See `LEAD_ROUTING.md` for the full setup.

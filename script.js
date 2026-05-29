@@ -70,7 +70,7 @@ const cities = [
 ];
 
 const params = new URLSearchParams(window.location.search);
-const leadEndpoint = window.DELIVERY_DESK_LEAD_ENDPOINT || "";
+const leadEndpoint = window.DELIVERY_DESK_LEAD_ENDPOINT || "/api/leads";
 const inboundEmail = "andy@svmk.co.uk";
 
 function titleCaseSlug(value) {
@@ -114,6 +114,25 @@ function formDataToObject(form) {
     }
   }
   return data;
+}
+
+async function submitLeadPayload(payload) {
+  if (!leadEndpoint || window.location.protocol === "file:") {
+    return { ok: false, skipped: true };
+  }
+
+  const response = await fetch(leadEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok || result.ok === false) {
+    throw new Error(result.error || (result.errors || []).join("; ") || "Lead routing failed");
+  }
+
+  return result;
 }
 
 function setFieldValue(field, value) {
@@ -239,6 +258,7 @@ function wireLeadForms() {
       const leads = JSON.parse(localStorage.getItem("deliveryDeskLeads") || "[]");
       const reference = `TDD-${String(leads.length + 1).padStart(4, "0")}`;
       const payload = {
+        type: "customer",
         reference,
         createdAt: new Date().toISOString(),
         page: window.location.pathname,
@@ -248,20 +268,13 @@ function wireLeadForms() {
       localStorage.setItem("deliveryDeskLeads", JSON.stringify(leads));
       sessionStorage.setItem("deliveryDeskLastLead", reference);
 
-      if (leadEndpoint) {
-        try {
-          await fetch(leadEndpoint, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-          });
-        } catch (error) {
-          console.warn("Lead endpoint failed; enquiry kept in local fallback storage.", error);
-        }
+      try {
+        await submitLeadPayload(payload);
+      } catch (error) {
+        console.warn("Lead routing failed; enquiry kept in local fallback storage.", error);
       }
 
-      window.location.href = form.dataset.thankYou || "thank-you.html";
+      window.location.href = `${form.dataset.thankYou || "thank-you.html"}?ref=${encodeURIComponent(reference)}`;
     });
   });
 }
@@ -320,19 +333,31 @@ function renderAdminPage() {
 function wirePartnerForms() {
   document.querySelectorAll("[data-partner-form]").forEach((form) => {
     const status = form.querySelector("[data-partner-status]");
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const submitButton = form.querySelector("button[type='submit']");
+      if (submitButton) submitButton.disabled = true;
       const applications = JSON.parse(localStorage.getItem("deliveryDeskPartnerApplications") || "[]");
       const payload = {
+        type: "partner",
         reference: `TDD-P-${String(applications.length + 1).padStart(4, "0")}`,
         createdAt: new Date().toISOString(),
+        page: window.location.pathname,
         ...formDataToObject(form)
       };
       applications.push(payload);
       localStorage.setItem("deliveryDeskPartnerApplications", JSON.stringify(applications));
-      if (status) status.textContent = `Partner profile saved on this device. You can also email the details to ${inboundEmail}.`;
-      form.reset();
-      fillServiceOptions();
+      try {
+        await submitLeadPayload(payload);
+        if (status) status.textContent = `Partner profile sent. Reference ${payload.reference}.`;
+        form.reset();
+        fillServiceOptions();
+      } catch (error) {
+        console.warn("Partner routing failed; application kept in local fallback storage.", error);
+        if (status) status.textContent = `Saved on this device, but live routing is not configured yet. You can also email the details to ${inboundEmail}.`;
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   });
 }

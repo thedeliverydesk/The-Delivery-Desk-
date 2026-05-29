@@ -20,6 +20,8 @@ The current build generates 1,280 local service landing pages across 8 logistics
 - `terms.html`, `cookies.html` - legal support pages.
 - `generate-pages.js` - static page generator for service and city pages.
 - `audit-site.js` - static QA script for titles, descriptions, internal links, anchors, sitemap checks and JSON-LD.
+- `api/leads.mjs` - Vercel lead routing endpoint for enquiries, partner applications, Google Apps Script, Genie and email alerts.
+- `LEAD_ROUTING.md` - setup notes for Google Sheets, Genie and email routing.
 - `COMPETITOR_SEO_NOTES.md` - market positioning notes from competitor research.
 - `SEO_CONVERSION_NOTES.md` - working SEO and conversion brief.
 - `vercel.json` - Vercel clean URL, redirect and header configuration.
