@@ -265,6 +265,12 @@ h3 {
   box-shadow: 0 12px 30px rgba(46, 125, 99, 0.28);
 }
 
+.button.secondary {
+  color: var(--green);
+  background: var(--white);
+  border: 1px solid rgba(46, 125, 99, 0.26);
+}
+
 .button.ghost {
   color: var(--white);
   background: rgba(255, 255, 255, 0.12);
@@ -667,6 +673,11 @@ h3 {
 
 .check-list.compact {
   margin-top: 16px;
+}
+
+.split-copy .hero-actions,
+.two-col .hero-actions {
+  margin-top: 24px;
 }
 
 .expert-panel {

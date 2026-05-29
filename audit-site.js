@@ -107,10 +107,17 @@ const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => m
 if (!sitemap.includes("/locations/manchester")) failures.push("sitemap: missing Manchester location hub");
 if (!sitemap.includes("/same-day-delivery/issues-solutions")) failures.push("sitemap: missing same-day guide");
 if (!sitemap.includes("/how-we-work")) failures.push("sitemap: missing how-we-work page");
+if (!sitemap.includes("/about")) failures.push("sitemap: missing about page");
+if (!sitemap.includes("/delivery-review")) failures.push("sitemap: missing delivery review page");
+if (!sitemap.includes("/ai-search")) failures.push("sitemap: missing AI search page");
 if (!sitemap.includes("/sectors/ecommerce")) failures.push("sitemap: missing ecommerce sector page");
 if (sitemap.includes("/admin") || sitemap.includes("/thank-you")) failures.push("sitemap: contains noindex support pages");
 if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(sitemap)) failures.push("sitemap: missing lastmod dates");
 if (!/<priority>/.test(sitemap)) failures.push("sitemap: missing priority hints");
+
+for (const requiredFile of ["llms.txt", "llms-full.txt", "ai-search.json"]) {
+  if (!fs.existsSync(path.join(root, requiredFile))) failures.push(`${requiredFile}: missing AI search asset`);
+}
 
 console.log(JSON.stringify({
   htmlFiles: htmlFiles.length,

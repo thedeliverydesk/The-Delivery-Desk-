@@ -513,7 +513,9 @@ function siteFacts() {
     localServicePageCount: services.length * cities.length,
     priorityPages: [
       { name: "Home", url: `${siteUrl}/` },
+      { name: "About", url: `${siteUrl}/about` },
       { name: "How we work", url: `${siteUrl}/how-we-work` },
+      { name: "Delivery review checklist", url: `${siteUrl}/delivery-review` },
       { name: "Services", url: `${siteUrl}/#services` },
       { name: "Locations", url: `${siteUrl}/locations` },
       { name: "Sectors", url: `${siteUrl}/sectors` },
@@ -589,6 +591,7 @@ function headerHtml(prefix, localCta = false) {
               ${serviceNavLinks(prefix)}
           </div>
         </details>
+        <a href="${prefix}about/index.html">About</a>
         <a href="${prefix}how-we-work/index.html">How we work</a>
         <a href="${prefix}sectors/index.html">Sectors</a>
         <a href="${prefix}insights/index.html">Guides</a>
@@ -1546,6 +1549,254 @@ ${services.map((service) => `<a href="../${service.slug}/issues-solutions/index.
 `;
 }
 
+function aboutHtml() {
+  const title = "About The Delivery Desk | Independent UK Logistics Matching";
+  const description = "Learn how The Delivery Desk, powered by SVMK, uses 150+ years of combined delivery and logistics experience to help UK businesses find suitable delivery solutions.";
+  const canonical = `${siteUrl}/about`;
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": title,
+      "description": description,
+      "url": canonical,
+      "about": {
+        "@type": "ProfessionalService",
+        "name": "The Delivery Desk",
+        "url": siteUrl,
+        "email": inboundEmail,
+        "areaServed": "United Kingdom",
+        "description": "Independent delivery and logistics matching for UK businesses.",
+        "knowsAbout": services.map((service) => service.name)
+      }
+    },
+    breadcrumbSchema([
+      { label: "Home", path: "/" },
+      { label: "About", path: "/about" }
+    ])
+  ];
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${seoMeta({ title, description, canonical })}
+    <link rel="stylesheet" href="../styles.css">
+    ${jsonScript(schema)}
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "About" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">About The Delivery Desk</p>
+          <h1>Independent logistics experience for businesses that need the right delivery answer.</h1>
+          <p>The Delivery Desk is powered by SVMK and built for UK businesses that need practical help choosing delivery, freight, fulfilment or supply chain partners. The aim is simple: understand the job properly before a supplier conversation starts.</p>
+          <a class="button primary" href="../index.html#lead-form">Start an enquiry</a>
+        </div>
+      </section>
+
+      <section class="section-inner local-detail">
+        <div class="section-heading">
+          <p class="eyebrow dark">Why trust us</p>
+          <h2>Experience across the moving parts that usually get missed.</h2>
+          <p class="section-lede">The team brings 150+ years of combined knowledge across courier operations, parcels, same-day, bulky delivery, warehousing, freight, retail delivery and supply chain problem-solving.</p>
+        </div>
+        <div class="trust-strip">
+          <article>
+            <strong>150+ years</strong>
+            <span>Combined team knowledge across delivery and logistics operations.</span>
+          </article>
+          <article>
+            <strong>Independent</strong>
+            <span>We start with the requirement, not a single supplier's rate card.</span>
+          </article>
+          <article>
+            <strong>Practical</strong>
+            <span>We look at cut-offs, access, claims, customs, damages and service promises.</span>
+          </article>
+          <article>
+            <strong>UK-wide</strong>
+            <span>Coverage is built around national services and local business delivery needs.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-inner two-col local-detail">
+        <div>
+          <p class="eyebrow dark">Our position</p>
+          <h2>We are not trying to make every job fit the same carrier.</h2>
+          <p>Daily parcels, same-day work, white glove 2-man delivery, pallets, EU and international freight, storage, fulfilment and sea freight all fail for different reasons. A good match starts by asking what is moving, how urgent it is, what the customer expects and where the current process is leaking time or money.</p>
+          <p>That is why The Delivery Desk asks for the details before routing an enquiry. It protects the customer from irrelevant proposals and gives partner companies a clearer lead.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="../delivery-review/index.html">Use the review checklist</a>
+            <a class="button secondary" href="../how-we-work/index.html">See how matching works</a>
+          </div>
+        </div>
+        <aside class="expert-panel">
+          <h3>What this helps avoid</h3>
+          <ul class="check-list compact">
+            <li>Choosing on headline price alone</li>
+            <li>Using a parcel service for bulky or fragile goods</li>
+            <li>Missing customs, access or booking requirements</li>
+            <li>Ignoring failed delivery and claims costs</li>
+            <li>Sending weak enquiries to the wrong partner</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Service expertise</p>
+          <h2>The areas we help businesses review.</h2>
+        </div>
+        <div class="related-grid">
+${services.map((service) => `<a href="../${service.slug}/index.html">${escapeHtml(service.name)}</a>`).join("\n")}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../delivery-review/index.html">Delivery review</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
+function deliveryReviewHtml() {
+  const title = "Delivery Review Checklist | The Delivery Desk";
+  const description = "A practical checklist for UK businesses reviewing parcel collections, same-day delivery, 2-man delivery, freight, fulfilment, international delivery or sea freight.";
+  const canonical = `${siteUrl}/delivery-review`;
+  const checklist = [
+    ["Volumes and pattern", "Daily, weekly and seasonal volumes; peak pressure; regular routes versus one-off work."],
+    ["Goods profile", "Weight, dimensions, fragility, value, packaging, pallet type, bulky handling or room-of-choice needs."],
+    ["Collection and delivery promise", "Cut-off times, timed windows, booking requirements, customer communication and proof of delivery."],
+    ["Access and handling", "Loading equipment, tail-lift needs, stairs, parking, site restrictions, port collection or devanning requirements."],
+    ["Failure points", "Missed collections, failed drops, damage, claims, customs delays, stock visibility gaps or manual chasing."],
+    ["True cost", "Headline rate, surcharges, admin time, redelivery, claims, storage, demurrage, returns and customer service impact."]
+  ];
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to review a business delivery setup",
+      "description": description,
+      "step": checklist.map(([name, text]) => ({
+        "@type": "HowToStep",
+        "name": name,
+        "text": text
+      }))
+    },
+    breadcrumbSchema([
+      { label: "Home", path: "/" },
+      { label: "Delivery review checklist", path: "/delivery-review" }
+    ])
+  ];
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${seoMeta({ title, description, canonical })}
+    <link rel="stylesheet" href="../styles.css">
+    ${jsonScript(schema)}
+  </head>
+  <body>
+    ${headerHtml("../")}
+
+    <main>
+      ${breadcrumbs([
+        { label: "Home", href: "../index.html" },
+        { label: "Delivery review checklist" }
+      ])}
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Delivery review checklist</p>
+          <h1>Review the delivery problem before asking for another quote.</h1>
+          <p>This checklist helps a business frame parcel, same-day, 2-man, fulfilment, freight, EU and international, or sea freight problems before The Delivery Desk matches the enquiry with a suitable route.</p>
+          <a class="button primary" href="../index.html#lead-form">Ask us to review your delivery setup</a>
+        </div>
+      </section>
+
+      <section class="section-inner proof-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Checklist</p>
+          <h2>The details that change the recommendation.</h2>
+          <p class="section-lede">A good delivery partner cannot be chosen properly without the operational detail. These are the areas we look at before deciding what kind of solution should be considered.</p>
+        </div>
+        <div class="proof-grid">
+${checklist.map(([name, text]) => `
+          <article class="proof-card">
+            <h3>${escapeHtml(name)}</h3>
+            <p>${escapeHtml(text)}</p>
+          </article>`).join("\n")}
+        </div>
+      </section>
+
+      <section class="section-inner two-col local-detail">
+        <div>
+          <p class="eyebrow dark">What to prepare</p>
+          <h2>The fastest route to a useful answer.</h2>
+          <p>Before submitting an enquiry, gather the basics: collection postcode, delivery areas, volume, average size and weight, service deadlines, current carrier issues, claims or damage history, and any access or handling notes.</p>
+          <p>For EU, international or sea freight, include destination country, goods description, value, customs paperwork status, incoterms if known, container type or freight profile, and onward UK delivery needs.</p>
+        </div>
+        <aside class="expert-panel">
+          <h3>Useful next steps</h3>
+          <ol>
+            <li>Pick the closest service page.</li>
+            <li>Check the issues guide for common red flags.</li>
+            <li>Submit the enquiry with the operational details.</li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="section-inner related-section">
+        <div class="section-heading">
+          <p class="eyebrow dark">Use with service guides</p>
+          <h2>Choose the area closest to the problem.</h2>
+        </div>
+        <div class="related-grid">
+${services.map((service) => `<a href="../${service.slug}/issues-solutions/index.html">${escapeHtml(service.name)} issues guide</a>`).join("\n")}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../about/index.html">About</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+`;
+}
+
 function cityHubHtml(city) {
   const title = `Delivery and Logistics Services in ${city.name} | The Delivery Desk`;
   const areas = businessAreasFor(city);
@@ -2429,10 +2680,12 @@ function aiSearchJson() {
 const generated = [];
 const sitemapPaths = [
   "/",
+  "/about",
   "/privacy",
   "/terms",
   "/cookies",
   "/how-we-work",
+  "/delivery-review",
   "/insights",
   "/locations",
   "/sectors",
@@ -2442,6 +2695,12 @@ const sitemapPaths = [
 
 fs.writeFileSync(path.join(__dirname, "terms.html"), termsHtml(), "utf8");
 fs.writeFileSync(path.join(__dirname, "cookies.html"), cookiesHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "about"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "about", "index.html"), aboutHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "delivery-review"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "delivery-review", "index.html"), deliveryReviewHtml(), "utf8");
 
 fs.mkdirSync(path.join(__dirname, "partners"), { recursive: true });
 fs.writeFileSync(path.join(__dirname, "partners", "index.html"), partnersHtml(), "utf8");

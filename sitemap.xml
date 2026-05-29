@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/about</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/privacy</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -26,6 +32,12 @@
   </url>
   <url>
     <loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/how-we-work</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://the-delivery-desk-andy-3048s-projects.vercel.app/delivery-review</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
