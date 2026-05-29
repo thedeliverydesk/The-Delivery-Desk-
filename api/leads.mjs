@@ -119,12 +119,14 @@ function highLevelPayload(lead) {
   const { firstName, lastName } = splitName(lead);
   const notes = leadSummary(lead);
   const serviceText = displayValue(lead.service);
+  const formType = lead.type === "partner" ? "partner_application" : "customer_enquiry";
 
   return {
     ...lead,
     source: "The Delivery Desk Website",
     type: lead.type,
-    formType: lead.type === "partner" ? "partner_application" : "customer_enquiry",
+    formType,
+    lead_form_type: formType,
     leadName: cleanValue(lead.name || `${firstName} ${lastName}`),
     firstName,
     lastName,
@@ -144,6 +146,7 @@ function highLevelPayload(lead) {
     assignedTo: "Andy Smith",
     notes,
     fullDetails: notes,
+    full_form_details: notes,
     rawPayload: JSON.stringify(lead),
     submittedAt: lead.createdAt,
     lead
