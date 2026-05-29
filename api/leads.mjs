@@ -51,17 +51,68 @@ ${JSON.stringify(lead, null, 2)}
 `;
 }
 
+function splitName(lead) {
+  const fullName = cleanValue(lead.name || lead.contactName || lead.leadName);
+  if (lead.firstName || lead.lastName) {
+    return {
+      firstName: cleanValue(lead.firstName),
+      lastName: cleanValue(lead.lastName)
+    };
+  }
+
+  const parts = fullName.split(/\s+/).filter(Boolean);
+  return {
+    firstName: parts[0] || "",
+    lastName: parts.slice(1).join(" ")
+  };
+}
+
+function highLevelPayload(lead) {
+  const company = cleanValue(lead.company || lead.business);
+  const { firstName, lastName } = splitName(lead);
+
+  return {
+    source: "The Delivery Desk Website",
+    formType: lead.type === "partner" ? "partner_application" : "customer_enquiry",
+    leadName: cleanValue(lead.name || `${firstName} ${lastName}`),
+    firstName,
+    lastName,
+    email: cleanValue(lead.email),
+    phone: cleanValue(lead.phone),
+    company,
+    business: company,
+    postcode: cleanValue(lead.postcode || lead.location || lead.coverage),
+    serviceArea: cleanValue(lead.coverage || lead.location),
+    service: cleanValue(lead.service),
+    message: cleanValue(lead.details || lead.bestFit || lead.issue),
+    reference: lead.reference,
+    pipeline: "D Desk Pipeline",
+    stage: "New Lead",
+    assignedTo: "Andy Smith",
+    submittedAt: lead.createdAt,
+    lead
+  };
+}
+
+function isHighLevelWebhook(url) {
+  return /leadconnectorhq\.com\/hooks\//i.test(url);
+}
+
 async function forwardToWebhook(lead) {
   const webhookUrl = process.env.LEAD_WEBHOOK_URL || process.env.GOOGLE_APPS_SCRIPT_WEBHOOK_URL || "";
   if (!webhookUrl) return { configured: false };
 
+  const body = isHighLevelWebhook(webhookUrl)
+    ? highLevelPayload(lead)
+    : {
+        secret: process.env.LEAD_WEBHOOK_SECRET || "",
+        lead
+      };
+
   const response = await fetch(webhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      secret: process.env.LEAD_WEBHOOK_SECRET || "",
-      lead
-    })
+    body: JSON.stringify(body)
   });
 
   const text = await response.text();
@@ -114,6 +165,7 @@ async function forwardToGenie(lead) {
     method: "POST",
     headers,
     body: JSON.stringify({
+      ...highLevelPayload(lead),
       source: "The Delivery Desk",
       contact: {
         name: lead.name || "",
