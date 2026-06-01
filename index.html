@@ -369,7 +369,11 @@
             <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
           </div>
           <div class="form-row">
-            <label>Services needed<select name="service" data-service-options multiple size="6" required></select><small>Choose one or more services.</small></label>
+            <div class="form-field">
+              <span class="field-label">Services needed</span>
+              <div class="checkbox-grid" data-service-options data-service-checkboxes></div>
+              <small>Choose one or more services.</small>
+            </div>
             <label>Collection area<input name="location" placeholder="e.g. Leeds, Bristol, Glasgow" required></label>
           </div>
           <div class="form-row">

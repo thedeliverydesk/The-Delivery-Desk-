@@ -1064,6 +1064,115 @@ select[multiple] option {
   padding: clamp(42px, 7vw, 86px) 0;
 }
 
+.partner-portal {
+  display: grid;
+  gap: 22px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.portal-status {
+  display: grid;
+  min-width: min(100%, 240px);
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(16, 47, 74, 0.06);
+}
+
+.portal-status strong,
+.portal-status small {
+  overflow-wrap: anywhere;
+}
+
+.badge-pill {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--green);
+  background: #eaf6f0;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.metric-grid,
+.portal-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-grid article,
+.portal-panel {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(16, 47, 74, 0.06);
+}
+
+.metric-grid strong {
+  display: block;
+  color: var(--navy);
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.metric-grid span,
+.portal-panel p,
+.portal-status small {
+  color: var(--muted);
+}
+
+.portal-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portal-form {
+  display: grid;
+  gap: 14px;
+}
+
+.panel-heading {
+  margin-bottom: 14px;
+}
+
+.panel-heading h3 {
+  margin-bottom: 0;
+}
+
+.lead-preview-list {
+  display: grid;
+  gap: 12px;
+}
+
+.lead-preview-list div {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.lead-preview-list p {
+  margin: 0;
+}
+
 .proof-grid,
 .trust-strip {
   display: grid;
@@ -1329,6 +1438,8 @@ th {
   .split-section,
   .proof-grid,
   .trust-strip,
+  .metric-grid,
+  .portal-grid,
   .local-area-grid,
   .location-featured-grid,
   .location-region-grid,
@@ -1337,6 +1448,10 @@ th {
   .assistant-layout,
   .lead-section {
     grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    display: grid;
   }
 
   .service-grid {

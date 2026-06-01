@@ -270,6 +270,13 @@ function wireLeadForms() {
   document.querySelectorAll("[data-lead-form]").forEach((form) => {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const serviceGroup = form.querySelector("[data-service-checkboxes]");
+      const status = form.querySelector("[data-form-status]");
+      if (serviceGroup && !serviceGroup.querySelector("input[type='checkbox']:checked")) {
+        if (status) status.textContent = "Choose at least one service.";
+        serviceGroup.querySelector("input[type='checkbox']")?.focus();
+        return;
+      }
       const submitButton = form.querySelector("button[type='submit']");
       if (submitButton) submitButton.disabled = true;
       const data = formDataToObject(form);
@@ -402,13 +409,49 @@ function wirePrototypeLogins() {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = formDataToObject(form);
+      delete data.password;
       localStorage.setItem("deliveryDeskPrototypeLogin", JSON.stringify({
         type: form.dataset.loginType || "prototype",
         createdAt: new Date().toISOString(),
         ...data
       }));
+      const company = document.querySelector("[data-partner-company]");
+      const email = document.querySelector("[data-partner-email]");
+      if (company) company.textContent = data.company || "Partner account";
+      if (email) email.textContent = data.email || "Authentication pending";
       if (status) status.textContent = "Partner area opened. We will verify partner details before live lead routing is enabled.";
       if (dashboard) dashboard.hidden = false;
+    });
+  });
+}
+
+function wirePartnerDashboardProfiles() {
+  document.querySelectorAll("[data-partner-profile]").forEach((form) => {
+    const status = form.querySelector("[data-partner-profile-status]");
+    const saved = JSON.parse(localStorage.getItem("deliveryDeskPartnerDashboardProfile") || "null");
+
+    if (saved) {
+      Object.entries(saved).forEach(([key, value]) => {
+        const field = form.elements[key] || form.querySelector(`[name="${key}"]`) || form.querySelector("[data-service-checkboxes]");
+        setFieldValue(field, value);
+      });
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const serviceGroup = form.querySelector("[data-service-checkboxes]");
+      if (serviceGroup && !serviceGroup.querySelector("input[type='checkbox']:checked")) {
+        if (status) status.textContent = "Choose at least one service before saving.";
+        serviceGroup.querySelector("input[type='checkbox']")?.focus();
+        return;
+      }
+
+      const payload = {
+        updatedAt: new Date().toISOString(),
+        ...formDataToObject(form)
+      };
+      localStorage.setItem("deliveryDeskPartnerDashboardProfile", JSON.stringify(payload));
+      if (status) status.textContent = "Dashboard profile saved on this device for the preview.";
     });
   });
 }
@@ -659,7 +702,7 @@ function prefillLeadForm(service, city, message, issue, volume) {
   const leadForm = document.querySelector("[data-lead-form]");
   if (!leadForm) return;
 
-  const serviceSelect = leadForm.querySelector("[name='service']");
+  const serviceSelect = leadForm.elements.service || leadForm.querySelector("[data-service-checkboxes]");
   const locationInput = leadForm.querySelector("[name='location']");
   const detailsInput = leadForm.querySelector("[name='details']");
   const issueSelect = leadForm.querySelector("[name='issue']");
@@ -731,4 +774,5 @@ renderAdminPage();
 wireAssistant();
 wirePartnerForms();
 wirePrototypeLogins();
+wirePartnerDashboardProfiles();
 wireCustomerProfile();

@@ -53,41 +53,122 @@
       <section class="local-hero">
         <div class="section-inner">
           <p class="eyebrow dark">Partner area</p>
-          <h1>Partner login.</h1>
-          <p>This preview shows how partners could manage service coverage, preferred work and lead notes once secure access is added.</p>
+          <h1>Partner login and lead dashboard.</h1>
+          <p>Use this secure-access preview to see how approved delivery partners will manage service coverage, preferred work, lead notes and onboarding checks once live authentication is connected.</p>
         </div>
       </section>
       <section class="section-inner lead-section">
         <div class="lead-copy">
-          <p class="eyebrow dark">Partner dashboard</p>
-          <h2>Sign in with your partner email.</h2>
-          <p>Secure authentication still needs to be connected before partners can use this for real lead management.</p>
+          <p class="eyebrow dark">Secure preview</p>
+          <h2>Sign in with your partner details.</h2>
+          <p>This page is ready for the partner workflow, but real accounts should only be enabled after authentication, access control and lead-routing permissions are connected.</p>
+          <ul class="check-list compact">
+            <li>Approved partner profile</li>
+            <li>Service coverage and lead preferences</li>
+            <li>Insurance, compliance and onboarding notes</li>
+          </ul>
         </div>
         <form class="lead-form" data-preview-login data-login-type="partner">
           <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Company<input name="company" autocomplete="organization"></label>
-          <button class="button primary full" type="submit">Open partner area</button>
+          <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+          <label>Company<input name="company" autocomplete="organization" placeholder="Your delivery company"></label>
+          <button class="button primary full" type="submit">Open partner dashboard</button>
+          <p class="form-note">Preview only. Do not use a real password until live authentication is connected.</p>
           <p class="form-status" role="status" data-login-status></p>
         </form>
       </section>
-      <section class="section-inner dashboard-section" data-partner-dashboard hidden>
-        <div class="section-heading">
-          <p class="eyebrow dark">Partner dashboard</p>
-          <h2>Your service profile.</h2>
-          <p class="section-lede">Use this account preview to shape what the real dashboard should hold.</p>
+      <section class="section-inner dashboard-section partner-portal" data-partner-dashboard hidden>
+        <div class="dashboard-header">
+          <div>
+            <p class="eyebrow dark">Partner dashboard</p>
+            <h2>Lead readiness and service profile.</h2>
+            <p class="section-lede">This preview shows the operational information The Delivery Desk should hold before routing live enquiries.</p>
+          </div>
+          <div class="portal-status">
+            <span class="badge-pill">Preview mode</span>
+            <strong data-partner-company>Partner account</strong>
+            <small data-partner-email>Authentication pending</small>
+          </div>
         </div>
-        <div class="insight-grid">
-          <article class="insight-card">
-            <h3>Service coverage</h3>
-            <p>Store preferred services, regions, fleet notes and specialist handling rules.</p>
+        <div class="metric-grid">
+          <article>
+            <strong>0</strong>
+            <span>Live leads routed</span>
           </article>
-          <article class="insight-card">
-            <h3>Lead preferences</h3>
-            <p>Set minimum volume, work types, sectors and routes you want to receive.</p>
+          <article>
+            <strong>3</strong>
+            <span>Profile areas to complete</span>
           </article>
-          <article class="insight-card">
-            <h3>Documents</h3>
-            <p>Insurance, accreditations and service documents can be linked during live onboarding.</p>
+          <article>
+            <strong>Pending</strong>
+            <span>Verification status</span>
+          </article>
+        </div>
+        <div class="portal-grid">
+          <article class="portal-panel">
+            <div class="panel-heading">
+              <p class="eyebrow dark">Lead inbox</p>
+              <h3>Qualified enquiry preview</h3>
+            </div>
+            <div class="lead-preview-list">
+              <div>
+                <span class="badge-pill">Example</span>
+                <strong>Ecommerce parcels, North West</strong>
+                <p>Daily collections, 100+ shipments a week, missed collection risk and returns pressure.</p>
+              </div>
+              <div>
+                <span class="badge-pill">Example</span>
+                <strong>2-man furniture, South East</strong>
+                <p>Room-of-choice, booking windows, fragile goods and claims control required.</p>
+              </div>
+              <div>
+                <span class="badge-pill">Example</span>
+                <strong>Container devanning, Felixstowe route</strong>
+                <p>Port collection, storage, customs handover and onward UK pallet movement.</p>
+              </div>
+            </div>
+          </article>
+
+          <form class="portal-panel portal-form" data-partner-profile>
+            <div class="panel-heading">
+              <p class="eyebrow dark">Coverage profile</p>
+              <h3>What work should we send you?</h3>
+            </div>
+            <div class="form-field">
+              <span class="field-label">Core services</span>
+              <div class="checkbox-grid" data-service-options data-service-checkboxes></div>
+              <small>Choose the services you can handle well.</small>
+            </div>
+            <label>Best coverage areas<textarea name="coverage" rows="3" placeholder="e.g. London and South East, Midlands pallets, UK-wide parcels, Felixstowe and Southampton port work"></textarea></label>
+            <label>Preferred lead notes<textarea name="preferences" rows="3" placeholder="Minimum volumes, sectors, exclusions, vehicle types, response times or specialist handling rules"></textarea></label>
+            <button class="button secondary full" type="submit">Save dashboard profile</button>
+            <p class="form-status" role="status" data-partner-profile-status></p>
+          </form>
+
+          <article class="portal-panel">
+            <div class="panel-heading">
+              <p class="eyebrow dark">Onboarding checks</p>
+              <h3>Before live routing</h3>
+            </div>
+            <ul class="check-list compact">
+              <li>Partner identity and trading details verified</li>
+              <li>Goods in transit insurance confirmed</li>
+              <li>Coverage, exclusions and response times recorded</li>
+              <li>Lead handoff process agreed with SVMK</li>
+              <li>Data protection and customer contact rules accepted</li>
+            </ul>
+          </article>
+
+          <article class="portal-panel">
+            <div class="panel-heading">
+              <p class="eyebrow dark">Account actions</p>
+              <h3>Next practical steps</h3>
+            </div>
+            <p>Apply as a partner first if your company has not been approved. Once approved, this dashboard can become the place for lead routing, profile updates and document checks.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="../partners/index.html#partner-form">Complete partner application</a>
+              <a class="button secondary" href="mailto:andy@svmk.co.uk">Email SVMK</a>
+            </div>
           </article>
         </div>
       </section>
