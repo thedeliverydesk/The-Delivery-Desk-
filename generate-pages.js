@@ -2187,12 +2187,37 @@ function sectorServiceLinks(sector, prefix = "../") {
 
 function sectorsIndexHtml() {
   const title = "Delivery Support by Sector | The Delivery Desk";
-  const description = "Delivery and logistics matching for ecommerce, furniture, trade suppliers, manufacturers, wholesalers, importers, exporters and retail businesses.";
+  const description = "Compare delivery and logistics support by sector, including ecommerce, furniture, trade suppliers, manufacturers, wholesalers, importers, exporters and retail stores.";
   const canonical = `${siteUrl}/sectors`;
-  const schema = breadcrumbSchema([
-    { label: "Home", path: "/" },
-    { label: "Sectors", path: "/sectors" }
-  ]);
+  const sectorFaqs = [
+    ["Which sector should I choose if my business fits more than one?", "Choose the page that best matches the delivery problem you are trying to solve. If you sell online and also run stores, for example, ecommerce may be the right route for parcel collections while retail supply chain may be better for stock movement and returns."],
+    ["Can The Delivery Desk help if we already have carriers?", "Yes. Many enquiries start with an existing carrier or courier setup that is no longer fitting the goods, volume, customer promise or admin load. We help review what is failing before suggesting a better route."],
+    ["Do you only support large companies?", "No. The Delivery Desk can help small, growing and established UK businesses where the current delivery process is costing time, margin or customer trust."],
+    ["What information helps you match a sector requirement?", "Useful detail includes goods type, typical order volume, collection or delivery postcode, customer promise, current provider, failure points, returns needs, storage needs and any access or handling restrictions."]
+  ];
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Delivery support by sector",
+      "description": description,
+      "url": canonical,
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": sectors.map((sector, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": sector.name,
+          "url": `${siteUrl}/sectors/${sector.slug}`
+        }))
+      }
+    },
+    breadcrumbSchema([
+      { label: "Home", path: "/" },
+      { label: "Sectors", path: "/sectors" }
+    ]),
+    faqSchema(sectorFaqs)
+  ];
   const cards = sectors.map((sector) => `
             <article class="service-card">
               <span class="service-icon" aria-hidden="true">S</span>
@@ -2200,6 +2225,22 @@ function sectorsIndexHtml() {
               <p>${escapeHtml(sector.intro)}</p>
               <a href="${sector.slug}/index.html">View sector</a>
             </article>`).join("\n");
+  const comparisonRows = [
+    ["Ecommerce and online sellers", "Daily dispatch, returns, tracking, failed collections, peak trading and international orders", "Parcel collection, fulfilment, returns flow and service promise"],
+    ["Furniture and interiors", "Bulky goods, fragile handling, booking slots, room-of-choice delivery and damage claims", "2-man delivery, access checks, storage and customer communication"],
+    ["Trade suppliers and merchants", "Urgent parts, site deliveries, mixed parcels and pallets, timed drops and proof of delivery", "Same-day, pallet freight, trade route coverage and collection reliability"],
+    ["Manufacturers", "Inbound materials, outbound pallets, production pressure, booking-in requirements and export paperwork", "Pallet freight, same-day recovery, international freight and container support"],
+    ["Wholesalers and distributors", "High dispatch volume, mixed delivery profiles, warehouse pressure and customer delivery windows", "Parcel, pallet, fulfilment, regional delivery and reporting control"],
+    ["Importers and exporters", "Customs, port movement, devanning, onward delivery, landed cost and documentation risk", "Sea freight, international delivery, pallet movement and storage handover"],
+    ["Retail and multi-site", "Store replenishment, customer delivery, returns, stock transfers and urgent fixes", "Retail supply chain, same-day support, fulfilment and bulky delivery"]
+  ];
+  const comparison = comparisonRows.map(([sector, pressure, route]) => `
+              <tr>
+                <th>${escapeHtml(sector)}</th>
+                <td>${escapeHtml(pressure)}</td>
+                <td>${escapeHtml(route)}</td>
+              </tr>`).join("\n");
+  const faqMarkup = faqItems(sectorFaqs);
 
   return `<!doctype html>
 <html lang="en">
@@ -2221,8 +2262,47 @@ function sectorsIndexHtml() {
       <section class="local-hero">
         <div class="section-inner">
           <p class="eyebrow dark">Sector delivery support</p>
-          <h1>Delivery advice shaped around the way your business actually works.</h1>
-          <p>Different sectors create different delivery problems. Use these pages to find the service mix most likely to fit your operation.</p>
+          <h1>Find the right delivery route for how your business actually operates.</h1>
+          <p>Delivery problems look different in each sector. Use this page to compare the common pressure points, then move into the sector page that best matches your goods, customers and current delivery setup.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#lead-form">Ask us to review your setup</a>
+            <a class="button secondary" href="../service-finder/index.html">Use the service finder</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-band">
+        <div class="section-inner two-col">
+          <div>
+            <p class="eyebrow dark">Why sectors matter</p>
+            <h2>The same courier service can be a good fit for one business and a poor fit for another.</h2>
+          </div>
+          <div class="lead-copy">
+            <p>A low parcel rate will not solve missed collections. A standard delivery network will not fix bulky room-of-choice deliveries. A freight quote will not help if customs, storage and onward delivery are disconnected.</p>
+            <p>The Delivery Desk starts with the operating model first, then looks at the service type, route, goods profile and failure points. That keeps the recommendation practical rather than generic.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-inner local-conversion">
+        <div class="section-heading">
+          <p class="eyebrow dark">Quick comparison</p>
+          <h2>Match the page to the delivery problem, not just the business label.</h2>
+          <p class="section-lede">If more than one row feels relevant, start with the issue causing the most cost, delay or customer friction.</p>
+        </div>
+        <div class="comparison-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Sector</th>
+                <th>Typical pressure points</th>
+                <th>Likely route to compare</th>
+              </tr>
+            </thead>
+            <tbody>
+${comparison}
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -2230,9 +2310,76 @@ function sectorsIndexHtml() {
         <div class="section-heading">
           <p class="eyebrow dark">Business types</p>
           <h2>Choose the closest operating model.</h2>
+          <p class="section-lede">Each sector page explains the common delivery risks, the service types worth comparing and the details we would qualify before matching a provider.</p>
         </div>
         <div class="service-grid">
 ${cards}
+        </div>
+      </section>
+
+      <section class="split-section">
+        <div class="split-copy">
+          <p class="eyebrow dark">What we qualify</p>
+          <h2>Good sector matching starts with operational detail.</h2>
+          <p>Before recommending a service route, we look at the facts that usually decide whether a delivery partner will work in practice.</p>
+          <ul class="check-list">
+            <li>Goods profile, size, value, fragility and handling restrictions</li>
+            <li>Collection points, delivery postcodes, delivery windows and site access</li>
+            <li>Current provider, failure points, surcharges, claims and admin load</li>
+            <li>Returns, storage, fulfilment, customs or onward delivery requirements</li>
+            <li>Customer promise, tracking expectations and proof-of-delivery needs</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#lead-form">Start an enquiry</a>
+            <a class="button secondary" href="../delivery-review/index.html">Use the review checklist</a>
+          </div>
+        </div>
+        <aside class="expert-panel">
+          <p class="eyebrow">Decision signal</p>
+          <h3>When the sector route is probably wrong</h3>
+          <ul>
+            <li>The recommendation only compares headline price.</li>
+            <li>No one asks about access, packaging, failed delivery or returns.</li>
+            <li>Bulky, fragile or palletised goods are pushed through a standard parcel process.</li>
+            <li>International, customs, storage and onward UK delivery are treated as separate problems.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="proof-section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow dark">How to use this section</p>
+            <h2>Three practical ways to move forward.</h2>
+          </div>
+          <div class="trust-strip">
+            <article>
+              <strong>1</strong>
+              <span>Choose the sector page that best reflects the delivery issue you need to fix first.</span>
+            </article>
+            <article>
+              <strong>2</strong>
+              <span>Check the likely service types and pressure points before asking for quotes.</span>
+            </article>
+            <article>
+              <strong>3</strong>
+              <span>Send the operational detail so we can match the requirement to the right kind of partner.</span>
+            </article>
+            <article>
+              <strong>150+</strong>
+              <span>Years of combined team knowledge behind the matching process.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section section-inner">
+        <div class="section-heading">
+          <p class="eyebrow dark">Sector FAQs</p>
+          <h2>Questions businesses usually ask before choosing a route.</h2>
+        </div>
+        <div class="faq-list">
+${faqMarkup}
         </div>
       </section>
     </main>
