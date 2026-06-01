@@ -2186,14 +2186,14 @@ function sectorServiceLinks(sector, prefix = "../") {
 }
 
 function sectorsIndexHtml() {
-  const title = "Delivery Support by Sector | The Delivery Desk";
-  const description = "Compare delivery and logistics support by sector, including ecommerce, furniture, trade suppliers, manufacturers, wholesalers, importers, exporters and retail stores.";
+  const title = "Delivery and Logistics Support by Sector | The Delivery Desk";
+  const description = "Sector-specific UK delivery and logistics matching for ecommerce, furniture, trade suppliers, manufacturers, wholesalers, importers, exporters and retail stores.";
   const canonical = `${siteUrl}/sectors`;
   const sectorFaqs = [
-    ["Which sector should I choose if my business fits more than one?", "Choose the page that best matches the delivery problem you are trying to solve. If you sell online and also run stores, for example, ecommerce may be the right route for parcel collections while retail supply chain may be better for stock movement and returns."],
-    ["Can The Delivery Desk help if we already have carriers?", "Yes. Many enquiries start with an existing carrier or courier setup that is no longer fitting the goods, volume, customer promise or admin load. We help review what is failing before suggesting a better route."],
-    ["Do you only support large companies?", "No. The Delivery Desk can help small, growing and established UK businesses where the current delivery process is costing time, margin or customer trust."],
-    ["What information helps you match a sector requirement?", "Useful detail includes goods type, typical order volume, collection or delivery postcode, customer promise, current provider, failure points, returns needs, storage needs and any access or handling restrictions."]
+    ["Which sector page should I start with?", "Start with the page that matches the delivery problem you need to fix first. If you sell online and also run stores, ecommerce may be the right route for daily parcel collections while retail supply chain may be better for store replenishment, returns or stock movement."],
+    ["Can The Delivery Desk help if we already use couriers or carriers?", "Yes. Many enquiries come from businesses that already have a courier, carrier or freight provider but are dealing with missed collections, damage, surcharges, weak tracking, poor fit for bulky goods or too much manual chasing."],
+    ["Do you only support large companies?", "No. The Delivery Desk is built for small, growing and established UK businesses where delivery is starting to affect margin, customer trust, staff time or operational control."],
+    ["What should I send with a sector enquiry?", "Send the goods type, order volume, collection and delivery postcodes, current provider, delivery promise, failure points, returns needs, storage needs and any access, customs or handling restrictions."]
   ];
   const schema = [
     {
@@ -2218,21 +2218,39 @@ function sectorsIndexHtml() {
     ]),
     faqSchema(sectorFaqs)
   ];
+  const sectorCardCopy = {
+    ecommerce: "Protect reviews, repeat orders and margin when daily parcels, returns or peak dispatch start to stretch the current courier setup.",
+    "furniture-interiors": "Match bulky, fragile or high-value goods with delivery routes that handle booking, access, room-of-choice and damage risk properly.",
+    "trade-suppliers": "Keep parts, materials and site deliveries moving when urgent drops, pallets and trade customer promises all compete for attention.",
+    manufacturers: "Connect inbound materials, outbound pallets, urgent spares and export movements without letting freight issues disrupt production.",
+    "wholesalers-distributors": "Bring parcel, pallet, warehouse and regional delivery work together so growth does not create hidden admin cost.",
+    "importers-exporters": "Join up customs, port movement, devanning, storage and onward UK delivery so international work does not fragment.",
+    "retail-stores": "Support store replenishment, customer delivery, returns and stock transfers without pulling shop or warehouse teams off task."
+  };
+  const sectorCardLabels = {
+    ecommerce: "EC",
+    "furniture-interiors": "FG",
+    "trade-suppliers": "TS",
+    manufacturers: "MF",
+    "wholesalers-distributors": "WD",
+    "importers-exporters": "IE",
+    "retail-stores": "RT"
+  };
   const cards = sectors.map((sector) => `
             <article class="service-card">
-              <span class="service-icon" aria-hidden="true">S</span>
+              <span class="service-icon" aria-hidden="true">${escapeHtml(sectorCardLabels[sector.slug] || "Sector")}</span>
               <h3>${escapeHtml(sector.name)}</h3>
-              <p>${escapeHtml(sector.intro)}</p>
-              <a href="${sector.slug}/index.html">View sector</a>
+              <p>${escapeHtml(sectorCardCopy[sector.slug] || sector.intro)}</p>
+              <a href="${sector.slug}/index.html">Explore this sector</a>
             </article>`).join("\n");
   const comparisonRows = [
-    ["Ecommerce and online sellers", "Daily dispatch, returns, tracking, failed collections, peak trading and international orders", "Parcel collection, fulfilment, returns flow and service promise"],
-    ["Furniture and interiors", "Bulky goods, fragile handling, booking slots, room-of-choice delivery and damage claims", "2-man delivery, access checks, storage and customer communication"],
-    ["Trade suppliers and merchants", "Urgent parts, site deliveries, mixed parcels and pallets, timed drops and proof of delivery", "Same-day, pallet freight, trade route coverage and collection reliability"],
-    ["Manufacturers", "Inbound materials, outbound pallets, production pressure, booking-in requirements and export paperwork", "Pallet freight, same-day recovery, international freight and container support"],
-    ["Wholesalers and distributors", "High dispatch volume, mixed delivery profiles, warehouse pressure and customer delivery windows", "Parcel, pallet, fulfilment, regional delivery and reporting control"],
-    ["Importers and exporters", "Customs, port movement, devanning, onward delivery, landed cost and documentation risk", "Sea freight, international delivery, pallet movement and storage handover"],
-    ["Retail and multi-site", "Store replenishment, customer delivery, returns, stock transfers and urgent fixes", "Retail supply chain, same-day support, fulfilment and bulky delivery"]
+    ["Ecommerce and online sellers", "Customers chase tracking, collections slip, returns are slow, peak dispatch feels fragile", "Daily parcel collection, fulfilment, returns flow and service promise"],
+    ["Furniture and interiors", "Damage claims, failed appointments, awkward access, poor handover on bulky or fragile items", "White glove 2-man delivery, access checks, storage and customer booking"],
+    ["Trade suppliers and merchants", "Urgent parts miss deadlines, site drops need the right vehicle, POD is being chased manually", "Same-day courier, pallet freight, trade route coverage and collection reliability"],
+    ["Manufacturers", "Production is disrupted by late inbound goods, booking-in issues or outbound pallet failures", "Pallet freight, same-day recovery, international freight and container support"],
+    ["Wholesalers and distributors", "Dispatch volume is growing but parcels, pallets and regional delivery are being managed in silos", "Parcel, pallet, fulfilment, regional delivery and reporting control"],
+    ["Importers and exporters", "Customs, port handling, devanning, storage and onward delivery are not joined up", "Sea freight, international delivery, pallet movement and storage handover"],
+    ["Retail and multi-site", "Stores are losing time to replenishment, returns, customer delivery and urgent stock transfers", "Retail supply chain, same-day support, fulfilment and bulky delivery"]
   ];
   const comparison = comparisonRows.map(([sector, pressure, route]) => `
               <tr>
@@ -2240,6 +2258,19 @@ function sectorsIndexHtml() {
                 <td>${escapeHtml(pressure)}</td>
                 <td>${escapeHtml(route)}</td>
               </tr>`).join("\n");
+  const customerSignals = [
+    ["The cheapest quote is not fixing the real cost", "If missed collections, re-deliveries, claims and staff chasing are still happening, the headline rate is only part of the story."],
+    ["The goods do not fit the network", "Furniture, fragile goods, pallets, site deliveries and container work need the right handling route, not a forced parcel solution."],
+    ["The customer promise is outgrowing the operation", "Next-day, booked-in, room-of-choice, international or multi-site delivery promises all need a process that can stand up under pressure."],
+    ["Delivery is stealing time from the team", "When warehouse, store or office staff are constantly chasing couriers, proof of delivery, returns or damage claims, the setup needs reviewing."],
+    ["Different suppliers are not talking to each other", "Storage, fulfilment, freight, customs, devanning and onward delivery can fail when they are managed as disconnected pieces."],
+    ["You know something is wrong, but not which service solves it", "That is exactly where a sector-led review helps: goods, routes, timing, customer expectation and failure points come first."]
+  ].map(([heading, copy], index) => `
+          <article class="insight-card">
+            <span class="service-icon">${index + 1}</span>
+            <h3>${escapeHtml(heading)}</h3>
+            <p>${escapeHtml(copy)}</p>
+          </article>`).join("\n");
   const faqMarkup = faqItems(sectorFaqs);
 
   return `<!doctype html>
@@ -2262,11 +2293,11 @@ function sectorsIndexHtml() {
       <section class="local-hero">
         <div class="section-inner">
           <p class="eyebrow dark">Sector delivery support</p>
-          <h1>Find the right delivery route for how your business actually operates.</h1>
-          <p>Delivery problems look different in each sector. Use this page to compare the common pressure points, then move into the sector page that best matches your goods, customers and current delivery setup.</p>
+          <h1>Delivery and logistics support by sector for UK businesses.</h1>
+          <p>If parcels are late, furniture is getting damaged, pallets are being missed, imports are becoming messy or staff are spending too much time chasing couriers, the answer is rarely just a cheaper quote. It starts with matching the delivery setup to how your business really works.</p>
           <div class="hero-actions">
-            <a class="button primary" href="../index.html#lead-form">Ask us to review your setup</a>
-            <a class="button secondary" href="../service-finder/index.html">Use the service finder</a>
+            <a class="button primary" href="../index.html#lead-form">Tell us what is going wrong</a>
+            <a class="button secondary" href="#sectors">Compare sectors</a>
           </div>
         </div>
       </section>
@@ -2275,28 +2306,39 @@ function sectorsIndexHtml() {
         <div class="section-inner two-col">
           <div>
             <p class="eyebrow dark">Why sectors matter</p>
-            <h2>The same courier service can be a good fit for one business and a poor fit for another.</h2>
+            <h2>The right delivery partner depends on the goods, the promise and the pressure behind the order.</h2>
           </div>
           <div class="lead-copy">
-            <p>A low parcel rate will not solve missed collections. A standard delivery network will not fix bulky room-of-choice deliveries. A freight quote will not help if customs, storage and onward delivery are disconnected.</p>
-            <p>The Delivery Desk starts with the operating model first, then looks at the service type, route, goods profile and failure points. That keeps the recommendation practical rather than generic.</p>
+            <p>An online seller needs reliable collections and returns. A furniture retailer needs careful handling and booked delivery. A manufacturer may need pallets, urgent parts and international freight. An importer may need customs, devanning, storage and onward UK delivery to line up.</p>
+            <p>The Delivery Desk looks at the operating model first, then the service type, route, goods profile and failure points. That keeps the recommendation practical, commercial and grounded in how UK logistics actually behaves.</p>
           </div>
         </div>
       </section>
 
       <section class="section-inner local-conversion">
         <div class="section-heading">
-          <p class="eyebrow dark">Quick comparison</p>
-          <h2>Match the page to the delivery problem, not just the business label.</h2>
-          <p class="section-lede">If more than one row feels relevant, start with the issue causing the most cost, delay or customer friction.</p>
+          <p class="eyebrow dark">Customer symptoms</p>
+          <h2>Start here if you know delivery is hurting the business but you are not sure what to change.</h2>
+          <p class="section-lede">Most delivery problems show up as cost, complaints, delays, damage or staff time. The sector pages help turn those symptoms into a clearer service brief.</p>
+        </div>
+        <div class="insight-grid">
+${customerSignals}
+        </div>
+      </section>
+
+      <section class="section-inner local-conversion">
+        <div class="section-heading">
+          <p class="eyebrow dark">Sector comparison</p>
+          <h2>Choose the page by the operational problem, not just the business label.</h2>
+          <p class="section-lede">If more than one row feels relevant, start with the issue causing the most cost, delay, damage, complaint volume or customer friction.</p>
         </div>
         <div class="comparison-wrap">
           <table class="comparison-table">
             <thead>
               <tr>
                 <th>Sector</th>
-                <th>Typical pressure points</th>
-                <th>Likely route to compare</th>
+                <th>What the customer usually feels</th>
+                <th>Likely service route to compare</th>
               </tr>
             </thead>
             <tbody>
@@ -2309,8 +2351,8 @@ ${comparison}
       <section class="section-inner" id="sectors">
         <div class="section-heading">
           <p class="eyebrow dark">Business types</p>
-          <h2>Choose the closest operating model.</h2>
-          <p class="section-lede">Each sector page explains the common delivery risks, the service types worth comparing and the details we would qualify before matching a provider.</p>
+          <h2>Choose the closest sector and build a better delivery brief.</h2>
+          <p class="section-lede">Each page explains the common risks, the service types worth comparing and the operational detail we would qualify before matching a courier, carrier, freight, fulfilment or specialist delivery partner.</p>
         </div>
         <div class="service-grid">
 ${cards}
@@ -2320,8 +2362,8 @@ ${cards}
       <section class="split-section">
         <div class="split-copy">
           <p class="eyebrow dark">What we qualify</p>
-          <h2>Good sector matching starts with operational detail.</h2>
-          <p>Before recommending a service route, we look at the facts that usually decide whether a delivery partner will work in practice.</p>
+          <h2>A good logistics recommendation should feel specific to your operation.</h2>
+          <p>Before recommending a service route, we look at the facts that decide whether a delivery partner will work in practice, not just whether they cover the postcode.</p>
           <ul class="check-list">
             <li>Goods profile, size, value, fragility and handling restrictions</li>
             <li>Collection points, delivery postcodes, delivery windows and site access</li>
@@ -2336,12 +2378,12 @@ ${cards}
         </div>
         <aside class="expert-panel">
           <p class="eyebrow">Decision signal</p>
-          <h3>When the sector route is probably wrong</h3>
+          <h3>Warning signs the recommendation is too generic</h3>
           <ul>
             <li>The recommendation only compares headline price.</li>
             <li>No one asks about access, packaging, failed delivery or returns.</li>
             <li>Bulky, fragile or palletised goods are pushed through a standard parcel process.</li>
-            <li>International, customs, storage and onward UK delivery are treated as separate problems.</li>
+            <li>International, customs, storage and onward UK delivery are treated as unrelated problems.</li>
           </ul>
         </aside>
       </section>
@@ -2350,20 +2392,20 @@ ${cards}
         <div class="section-inner">
           <div class="section-heading">
             <p class="eyebrow dark">How to use this section</p>
-            <h2>Three practical ways to move forward.</h2>
+            <h2>A simple route from delivery problem to better supplier fit.</h2>
           </div>
           <div class="trust-strip">
             <article>
               <strong>1</strong>
-              <span>Choose the sector page that best reflects the delivery issue you need to fix first.</span>
+              <span>Choose the sector page that best reflects the issue costing the most money, time or customer trust.</span>
             </article>
             <article>
               <strong>2</strong>
-              <span>Check the likely service types and pressure points before asking for quotes.</span>
+              <span>Check the likely service types and pressure points before asking providers for quotes.</span>
             </article>
             <article>
               <strong>3</strong>
-              <span>Send the operational detail so we can match the requirement to the right kind of partner.</span>
+              <span>Send the operational detail so we can match the requirement to the right partner type.</span>
             </article>
             <article>
               <strong>150+</strong>
