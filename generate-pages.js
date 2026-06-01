@@ -2241,7 +2241,7 @@ function sectorsIndexHtml() {
               <span class="service-icon" aria-hidden="true">${escapeHtml(sectorCardLabels[sector.slug] || "Sector")}</span>
               <h3>${escapeHtml(sector.name)}</h3>
               <p>${escapeHtml(sectorCardCopy[sector.slug] || sector.intro)}</p>
-              <a href="${sector.slug}/index.html">Explore this sector</a>
+              <a href="/sectors/${sector.slug}">Explore this sector</a>
             </article>`).join("\n");
   const comparisonRows = [
     ["Ecommerce and online sellers", "Customers chase tracking, collections slip, returns are slow, peak dispatch feels fragile", "Daily parcel collection, fulfilment, returns flow and service promise"],
@@ -2482,7 +2482,7 @@ function sectorHtml(sector) {
     <main>
       ${breadcrumbs([
         { label: "Home", href: "../../index.html" },
-        { label: "Sectors", href: "../index.html" },
+        { label: "Sectors", href: "/sectors" },
         { label: sector.name }
       ])}
       <section class="local-hero">
@@ -2526,7 +2526,7 @@ ${sectorServiceLinks(sector, "../../")}
         <p>Independent logistics matching, powered by SVMK.</p>
       </div>
       <div class="footer-links">
-        <a href="../index.html">All sectors</a>
+        <a href="/sectors">All sectors</a>
         <a href="../../privacy.html">Privacy</a>
       </div>
     </footer>
