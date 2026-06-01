@@ -622,7 +622,7 @@ function nearbyCityLinks(service, currentCity) {
   return cities
     .filter((city) => city.region === currentCity.region && city.name !== currentCity.name)
     .slice(0, 8)
-    .map((city) => `<a href="../${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`)
+    .map((city) => `<a href="/${service.slug}/${citySlug(city.name)}">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`)
     .join("\n");
 }
 
@@ -652,7 +652,7 @@ function localSearchSection(service, city) {
   const nearby = nearbyCitiesFor(city, 6);
   const areaLinks = businessAreasFor(city).map((area) => `<li>${escapeHtml(area)}</li>`).join("\n");
   const nearbyLinks = nearby
-    .map((nearbyCity) => `<a href="../${citySlug(nearbyCity.name)}/index.html">${escapeHtml(nearbyCity.name)}</a>`)
+    .map((nearbyCity) => `<a href="/${service.slug}/${citySlug(nearbyCity.name)}">${escapeHtml(nearbyCity.name)}</a>`)
     .join("\n");
   const nearbyNames = nearby.map((nearbyCity) => nearbyCity.name).join(", ");
 
@@ -685,7 +685,7 @@ ${nearbyLinks}
 }
 
 function cityServiceLinks(city, prefix = "../") {
-  return services.map((service) => `<a href="${prefix}${service.slug}/${citySlug(city.name)}/index.html">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`).join("\n");
+  return services.map((service) => `<a href="/${service.slug}/${citySlug(city.name)}">${escapeHtml(service.name)} in ${escapeHtml(city.name)}</a>`).join("\n");
 }
 
 function serviceLocationDirectory(service) {
@@ -697,7 +697,7 @@ function serviceLocationDirectory(service) {
     .map((name) => cities.find((city) => city.name === name))
     .filter(Boolean)
     .map((city) => `
-              <a href="${citySlug(city.name)}/index.html">
+              <a href="/${service.slug}/${citySlug(city.name)}">
                 <strong>${escapeHtml(city.name)}</strong>
                 <span>${escapeHtml(service.name)} support</span>
               </a>`).join("\n");
@@ -712,7 +712,7 @@ function serviceLocationDirectory(service) {
               <article>
                 <h3>${escapeHtml(region)}</h3>
                 <div>
-${regionCities.map((city) => `                  <a href="${citySlug(city.name)}/index.html">${escapeHtml(city.name)}</a>`).join("\n")}
+${regionCities.map((city) => `                  <a href="/${service.slug}/${citySlug(city.name)}">${escapeHtml(city.name)}</a>`).join("\n")}
                 </div>
               </article>`).join("\n");
 
@@ -800,7 +800,7 @@ function pageHtml(service, city) {
     <main>
       ${breadcrumbs([
         { label: "Home", href: "../../index.html" },
-        { label: service.name, href: "../index.html" },
+        { label: service.name, href: `/${service.slug}` },
         { label: city.name }
       ])}
       <section class="local-hero">
@@ -900,9 +900,9 @@ ${faqItems(localFaq)}
           <h2>Useful next pages.</h2>
         </div>
         <div class="related-grid">
-          <a href="../index.html">Service overview: ${escapeHtml(service.name)}</a>
-          <a href="../issues-solutions/index.html">Common ${escapeHtml(service.phrase)} problems</a>
-          <a href="../../locations/${citySlug(city.name)}/index.html">All delivery services in ${escapeHtml(city.name)}</a>
+          <a href="/${service.slug}">Service overview: ${escapeHtml(service.name)}</a>
+          <a href="/${service.slug}/issues-solutions">Common ${escapeHtml(service.phrase)} problems</a>
+          <a href="/locations/${citySlug(city.name)}">All delivery services in ${escapeHtml(city.name)}</a>
 ${nearbyCityLinks(service, city)}
         </div>
       </section>
@@ -1095,7 +1095,7 @@ ${faqItems(service.faq)}
           <h2>Know what can go wrong before you choose a partner.</h2>
           <p class="section-lede">We have also built a practical guide to the common problems, warning signs and better ways to handle ${escapeHtml(service.phrase)}.</p>
         </div>
-        <a class="button primary" href="issues-solutions/index.html">Read the ${escapeHtml(service.name)} guide</a>
+        <a class="button primary" href="/${service.slug}/issues-solutions">Read the ${escapeHtml(service.name)} guide</a>
       </section>
 
       <section class="locations-band">
@@ -1213,7 +1213,7 @@ function serviceGuideHtml(service) {
     <main>
       ${breadcrumbs([
         { label: "Home", href: "../../index.html" },
-        { label: service.name, href: "../index.html" },
+        { label: service.name, href: `/${service.slug}` },
         { label: "Problems and solutions" }
       ])}
       <section class="local-hero">
@@ -1221,7 +1221,7 @@ function serviceGuideHtml(service) {
           <p class="eyebrow dark">High-level delivery guide</p>
           <h1>${escapeHtml(service.name)} problems and ways to overcome them</h1>
           <p>${escapeHtml(service.warning)} This guide explains what to check before you change supplier or ask for another rate.</p>
-          <a class="button primary" href="../index.html#lead-form">Ask us to review the job</a>
+          <a class="button primary" href="/${service.slug}#lead-form">Ask us to review the job</a>
         </div>
       </section>
 
@@ -1272,7 +1272,7 @@ ${faqItems(service.faq)}
             <p class="eyebrow">Need this checked?</p>
             <h2>Bring us the delivery problem before you choose the partner.</h2>
           </div>
-          <a class="button primary" href="../index.html#lead-form">Start an enquiry</a>
+          <a class="button primary" href="/${service.slug}#lead-form">Start an enquiry</a>
         </div>
       </section>
     </main>
@@ -1283,7 +1283,7 @@ ${faqItems(service.faq)}
         <p>Independent logistics matching, powered by SVMK.</p>
       </div>
       <div class="footer-links">
-        <a href="../index.html">Back to service</a>
+        <a href="/${service.slug}">Back to service</a>
         <a href="../../privacy.html">Privacy</a>
       </div>
     </footer>
@@ -1390,7 +1390,7 @@ function locationsIndexHtml() {
   ]);
   const official = cities.filter((city) => city.officialCity);
   const commercial = cities.filter((city) => !city.officialCity);
-  const links = (items) => items.map((city) => `<a href="${citySlug(city.name)}/index.html">${escapeHtml(city.name)}</a>`).join("\n");
+  const links = (items) => items.map((city) => `<a href="/locations/${citySlug(city.name)}">${escapeHtml(city.name)}</a>`).join("\n");
 
   return `<!doctype html>
 <html lang="en">
@@ -2120,7 +2120,7 @@ function cityHubHtml(city) {
     <main>
       ${breadcrumbs([
         { label: "Home", href: "../../index.html" },
-        { label: "Locations", href: "../index.html" },
+        { label: "Locations", href: "/locations" },
         { label: city.name }
       ])}
       <section class="local-hero">
@@ -2167,7 +2167,7 @@ ${cityServiceLinks(city, "../../")}
         <p>Independent logistics matching, powered by SVMK.</p>
       </div>
       <div class="footer-links">
-        <a href="../index.html">All locations</a>
+        <a href="/locations">All locations</a>
         <a href="../../privacy.html">Privacy</a>
       </div>
     </footer>
