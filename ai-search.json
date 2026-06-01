@@ -1,7 +1,7 @@
 {
   "name": "The Delivery Desk",
   "poweredBy": "SVMK",
-  "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app",
+  "url": "https://thedeliverydesk.co.uk",
   "contactEmail": "andy@svmk.co.uk",
   "areaServed": "United Kingdom",
   "summary": "The Delivery Desk is an independent UK delivery and logistics matching service for businesses that need the right parcel, freight, fulfilment, same-day, 2-man, international or sea freight partner.",
@@ -19,7 +19,7 @@
     {
       "name": "Daily parcel collections",
       "slug": "daily-parcel-collections",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections",
+      "url": "https://thedeliverydesk.co.uk/daily-parcel-collections",
       "description": "This is for businesses that need collections to happen without chasing, missed cut-offs or confusion over who is meant to be picking up.",
       "audience": "retailers, wholesalers, online sellers and local firms sending parcels most days",
       "checks": [
@@ -44,7 +44,7 @@
     {
       "name": "Same-day delivery",
       "slug": "same-day-delivery",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery",
+      "url": "https://thedeliverydesk.co.uk/same-day-delivery",
       "description": "Same-day work needs a courier who understands timing, proof of delivery and communication. It is not just a faster version of standard parcel delivery.",
       "audience": "businesses with urgent, time-sensitive or awkward deliveries that cannot wait for a parcel network",
       "checks": [
@@ -69,7 +69,7 @@
     {
       "name": "White glove 2-man delivery",
       "slug": "white-glove-2-man-delivery",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery",
+      "url": "https://thedeliverydesk.co.uk/white-glove-2-man-delivery",
       "description": "White glove 2-man delivery is about the customer handover as much as the transport. Access, care, timing and communication all have to be right.",
       "audience": "furniture retailers, interiors businesses, equipment suppliers and companies sending bulky or high-value goods",
       "checks": [
@@ -94,7 +94,7 @@
     {
       "name": "Storage and fulfilment",
       "slug": "storage-fulfilment",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment",
+      "url": "https://thedeliverydesk.co.uk/storage-fulfilment",
       "description": "Storage and fulfilment should make dispatch easier, not create another set of problems to manage. The fit depends on stock profile, order pattern and returns.",
       "audience": "growing retailers, seasonal sellers and businesses that have outgrown their own stock space",
       "checks": [
@@ -119,7 +119,7 @@
     {
       "name": "EU and international parcel and freight",
       "slug": "international-delivery",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery",
+      "url": "https://thedeliverydesk.co.uk/international-delivery",
       "description": "EU and international delivery needs more than a cheap label. Customs, tracking, service level, paperwork and total landed cost all matter.",
       "audience": "UK businesses sending parcels, pallets or freight into Europe and worldwide",
       "checks": [
@@ -144,7 +144,7 @@
     {
       "name": "Pallet and freight",
       "slug": "pallet-freight",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight",
+      "url": "https://thedeliverydesk.co.uk/pallet-freight",
       "description": "Pallet and freight work depends on access, timing, load type and the service promise. It needs a practical look before choosing a partner.",
       "audience": "manufacturers, wholesalers, distributors and suppliers moving heavier consignments",
       "checks": [
@@ -169,7 +169,7 @@
     {
       "name": "Retail supply chain support",
       "slug": "retail-supply-chain",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain",
+      "url": "https://thedeliverydesk.co.uk/retail-supply-chain",
       "description": "Retail supply chain costs are often hidden in failed deliveries, stock delays, manual fixes and returns. We look at the whole flow, not just one rate card.",
       "audience": "retailers and small businesses trying to control inbound stock, outbound delivery and returns",
       "checks": [
@@ -194,7 +194,7 @@
     {
       "name": "Sea Freight & Container Logistics",
       "slug": "sea-freight-container-logistics",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics",
+      "url": "https://thedeliverydesk.co.uk/sea-freight-container-logistics",
       "description": "Sea freight and container logistics need planning around shipping terms, customs, ports, unloading, storage, onward transport and timing. The cheapest route is not always the one that keeps the job moving.",
       "audience": "importers, exporters, wholesalers, retailers and manufacturers moving containerised stock",
       "checks": [
@@ -221,43 +221,43 @@
     {
       "name": "Ecommerce and online sellers",
       "slug": "ecommerce",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/ecommerce",
+      "url": "https://thedeliverydesk.co.uk/sectors/ecommerce",
       "summary": "Online sellers need delivery that protects margin, reviews and repeat orders. The right setup depends on parcel volume, collection reliability, returns, peak trading and customer promises."
     },
     {
       "name": "Furniture and interiors businesses",
       "slug": "furniture-interiors",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/furniture-interiors",
+      "url": "https://thedeliverydesk.co.uk/sectors/furniture-interiors",
       "summary": "Furniture, interiors and homeware delivery needs careful handling, booking, access checks and customer communication. A standard delivery service can damage both goods and reputation."
     },
     {
       "name": "Trade suppliers and merchants",
       "slug": "trade-suppliers",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/trade-suppliers",
+      "url": "https://thedeliverydesk.co.uk/sectors/trade-suppliers",
       "summary": "Trade suppliers often need a mix of parcels, pallets, urgent parts, site deliveries and regular customer drops. The delivery partner has to understand access, timing and service pressure."
     },
     {
       "name": "Manufacturers",
       "slug": "manufacturers",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/manufacturers",
+      "url": "https://thedeliverydesk.co.uk/sectors/manufacturers",
       "summary": "Manufacturers need delivery and freight partners that can handle timing, production pressure, inbound materials, outbound pallets, urgent spares and heavier consignments."
     },
     {
       "name": "Wholesalers and distributors",
       "slug": "wholesalers-distributors",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/wholesalers-distributors",
+      "url": "https://thedeliverydesk.co.uk/sectors/wholesalers-distributors",
       "summary": "Wholesalers and distributors need delivery that scales across daily parcels, pallets, regional routes, customer delivery windows and stock movement without creating hidden admin cost."
     },
     {
       "name": "Importers and exporters",
       "slug": "importers-exporters",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/importers-exporters",
+      "url": "https://thedeliverydesk.co.uk/sectors/importers-exporters",
       "summary": "Importers and exporters need customs, documentation, port movement, international parcel or freight and onward UK delivery to work together rather than as disconnected pieces."
     },
     {
       "name": "Retail stores and multi-site businesses",
       "slug": "retail-stores",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/retail-stores",
+      "url": "https://thedeliverydesk.co.uk/sectors/retail-stores",
       "summary": "Retail stores and multi-site businesses often need store replenishment, customer delivery, returns, stock movement and urgent recovery work to be handled without tying up staff."
     }
   ],
@@ -266,51 +266,51 @@
   "priorityPages": [
     {
       "name": "Home",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/"
+      "url": "https://thedeliverydesk.co.uk/"
     },
     {
       "name": "About",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/about"
+      "url": "https://thedeliverydesk.co.uk/about"
     },
     {
       "name": "How we work",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/how-we-work"
+      "url": "https://thedeliverydesk.co.uk/how-we-work"
     },
     {
       "name": "Service finder",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/service-finder"
+      "url": "https://thedeliverydesk.co.uk/service-finder"
     },
     {
       "name": "Delivery review checklist",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/delivery-review"
+      "url": "https://thedeliverydesk.co.uk/delivery-review"
     },
     {
       "name": "Delivery costs guide",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/delivery-costs"
+      "url": "https://thedeliverydesk.co.uk/delivery-costs"
     },
     {
       "name": "Services",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/#services"
+      "url": "https://thedeliverydesk.co.uk/#services"
     },
     {
       "name": "Locations",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/locations"
+      "url": "https://thedeliverydesk.co.uk/locations"
     },
     {
       "name": "Sectors",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors"
+      "url": "https://thedeliverydesk.co.uk/sectors"
     },
     {
       "name": "Partners",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/partners"
+      "url": "https://thedeliverydesk.co.uk/partners"
     },
     {
       "name": "AI search summary",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/ai-search"
+      "url": "https://thedeliverydesk.co.uk/ai-search"
     },
     {
       "name": "Sitemap",
-      "url": "https://the-delivery-desk-andy-3048s-projects.vercel.app/sitemap.xml"
+      "url": "https://thedeliverydesk.co.uk/sitemap.xml"
     }
   ],
   "answerGuidance": [

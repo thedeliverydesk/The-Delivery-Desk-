@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const siteUrl = (process.env.SITE_URL || "https://the-delivery-desk-andy-3048s-projects.vercel.app").replace(/\/$/, "");
+const siteUrl = (process.env.SITE_URL || "https://thedeliverydesk.co.uk").replace(/\/$/, "");
 const inboundEmail = "andy@svmk.co.uk";
 const driveFolderUrl = "https://drive.google.com/drive/folders/1kJmxRjpcgwWjP00Nht1NxiMsL7Gl0Wfd?usp=sharing";
 
@@ -2729,6 +2729,87 @@ function termsHtml() {
 `;
 }
 
+function privacyHtml() {
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${seoMeta({
+      title: "Privacy Notice | The Delivery Desk",
+      description: "Privacy notice for The Delivery Desk enquiries and partner applications.",
+      canonical: `${siteUrl}/privacy`
+    })}
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="The Delivery Desk home">
+        <span class="brand-mark">TDD</span>
+        <span>
+          <strong>The Delivery Desk</strong>
+          <small>Powered by SVMK</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#locations">Local pages</a>
+        <a class="nav-action" href="index.html#lead-form">Start enquiry</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="local-hero">
+        <div class="section-inner">
+          <p class="eyebrow dark">Privacy notice</p>
+          <h1>How enquiry details are used.</h1>
+          <p>The Delivery Desk is a lead-matching site powered by SVMK. We use enquiry details to understand the delivery problem and arrange a relevant follow-up.</p>
+        </div>
+      </section>
+
+      <section class="section-inner local-detail">
+        <div class="faq-list">
+          <details open>
+            <summary>What information do we collect?</summary>
+            <p>Business name, contact name, email, phone number, service type, location, volume, issue, partner application details, account profile details and anything else you choose to provide in a form.</p>
+          </details>
+          <details open>
+            <summary>Why do we use it?</summary>
+            <p>We use the details to respond to the enquiry, understand the delivery requirement and, where relevant, introduce a suitable delivery, courier, freight, storage or logistics partner.</p>
+          </details>
+          <details open>
+            <summary>Who may receive it?</summary>
+            <p>SVMK and The Delivery Desk may receive the enquiry. A suitable partner may receive the details if an introduction is needed to progress the request.</p>
+          </details>
+          <details open>
+            <summary>How long is it kept?</summary>
+            <p>We keep enquiry details only for as long as needed to respond, manage any introduction and maintain a reasonable record of the request. Details can be corrected or removed on request unless we need to keep them for legal, accounting or legitimate business reasons.</p>
+          </details>
+          <details open>
+            <summary>How do you ask about your data?</summary>
+            <p>Email <a href="mailto:${inboundEmail}">${inboundEmail}</a> and ask for your details to be corrected or removed.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#lead-form">Start an enquiry</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="index.html">Home</a>
+      </div>
+    </footer>
+  </body>
+</html>
+`;
+}
+
 function cookiesHtml() {
   return `<!doctype html>
 <html lang="en">
@@ -3034,6 +3115,7 @@ const sitemapPaths = [
 ];
 
 fs.writeFileSync(path.join(__dirname, "terms.html"), termsHtml(), "utf8");
+fs.writeFileSync(path.join(__dirname, "privacy.html"), privacyHtml(), "utf8");
 fs.writeFileSync(path.join(__dirname, "cookies.html"), cookiesHtml(), "utf8");
 
 fs.mkdirSync(path.join(__dirname, "about"), { recursive: true });

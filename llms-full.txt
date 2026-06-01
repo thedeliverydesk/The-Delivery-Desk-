@@ -4,7 +4,7 @@
 
 Name: The Delivery Desk
 Powered by: SVMK
-Website: https://the-delivery-desk-andy-3048s-projects.vercel.app
+Website: https://thedeliverydesk.co.uk
 Contact: andy@svmk.co.uk
 Area served: United Kingdom
 Summary: The Delivery Desk is an independent UK delivery and logistics matching service for businesses that need the right parcel, freight, fulfilment, same-day, 2-man, international or sea freight partner.
@@ -13,86 +13,86 @@ Experience: 150+ years combined team knowledge and experience
 ## Services
 
 ### Daily parcel collections
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections
+URL: https://thedeliverydesk.co.uk/daily-parcel-collections
 Audience: retailers, wholesalers, online sellers and local firms sending parcels most days
 Summary: This is for businesses that need collections to happen without chasing, missed cut-offs or confusion over who is meant to be picking up.
 Checks: daily and weekly parcel volumes; collection cut-off times; average parcel size and weight; current carrier failures; returns and peak trading pressure
 Good fit when: regular parcel volumes leaving one or more sites; missed or late collections are causing staff pressure; you need carrier options checked before changing supplier
 Risk signals: unclear cut-off times; regular failed collections; surcharges that are hard to explain; too much manual chasing or rebooking
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/daily-parcel-collections/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/daily-parcel-collections/issues-solutions
 
 ### Same-day delivery
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery
+URL: https://thedeliverydesk.co.uk/same-day-delivery
 Audience: businesses with urgent, time-sensitive or awkward deliveries that cannot wait for a parcel network
 Summary: Same-day work needs a courier who understands timing, proof of delivery and communication. It is not just a faster version of standard parcel delivery.
 Checks: pickup and delivery deadlines; vehicle type; waiting time and access; proof of delivery requirements; regular routes versus one-off urgent jobs
 Good fit when: urgent parts, samples, documents or customer orders; timed collections and timed delivery windows; direct routes where tracking and proof matter
 Risk signals: unclear pickup readiness; wrong vehicle size; waiting time not agreed; no clear proof of delivery
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/same-day-delivery/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/same-day-delivery/issues-solutions
 
 ### White glove 2-man delivery
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery
+URL: https://thedeliverydesk.co.uk/white-glove-2-man-delivery
 Audience: furniture retailers, interiors businesses, equipment suppliers and companies sending bulky or high-value goods
 Summary: White glove 2-man delivery is about the customer handover as much as the transport. Access, care, timing and communication all have to be right.
 Checks: room-of-choice delivery; fragile or high-value items; stair carries and access restrictions; customer booking process; failed delivery and damage risk
 Good fit when: furniture, interiors, equipment or fragile goods; room-of-choice delivery or careful customer handover; jobs where damage risk and customer communication matter
 Risk signals: no access checks before delivery; poor customer booking process; unclear damage handling; bulky items being pushed through a standard parcel-style service
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/white-glove-2-man-delivery/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/white-glove-2-man-delivery/issues-solutions
 
 ### Storage and fulfilment
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment
+URL: https://thedeliverydesk.co.uk/storage-fulfilment
 Audience: growing retailers, seasonal sellers and businesses that have outgrown their own stock space
 Summary: Storage and fulfilment should make dispatch easier, not create another set of problems to manage. The fit depends on stock profile, order pattern and returns.
 Checks: space needed now and at peak; pick-and-pack requirements; SKU count and stock control; returns handling; dispatch carrier options
 Good fit when: stock is taking over your own space; orders are growing or seasonal demand is hard to manage; returns, dispatch and carrier choice need tightening
 Risk signals: unclear storage charging; weak stock visibility; slow pick-and-pack process; returns handled away from the main stock picture
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/storage-fulfilment/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/storage-fulfilment/issues-solutions
 
 ### EU and international parcel and freight
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery
+URL: https://thedeliverydesk.co.uk/international-delivery
 Audience: UK businesses sending parcels, pallets or freight into Europe and worldwide
 Summary: EU and international delivery needs more than a cheap label. Customs, tracking, service level, paperwork and total landed cost all matter.
 Checks: destination countries; parcel or freight profile; customs paperwork; transit time and tracking; duties, taxes and total landed cost
 Good fit when: EU parcel delivery, worldwide parcels, pallets or freight; customs paperwork or tracking is causing problems; you need service options checked by destination and goods type
 Risk signals: unclear commodity details; poor customs data; unexpected duties or taxes; tracking that stops after export
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/international-delivery/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/international-delivery/issues-solutions
 
 ### Pallet and freight
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight
+URL: https://thedeliverydesk.co.uk/pallet-freight
 Audience: manufacturers, wholesalers, distributors and suppliers moving heavier consignments
 Summary: Pallet and freight work depends on access, timing, load type and the service promise. It needs a practical look before choosing a partner.
 Checks: pallet size and weight; forklift or tail-lift access; delivery booking requirements; part-load versus network freight; damage and claims exposure
 Good fit when: pallets, oversized consignments or heavier business freight; tail-lift, forklift or booking-in details matter; damage risk, access and timing need checking before booking
 Risk signals: wrong pallet dimensions; tail-lift not specified; delivery booking ignored; poor access notes or no contact details
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/pallet-freight/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/pallet-freight/issues-solutions
 
 ### Retail supply chain support
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain
+URL: https://thedeliverydesk.co.uk/retail-supply-chain
 Audience: retailers and small businesses trying to control inbound stock, outbound delivery and returns
 Summary: Retail supply chain costs are often hidden in failed deliveries, stock delays, manual fixes and returns. We look at the whole flow, not just one rate card.
 Checks: inbound supplier deliveries; outbound parcel and bulky delivery; returns process; seasonal pressure; where staff time is being lost
 Good fit when: delivery problems are linked to stock, returns or fulfilment; staff are spending too much time fixing delivery issues; you need to understand the full cost, not just the carriage price
 Risk signals: returns are disconnected from stock; inbound delays keep affecting customers; manual fixes are normal; carrier changes have not solved the real issue
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/retail-supply-chain/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/retail-supply-chain/issues-solutions
 
 ### Sea Freight & Container Logistics
-URL: https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics
+URL: https://thedeliverydesk.co.uk/sea-freight-container-logistics
 Audience: importers, exporters, wholesalers, retailers and manufacturers moving containerised stock
 Summary: Sea freight and container logistics need planning around shipping terms, customs, ports, unloading, storage, onward transport and timing. The cheapest route is not always the one that keeps the job moving.
 Checks: FCL, LCL or loose-loaded cargo; port or rail terminal collection; 20ft, 40ft or high-cube container type; customs and document requirements; devanning, storage and onward UK delivery
 Good fit when: FCL or LCL sea freight; container collection, devanning, storage or onward UK transport; imports or exports where customs and timing need coordinating
 Risk signals: container arrival dates are unclear; no unloading plan; demurrage or quay rent risk; customs and onward delivery being handled separately
-Issues guide: https://the-delivery-desk-andy-3048s-projects.vercel.app/sea-freight-container-logistics/issues-solutions
+Issues guide: https://thedeliverydesk.co.uk/sea-freight-container-logistics/issues-solutions
 
 ## Sectors
 
-- Ecommerce and online sellers: Online sellers need delivery that protects margin, reviews and repeat orders. The right setup depends on parcel volume, collection reliability, returns, peak trading and customer promises. (https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/ecommerce)
-- Furniture and interiors businesses: Furniture, interiors and homeware delivery needs careful handling, booking, access checks and customer communication. A standard delivery service can damage both goods and reputation. (https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/furniture-interiors)
-- Trade suppliers and merchants: Trade suppliers often need a mix of parcels, pallets, urgent parts, site deliveries and regular customer drops. The delivery partner has to understand access, timing and service pressure. (https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/trade-suppliers)
-- Manufacturers: Manufacturers need delivery and freight partners that can handle timing, production pressure, inbound materials, outbound pallets, urgent spares and heavier consignments. (https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/manufacturers)
-- Wholesalers and distributors: Wholesalers and distributors need delivery that scales across daily parcels, pallets, regional routes, customer delivery windows and stock movement without creating hidden admin cost. (https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/wholesalers-distributors)
-- Importers and exporters: Importers and exporters need customs, documentation, port movement, international parcel or freight and onward UK delivery to work together rather than as disconnected pieces. (https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/importers-exporters)
-- Retail stores and multi-site businesses: Retail stores and multi-site businesses often need store replenishment, customer delivery, returns, stock movement and urgent recovery work to be handled without tying up staff. (https://the-delivery-desk-andy-3048s-projects.vercel.app/sectors/retail-stores)
+- Ecommerce and online sellers: Online sellers need delivery that protects margin, reviews and repeat orders. The right setup depends on parcel volume, collection reliability, returns, peak trading and customer promises. (https://thedeliverydesk.co.uk/sectors/ecommerce)
+- Furniture and interiors businesses: Furniture, interiors and homeware delivery needs careful handling, booking, access checks and customer communication. A standard delivery service can damage both goods and reputation. (https://thedeliverydesk.co.uk/sectors/furniture-interiors)
+- Trade suppliers and merchants: Trade suppliers often need a mix of parcels, pallets, urgent parts, site deliveries and regular customer drops. The delivery partner has to understand access, timing and service pressure. (https://thedeliverydesk.co.uk/sectors/trade-suppliers)
+- Manufacturers: Manufacturers need delivery and freight partners that can handle timing, production pressure, inbound materials, outbound pallets, urgent spares and heavier consignments. (https://thedeliverydesk.co.uk/sectors/manufacturers)
+- Wholesalers and distributors: Wholesalers and distributors need delivery that scales across daily parcels, pallets, regional routes, customer delivery windows and stock movement without creating hidden admin cost. (https://thedeliverydesk.co.uk/sectors/wholesalers-distributors)
+- Importers and exporters: Importers and exporters need customs, documentation, port movement, international parcel or freight and onward UK delivery to work together rather than as disconnected pieces. (https://thedeliverydesk.co.uk/sectors/importers-exporters)
+- Retail stores and multi-site businesses: Retail stores and multi-site businesses often need store replenishment, customer delivery, returns, stock movement and urgent recovery work to be handled without tying up staff. (https://thedeliverydesk.co.uk/sectors/retail-stores)
 
 ## Location strategy
 

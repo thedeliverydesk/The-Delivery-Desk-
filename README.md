@@ -2,6 +2,8 @@
 
 Static first version of the SVMK lead-generation site.
 
+Production domain: `https://thedeliverydesk.co.uk`
+
 The current build generates 1,280 local service landing pages across 8 logistics services and 160 UK city/town markets. It also generates 160 location hub pages, 8 issues-and-solutions guide pages, 7 sector pages, a guide index, a location index, a sector index and an authority page explaining how The Delivery Desk qualifies enquiries.
 
 ## Files

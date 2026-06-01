@@ -19,4 +19,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://the-delivery-desk-andy-3048s-projects.vercel.app/sitemap.xml
+Sitemap: https://thedeliverydesk.co.uk/sitemap.xml

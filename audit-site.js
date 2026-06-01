@@ -2,6 +2,10 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
+const expectedSiteUrl = (process.env.SITE_URL || "https://thedeliverydesk.co.uk").replace(/\/$/, "");
+const blockedLaunchHosts = [
+  "the-delivery-desk-andy-3048s-projects.vercel.app"
+];
 const htmlFiles = [];
 
 function walk(dir) {
@@ -59,6 +63,10 @@ for (const file of htmlFiles) {
   const fileRel = rel(file);
   const ids = idsFor(html);
 
+  for (const host of blockedLaunchHosts) {
+    if (html.includes(host)) failures.push(`${fileRel}: contains temporary launch host ${host}`);
+  }
+
   if (!/<title>[^<]{8,}<\/title>/.test(html)) failures.push(`${fileRel}: missing or weak title`);
   else titles += 1;
 
@@ -68,7 +76,13 @@ for (const file of htmlFiles) {
     descriptions += 1;
   }
 
-  if (/<link rel=["']canonical["']/.test(html)) canonicals += 1;
+  const canonicalMatch = html.match(/<link rel=["']canonical["'] href=["']([^"']+)["']/);
+  if (canonicalMatch) {
+    canonicals += 1;
+    if (!canonicalMatch[1].startsWith(expectedSiteUrl)) {
+      failures.push(`${fileRel}: canonical is not on ${expectedSiteUrl}`);
+    }
+  }
 
   if (/<meta property=["']og:title["']/.test(html) && /<meta property=["']og:description["']/.test(html)) openGraph += 1;
   if (/<meta name=["']twitter:card["']/.test(html)) twitterCards += 1;
@@ -103,6 +117,20 @@ for (const file of htmlFiles) {
 
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
+
+for (const host of blockedLaunchHosts) {
+  if (sitemap.includes(host)) failures.push(`sitemap: contains temporary launch host ${host}`);
+  if (robots.includes(host)) failures.push(`robots: contains temporary launch host ${host}`);
+}
+
+for (const url of sitemapUrls) {
+  if (!url.startsWith(`${expectedSiteUrl}/`)) failures.push(`sitemap: URL is not on ${expectedSiteUrl}: ${url}`);
+}
+
+if (!robots.includes(`Sitemap: ${expectedSiteUrl}/sitemap.xml`)) {
+  failures.push(`robots: missing sitemap for ${expectedSiteUrl}`);
+}
 
 if (!sitemap.includes("/locations/manchester")) failures.push("sitemap: missing Manchester location hub");
 if (!sitemap.includes("/same-day-delivery/issues-solutions")) failures.push("sitemap: missing same-day guide");
