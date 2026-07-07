@@ -15,7 +15,8 @@ The current build generates 1,280 local service landing pages across 8 logistics
 - `assets/logistics-hero.png` - generated hero image for the homepage.
 - `thank-you.html` - confirmation page after form submission.
 - `privacy.html` - plain-English enquiry privacy notice.
-- `admin.html` - browser-local enquiry viewer and CSV export.
+- `admin/index.html` - Delivery Desk admin entry point embedding the Send247 admin copy.
+- `book-a-courier/index.html` - Delivery Desk courier booking entry point embedding the Send247 booking copy.
 - `partners/index.html` - partner network application page.
 - `partner-login/index.html` - partner account preview.
 - `customer-account/index.html` - customer account preview.

@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 
 const siteUrl = (process.env.SITE_URL || "https://thedeliverydesk.co.uk").replace(/\/$/, "");
+const adminAppUrl = (process.env.ADMIN_APP_URL || "https://admin-send247-copy.vercel.app").replace(/\/$/, "");
+const bookingAppUrl = (process.env.BOOKING_APP_URL || "https://send247-uk-copy.vercel.app/book-a-courier").replace(/\/$/, "");
 const inboundEmail = "andy@svmk.co.uk";
 const driveFolderUrl = "https://drive.google.com/drive/folders/1kJmxRjpcgwWjP00Nht1NxiMsL7Gl0Wfd?usp=sharing";
 
@@ -519,6 +521,7 @@ function siteFacts() {
       { name: "Delivery review checklist", url: `${siteUrl}/delivery-review` },
       { name: "Delivery costs guide", url: `${siteUrl}/delivery-costs` },
       { name: "Services", url: `${siteUrl}/#services` },
+      { name: "Book a courier", url: `${siteUrl}/book-a-courier` },
       { name: "Locations", url: `${siteUrl}/locations` },
       { name: "Sectors", url: `${siteUrl}/sectors` },
       { name: "Partners", url: `${siteUrl}/partners` },
@@ -601,10 +604,135 @@ function headerHtml(prefix, localCta = false) {
         <a href="${prefix}locations/index.html">Locations</a>
         <a href="${prefix}partners/index.html">Partners</a>
         <a href="${prefix}customer-account/index.html">Account</a>
+        <a href="${prefix}admin/index.html">Admin</a>
         <a href="${prefix}index.html#assistant">Assistant</a>
+        <a class="nav-action secondary-nav-action" href="${prefix}book-a-courier/index.html">Book courier</a>
         <a class="nav-action" href="${ctaHref}">Find a solution</a>
       </nav>
     </header>`;
+}
+
+function displayUrl(url) {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
+
+function integrationHtml({
+  title,
+  description,
+  canonicalPath,
+  eyebrow,
+  heading,
+  copy,
+  frameUrl,
+  frameTitle,
+  openLabel,
+  secondaryHref,
+  secondaryLabel
+}) {
+  const secondaryAction = secondaryHref && secondaryLabel
+    ? `<a class="button secondary" href="${escapeHtml(secondaryHref)}">${escapeHtml(secondaryLabel)}</a>`
+    : "";
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${seoMeta({
+      title,
+      description,
+      canonical: `${siteUrl}${canonicalPath}`
+    })}
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    ${headerHtml("../")}
+    <main>
+      <section class="integration-hero">
+        <div class="section-inner integration-hero-inner">
+          <div>
+            <p class="eyebrow dark">${escapeHtml(eyebrow)}</p>
+            <h1>${escapeHtml(heading)}</h1>
+            <p class="section-lede">${escapeHtml(copy)}</p>
+          </div>
+          <div class="integration-actions">
+            <a class="button primary" href="${escapeHtml(frameUrl)}" target="_blank" rel="noopener">${escapeHtml(openLabel)}</a>
+            ${secondaryAction}
+          </div>
+        </div>
+      </section>
+
+      <section class="section-inner integration-shell" aria-label="${escapeHtml(frameTitle)}">
+        <div class="integration-frame-card">
+          <div class="integration-frame-toolbar">
+            <div>
+              <strong>${escapeHtml(frameTitle)}</strong>
+              <span>${escapeHtml(displayUrl(frameUrl))}</span>
+            </div>
+            <a href="${escapeHtml(frameUrl)}" target="_blank" rel="noopener">Open full screen</a>
+          </div>
+          <iframe
+            class="integration-frame"
+            src="${escapeHtml(frameUrl)}"
+            title="${escapeHtml(frameTitle)}"
+            loading="eager"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="clipboard-write; payment; geolocation"
+          ></iframe>
+        </div>
+        <p class="integration-status">If this embedded screen does not load, use the full screen link above.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>The Delivery Desk</strong>
+        <p>Independent logistics matching, powered by SVMK.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#lead-form">Start an enquiry</a>
+        <a href="../book-a-courier/index.html">Book courier</a>
+        <a href="../admin/index.html">Admin</a>
+        <a href="../service-finder/index.html">Finder</a>
+        <a href="../partners/index.html">Partners</a>
+        <a href="../privacy.html">Privacy</a>
+      </div>
+    </footer>
+  </body>
+</html>`;
+}
+
+function adminIntegrationHtml() {
+  return integrationHtml({
+    title: "Delivery Desk Admin | The Delivery Desk",
+    description: "Delivery Desk admin access for managing courier bookings and delivery operations.",
+    canonicalPath: "/admin",
+    eyebrow: "Operations admin",
+    heading: "Manage courier bookings from Delivery Desk.",
+    copy: "Use the admin area to review delivery activity, customer requests and operational details from the existing Send247 admin system.",
+    frameUrl: adminAppUrl,
+    frameTitle: "Delivery Desk admin",
+    openLabel: "Open admin",
+    secondaryHref: "../book-a-courier/index.html",
+    secondaryLabel: "Book a courier"
+  });
+}
+
+function bookingIntegrationHtml() {
+  return integrationHtml({
+    title: "Book a Courier | The Delivery Desk",
+    description: "Book a courier through The Delivery Desk using the existing Send247 booking flow.",
+    canonicalPath: "/book-a-courier",
+    eyebrow: "Courier booking",
+    heading: "Book a courier through Delivery Desk.",
+    copy: "Use the booking flow to price and place courier work while keeping the journey inside the Delivery Desk site.",
+    frameUrl: bookingAppUrl,
+    frameTitle: "Delivery Desk courier booking",
+    openLabel: "Open booking",
+    secondaryHref: "../index.html#lead-form",
+    secondaryLabel: "Start an enquiry"
+  });
 }
 
 function breadcrumbs(items) {
@@ -3402,6 +3530,12 @@ fs.writeFileSync(path.join(__dirname, "delivery-costs", "index.html"), deliveryC
 
 fs.mkdirSync(path.join(__dirname, "partners"), { recursive: true });
 fs.writeFileSync(path.join(__dirname, "partners", "index.html"), partnersHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "admin"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "admin", "index.html"), adminIntegrationHtml(), "utf8");
+
+fs.mkdirSync(path.join(__dirname, "book-a-courier"), { recursive: true });
+fs.writeFileSync(path.join(__dirname, "book-a-courier", "index.html"), bookingIntegrationHtml(), "utf8");
 
 fs.mkdirSync(path.join(__dirname, "ai-search"), { recursive: true });
 fs.writeFileSync(path.join(__dirname, "ai-search", "index.html"), aiSearchHtml(), "utf8");
